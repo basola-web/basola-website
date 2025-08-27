@@ -12,13 +12,7 @@ const dict = {
       cta2: "So funktioniert's",
       badge1: "Off‑Grid",
       badge2: "Dezentral",
-      badge3: "Lokal betrieben",
-      card: {
-        h3: "Warum Basola?",
-        li1: "Plastik ↓, Energie ↑",
-        li2: "Solar + Syngas, autark",
-        li3: "Robust & wartungsfreundlich"
-      }
+      badge3: "Lokal betrieben"
     },
     problem: {
       h2: "Das Problem",
@@ -83,15 +77,11 @@ const dict = {
       h2: "Pilot: Ladrilleros, Kolumbien",
       p: "Zwischen Mangroven und Meer, eine Stunde Bootsfahrt: Diesel teuer, Plastikmüll am Strand. Wir machen daraus lokalen Kraftstoff.",
       f1h3: "100 kg Plastik/Tag",
-      f1p: "aus Haushalten (+ zusätzlich Meeresmüll).",
+      f1p: "inkl. Meeresmüll",
       f2h3: "1.000 Einwohner",
-      f2p: "nur per Boot erreichbar (~1 h von Buenaventura).",
+      f2p: "nur per Boot (~1 h)",
       f3h3: "Offene Verbrennung",
-      f3p: "Plastik wird derzeit offen verbrannt.",
-      f4h3: "Teurer Sprit",
-      f4p: "durch aufwändigen Transport.",
-      f5h3: "1 Prototyp",
-      f5p: "in Kooperation mit Plástico Precioso & Universidad del Valle.",
+      f3p: "Plastik wird verbrannt",
       maplink: "Auf Google Maps ansehen"
     },
     team: {
@@ -152,13 +142,7 @@ const dict = {
       cta2: "How it works",
       badge1: "Off-grid",
       badge2: "Decentralized",
-      badge3: "Locally operated",
-      card: {
-        h3: "Why Basola?",
-        li1: "Less plastic, more energy",
-        li2: "Solar + syngas, autonomous",
-        li3: "Robust & easy to maintain"
-      }
+      badge3: "Locally operated"
     },
     problem: {
       h2: "The Challenge",
@@ -223,15 +207,11 @@ const dict = {
       h2: "Pilot: Ladrilleros, Colombia",
       p: "Between mangroves and sea, one hour by boat: diesel is expensive, plastic litters the beach. We turn it into local fuel.",
       f1h3: "100 kg plastic/day",
-      f1p: "from households (+ additional marine debris).",
+      f1p: "incl. marine debris",
       f2h3: "1,000 residents",
-      f2p: "boat-only (~1 h from Buenaventura).",
+      f2p: "boat-only (~1 h)",
       f3h3: "Open burning",
-      f3p: "Plastic is currently burned openly.",
-      f4h3: "Costly fuel",
-      f4p: "due to laborious transport.",
-      f5h3: "1 prototype",
-      f5p: "with Plástico Precioso & Universidad del Valle.",
+      f3p: "Plastic is burned",
       maplink: "View on Google Maps"
     },
     team: {
