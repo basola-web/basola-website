@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BASOLA – Plastikmüll wird zu Solarkraftstoff</title>
-  <meta name="description" content="BASOLA verwandelt Plastikabfälle in solaren Kraftstoff für Off-Grid-Gemeinden – sauber, dezentral, lokal betrieben." />
+  <title data-i18n="meta.title">BASOLA – Solar-Kraftstoff aus Plastikmüll</title>
+  <meta name="description" data-i18n="meta.description" content="Dezentrale Solar-Pyrolyse verwandelt nicht recycelbare Kunststoffe in lokalen Treibstoff – für Küstenorte, die nur per Boot erreichbar sind." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="styles.css" />
 
   <link rel="canonical" href="https://basola.de/" />
@@ -46,36 +47,45 @@
   <meta property="og:description" content="Dezentrale Solar-Pyrolyse: Plastik → Kraftstoff. Energiezugang & saubere Küsten." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/basola_logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#">
-        <img src="/assets/basola_logo.png" alt="Basola Logo" />
-      </a>
-      <nav class="links" aria-label="Main Navigation">
-        <a href="#tech" data-i18n="nav.tech">Technologie</a>
-        <a href="#impact" data-i18n="nav.impact">Impact</a>
-        <a href="#pilot" data-i18n="nav.pilot">Pilot</a>
-        <a href="#team" data-i18n="nav.team">Team</a>
-        <a href="#kontakt" class="btn small" data-i18n="nav.contact">Kontakt</a>
-        <div class="lang-toggle">
-          <button type="button" data-lang="de" aria-label="Deutsch">DE</button>
-          <button type="button" data-lang="en" aria-label="English">EN</button>
+  <header class="header">
+    <div class="bar container">
+      <a href="#" class="brand"><img src="/assets/basola_logo.png" alt="Basola Logo" loading="lazy"></a>
+      <button class="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+      <div class="nav-right">
+        <nav class="primary-nav" aria-label="Hauptnavigation">
+          <a href="#technology" data-i18n="nav.tech">Technologie</a>
+          <a href="#impact" data-i18n="nav.impact">Impact</a>
+          <a href="#pilot" data-i18n="nav.pilot">Pilot</a>
+          <a href="#team" data-i18n="nav.team">Team</a>
+          <a href="impressum.html" data-i18n="nav.impressum">Impressum</a>
+          <a href="#contact" class="btn small" data-i18n="nav.contact">Kontakt</a>
+        </nav>
+        <div class="lang-toggle" role="tablist" aria-label="Language">
+          <button class="lang" data-lang="de" role="tab" aria-selected="true">DE</button>
+          <button class="lang" data-lang="en" role="tab" aria-selected="false">EN</button>
         </div>
-      </nav>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="hero">
+      <div class="hero-video-bg">
+        <video class="hero-video" autoplay muted loop playsinline>
+          <source src="assets/bootsfahrt_nach_ladrilleros.MP4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+      </div>
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h1 data-i18n="hero.h1" data-anim>Solar‑Kraftstoff aus Plastikmüll</h1>
-          <p class="lead" data-i18n="hero.lead" data-anim>Basola verwandelt lokale Plastikabfälle in Kraftstoff – mit Solarenergie und zirkulärer Technologie. Für saubere Küsten, bezahlbare Energie und neue Jobs.</p>
+          <h1 data-i18n="hero.h1" data-anim>Solar-Kraftstoff aus Plastikmüll – dort, wo es niemand abholt.</h1>
+          <p class="lead" data-i18n="hero.lead" data-anim>Dezentrale Solar-Pyrolyse verwandelt nicht recycelbare Kunststoffe in lokalen Treibstoff – für Küstenorte, die nur per Boot erreichbar sind.</p>
           <div class="cta" data-anim>
-            <a href="#kontakt" class="btn" data-i18n="hero.cta1">Partner werden</a>
-            <a href="#tech" class="btn ghost" data-i18n="hero.cta2">So funktioniert's</a>
+            <a href="#contact" class="btn" data-i18n="hero.cta1">Partner werden</a>
+            <a href="#technology" class="btn ghost" data-i18n="hero.cta2">So funktioniert's</a>
           </div>
           <ul class="badges" data-anim>
             <li data-i18n="hero.badge1">Off‑Grid</li>
@@ -98,23 +108,57 @@
     </section>
 
     <section id="problem" class="section">
-      <div class="container grid-2">
-        <div>
-          <h2 data-i18n="problem.h2" data-anim>Das Problem</h2>
-          <p data-i18n="problem.p" data-anim>Abgelegene Küstengemeinden kämpfen mit angeschwemmtem Plastik und teurem Diesel. Fehlt Infrastruktur, landen Abfälle oft im Feuer – mit Folgen für Klima, Gesundheit und Tourismus.</p>
-        </div>
-        <div class="kpi-wrap">
-          <div class="kpi" data-anim><span data-i18n="problem.k1">80&nbsp;kg</span><small data-i18n="problem.k1s">Plastik/Tag verwertbar (Pilot)</small></div>
-          <div class="kpi" data-anim><span data-i18n="problem.k2">~70‑80%</span><small data-i18n="problem.k2s">Öl‑Ausbeute je nach Feedstock</small></div>
-          <div class="kpi" data-anim><span data-i18n="problem.k3">&gt;40&nbsp;MJ/kg</span><small data-i18n="problem.k3s">Energiegehalt des Kraftstoffs</small></div>
+      <div class="container">
+        <h2 data-i18n="problem.h2" data-anim>Das Problem</h2>
+        <div class="problem-grid">
+          <div class="problem-card" tabindex="0" data-anim>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18l-3-4H6l-3 4z" fill="currentColor"/><path d="M6 14V6h12v8" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            <h3 data-i18n="problem.c1h3">Nur per Boot erreichbar</h3>
+            <p data-i18n="problem.c1p">Abgelegene Küstengemeinden ohne regelmäßige Abfuhr.</p>
+          </div>
+          <div class="problem-card" tabindex="0" data-anim>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2h6v4h-6zM8 6h8l1 3v11l-1 2H8l-1-2V9z" fill="currentColor"/></svg>
+            <h3 data-i18n="problem.c2h3">Plastik wird angespült</h3>
+            <p data-i18n="problem.c2p">Häufig offene Verbrennung direkt am Strand.</p>
+          </div>
+          <div class="problem-card" tabindex="0" data-anim>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c-3 5-6 7-6 11a6 6 0 0012 0c0-4-3-6-6-11z" fill="currentColor"/></svg>
+            <h3 data-i18n="problem.c3h3">Teurer Diesel</h3>
+            <p data-i18n="problem.c3p">Energieversorgung unsicher und kostenintensiv.</p>
+          </div>
+          <div class="problem-card" tabindex="0" data-anim>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8 8 5 10 5 14a7 7 0 0014 0C19 10 16 8 12 2z" fill="currentColor"/><path d="M12 12v6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+            <h3 data-i18n="problem.c4h3">Umweltbelastung</h3>
+            <p data-i18n="problem.c4p">Wasser/Erde/ Luft leiden unter Müll &amp; Verbrennung.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="tech" class="section alt">
+    <section id="usp" class="section alt">
+      <div class="container">
+        <h2 data-i18n="usp.h2" data-anim>Unser USP – Warum BASOLA?</h2>
+        <div class="grid-2">
+          <ul class="usp-list" data-anim>
+            <li data-i18n="usp.b1">Solar-Energieinput (PV) statt fossilem Brenner</li>
+            <li data-i18n="usp.b2">Klein &amp; dezentral für remote boat-only Gemeinden</li>
+            <li data-i18n="usp.b3">Verwertet nicht recycelbare Kunststoffe</li>
+            <li data-i18n="usp.b4">Robust &amp; sicher (Druckentlastung, Gas-Detektion, Fackel)</li>
+          </ul>
+          <ul class="badges kpi" data-anim>
+            <li data-i18n="usp.k1">~80 kg/Tag</li>
+            <li data-i18n="usp.k2">~40 L/Tag</li>
+            <li data-i18n="usp.k3">400–550 °C</li>
+            <li data-i18n="usp.k4">PV + Speicher</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="technology" class="section alt">
       <div class="container grid-2">
         <div>
-          <h2 data-i18n="tech.h2" data-anim>Die Technologie</h2>
+          <h2 data-i18n="tech.h2" data-anim>So funktioniert's</h2>
           <p data-i18n="tech.p" data-anim>Plastik wird in einem geschlossenen Reaktor ohne Sauerstoff erhitzt (Pyrolyse). Die Dämpfe kondensieren zu flüssigem Kraftstoff. Nicht‑kondensierbares Gas heizt den Prozess; Strom liefert Solar‑PV mit Speicher.</p>
           <ul class="list">
             <li data-i18n="tech.li1">Multi‑Stage‑Kondensation für Diesel/Gasoline‑Fraktionen</li>
@@ -122,23 +166,55 @@
             <li data-i18n="tech.li3">Sicher: Druckentlastung, Gas‑Detektion, Fackel</li>
           </ul>
         </div>
-        <img src="/assets/process_chart.png" alt="Systemskizze: Prozess von Plastikabfall zu Kraftstoff (Basola)" loading="lazy" data-anim class="tech-diagram" />
+        <img src="/assets/process_chart.png" alt="Systemskizze: Prozess von Plastikabfall zu Kraftstoff (BASOLA)" loading="lazy" class="tech-diagram" data-anim />
+      </div>
+    </section>
+
+    <section id="model" class="section">
+      <div class="container">
+        <h2 data-i18n="model.h2" data-anim>Business Model</h2>
+        <p data-i18n="model.p" data-anim>Einnahmen bleiben vor Ort; bis zu 2 Jobs/Unit.</p>
+        <div class="model-grid">
+          <div class="model-card" data-anim>
+            <div class="icon">⛽</div>
+            <h3 data-i18n="model.c1h3">Fuel-Sales</h3>
+            <p data-i18n="model.c1p">Lokaler Verkauf an Boote und Generatoren.</p>
+          </div>
+          <div class="model-card" data-anim>
+            <div class="icon">💰</div>
+            <h3 data-i18n="model.c2h3">Gate-Fee</h3>
+            <p data-i18n="model.c2p">Optionale Gebühr für nicht recycelbare Kunststoffe.</p>
+          </div>
+          <div class="model-card" data-anim>
+            <div class="icon">🌱</div>
+            <h3 data-i18n="model.c3h3">Biochar/Carbon</h3>
+            <p data-i18n="model.c3p">Potenzial für Kohlenstoffbindung/Finanzierung.</p>
+          </div>
+          <div class="model-card" data-anim>
+            <div class="icon">🛠️</div>
+            <h3 data-i18n="model.c4h3">Service &amp; Training</h3>
+            <p data-i18n="model.c4p">Betrieb, Wartung, Community-Ownership.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="impact" class="section">
       <div class="container">
         <h2 data-i18n="impact.h2" data-anim>Wirkung, die man sieht</h2>
-        <div class="cards-3">
-          <div class="card" data-anim>
+        <div class="impact-grid">
+          <div class="impact-card" data-anim>
+            <div class="badge">🌊</div>
             <h3 data-i18n="impact.c1h3">Saubere Küsten</h3>
             <p data-i18n="impact.c1p">Plastik wird zum Rohstoff statt zum Risiko. Weniger offenes Verbrennen, weniger Verschmutzung.</p>
           </div>
-          <div class="card" data-anim>
+          <div class="impact-card" data-anim>
+            <div class="badge">⚡</div>
             <h3 data-i18n="impact.c2h3">Energiezugang</h3>
             <p data-i18n="impact.c2p">Lokaler Kraftstoff für Boote, Generatoren und kleine Betriebe – unabhängig vom Dieselpreis.</p>
           </div>
-          <div class="card" data-anim>
+          <div class="impact-card" data-anim>
+            <div class="badge">💼</div>
             <h3 data-i18n="impact.c3h3">Lokale Jobs</h3>
             <p data-i18n="impact.c3p">Betrieb, Sammlung, Wartung: Wertschöpfung bleibt vor Ort. Training inklusive.</p>
           </div>
@@ -147,25 +223,14 @@
     </section>
 
     <section id="pilot" class="section alt">
-      <div class="container grid-2">
-        <div>
-          <h2 data-i18n="pilot.h2" data-anim>Pilot: Ladrilleros, Kolumbien</h2>
-          <p data-i18n="pilot.p" data-anim>Start in einer abgelegenen Pazifik‑Gemeinde mit starken Partnern und klaren Zielen: weniger Plastik, bezahlbare Energie, Community‑Ownership.</p>
-          <ul class="list">
-            <li data-i18n="pilot.li1">Partner: lokale NGOs, Hochschulen, Enactus</li>
-            <li data-i18n="pilot.li2">Setup: Off‑Grid, 1 Batch/Tag &approx; 80 kg Plastics</li>
-            <li data-i18n="pilot.li3">Outputs: Diesel‑ähnliches Öl, Syngas, Char</li>
-          </ul>
+      <div class="container">
+        <h2 data-i18n="pilot.h2" data-anim>Pilot: Ladrilleros, Kolumbien</h2>
+        <p data-i18n="pilot.p" data-anim>Zwischen Mangroven und Meer, eine Stunde Bootsfahrt: Diesel teuer, Plastikmüll am Strand. Wir machen daraus lokalen Kraftstoff.</p>
+        <div class="pilot-gallery" data-anim>
+          <video src="assets/bootsfahrt_nach_ladrilleros.MP4" autoplay muted loop playsinline></video>
+          <img src="/assets/Ladrilleros.png" alt="Strand von Ladrilleros" loading="lazy">
         </div>
-        <div class="card" data-anim>
-          <h3 data-i18n="pilot.card.h3">Roadmap</h3>
-          <ol>
-            <li data-i18n="pilot.card.li1">Prototyp fertigstellen</li>
-            <li data-i18n="pilot.card.li2">Test &amp; Optimierung</li>
-            <li data-i18n="pilot.card.li3">Pilotbetrieb vor Ort</li>
-            <li data-i18n="pilot.card.li4">Replikation &amp; Scale</li>
-          </ol>
-        </div>
+        <div id="map" class="map" data-anim></div>
       </div>
     </section>
 
@@ -174,9 +239,9 @@
         <h2 data-i18n="team.h2" data-anim>Team</h2>
         <p data-i18n="team.p" data-anim>Interdisziplinär aus Engineering, Energie &amp; Business. Unterstützt durch lokale Community‑Partner.</p>
         <div class="team-grid">
-          <div class="member" data-anim><div class="avatar">B</div><h4 data-i18n="team.m1h4">Basola Team</h4><small data-i18n="team.m1s">Engineering &amp; Ops</small></div>
-          <div class="member" data-anim><div class="avatar">A</div><h4 data-i18n="team.m2h4">Advisors</h4><small data-i18n="team.m2s">Tech &amp; Impact</small></div>
-          <div class="member" data-anim><div class="avatar">C</div><h4 data-i18n="team.m3h4">Community</h4><small data-i18n="team.m3s">Ladrilleros</small></div>
+          <a href="team.html" class="member" data-anim><div class="avatar">B</div><h4 data-i18n="team.m1h4">Basola Team</h4><small data-i18n="team.m1s">Engineering &amp; Ops</small></a>
+          <a href="advisors.html" class="member" data-anim><div class="avatar">A</div><h4 data-i18n="team.m2h4">Advisors</h4><small data-i18n="team.m2s">Tech &amp; Impact</small></a>
+          <a href="community.html" class="member" data-anim><div class="avatar">C</div><h4 data-i18n="team.m3h4">Community</h4><small data-i18n="team.m3s">Ladrilleros</small></a>
         </div>
       </div>
     </section>
@@ -195,7 +260,7 @@
       </div>
     </section>
 
-    <section id="kontakt" class="section alt">
+    <section id="contact" class="section alt">
       <div class="container grid-2">
         <div>
           <h2 data-i18n="contact.h2" data-anim>Partner werden</h2>
@@ -225,6 +290,13 @@
       <a href="impressum.html" class="micro" data-i18n="footer.impressum">Impressum</a>
     </div>
   </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map',{scrollWheelZoom:false}).setView([3.88,-77.36],11);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OSM'}).addTo(map);
+    L.marker([3.88,-77.36]).addTo(map)
+      .bindPopup('Playa de Ladrilleros – nur per Boot (~1 h) ab Buenaventura.');
+  </script>
   <script src="main.js"></script>
 </body>
 </html>
