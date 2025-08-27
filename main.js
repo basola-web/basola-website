@@ -127,7 +127,22 @@ const dict = {
       h2b: "Urheberrecht",
       p8: "Die durch uns erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
     },
-    footer: { copy: "© 2025 Basola", impressum: "Impressum" }
+    privacy: {
+      title: "Datenschutz – BASOLA",
+      description: "Hinweise zum Datenschutz für die BASOLA Website.",
+      h1: "Datenschutz",
+      p1: "Verantwortlich für die Datenverarbeitung: Enactus Karlsruhe e.V., Ludwig-Wilhelm-Straße 18, 76131 Karlsruhe, Deutschland, E-Mail: basola@karlsruhe.enactus.team.",
+      p2: "Wir erheben personenbezogene Daten nur, soweit dies zur Bereitstellung dieser Website erforderlich ist. Server-Logfiles werden zur Sicherstellung des Betriebs für maximal sieben Tage gespeichert.",
+      p3: "Wenn Sie uns per E-Mail kontaktieren, verwenden wir Ihre Angaben ausschließlich zur Bearbeitung der Anfrage.",
+      p4: "Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer Daten. Wenden Sie sich dazu an die oben genannte Adresse."
+    },
+    footer: {
+      copy: "© 2025 Basola",
+      impressum: "Impressum",
+      datenschutz: "Datenschutz",
+      contact: "Kontakt",
+      info: "<strong>BASOLA – Ein Projekt von Enactus Karlsruhe e.V.</strong><br>Ludwig-Wilhelm-Straße 18<br>76131 Karlsruhe<br>Deutschland<br>E-Mail: <a href=\"mailto:basola@karlsruhe.enactus.team\">basola@karlsruhe.enactus.team</a>"
+    }
   },
   en: {
     nav: { tech: "Technology", impact: "Impact", pilot: "Pilot", team: "Team", impressum: "Legal notice", contact: "Contact" },
@@ -257,7 +272,22 @@ const dict = {
       h2b: "Copyright",
       p8: "The content and works created by us on these pages are subject to German copyright law. Duplication, editing, distribution and any kind of use outside the limits of copyright require the written consent of the respective author or creator."
     },
-    footer: { copy: "© 2025 Basola", impressum: "Legal notice" }
+    privacy: {
+      title: "Privacy policy – BASOLA",
+      description: "Information on data protection for the BASOLA website.",
+      h1: "Privacy policy",
+      p1: "Controller for data processing: Enactus Karlsruhe e.V., Ludwig-Wilhelm-Straße 18, 76131 Karlsruhe, Germany, Email: basola@karlsruhe.enactus.team.",
+      p2: "We collect personal data only as necessary to provide this website. Server log files are stored for security reasons for up to seven days.",
+      p3: "If you contact us via email, we use your data solely to process the request.",
+      p4: "You have the right to information, rectification and deletion of your data. Please contact the address above."
+    },
+    footer: {
+      copy: "© 2025 Basola",
+      impressum: "Legal notice",
+      datenschutz: "Privacy",
+      contact: "Contact",
+      info: "<strong>BASOLA – A project by Enactus Karlsruhe e.V.</strong><br>Ludwig-Wilhelm-Straße 18<br>76131 Karlsruhe<br>Germany<br>Email: <a href=\"mailto:basola@karlsruhe.enactus.team\">basola@karlsruhe.enactus.team</a>"
+    }
   }
 };
 

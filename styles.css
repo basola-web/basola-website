@@ -82,7 +82,12 @@ textarea { resize: vertical; }
 .micro { font-size:.85rem; opacity:.7; }
 
 .footer { border-top:1px solid #e5e7eb; padding:1.2rem 0; background:#fff; }
-.foot-inner { display:flex; justify-content:space-between; align-items:center; }
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1rem}
+.foot-info{max-width:360px}
+.foot-nav{display:flex;gap:1rem}
+.foot-nav a:hover{text-decoration:underline}
+.foot-copy{margin-top:1rem;text-align:center;width:100%}
+@media(max-width:600px){.foot-top{flex-direction:column;align-items:flex-start}.foot-nav{margin-top:.5rem}}
 
 .tech-diagram { padding-top:1rem; }
 
