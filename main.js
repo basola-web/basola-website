@@ -183,53 +183,56 @@ const dict = {
   }
 };
 
-let currentLang = localStorage.getItem("basola_lang") || "de";
-function applyLang(lang){
-  currentLang = lang; localStorage.setItem("basola_lang", lang);
-  document.documentElement.lang = lang;
-  document.querySelectorAll("[data-i18n]").forEach(el=>{
-    const path = el.getAttribute("data-i18n").split(".");
-    let val = dict[lang];
-    for(const k of path){ if(val) val = val[k]; }
-    if(typeof val === "string"){
-      if("placeholder" in el) el.placeholder = val;
-      else el.textContent = val;
-    }
-  });
-  document.querySelectorAll("[data-lang]").forEach(btn=>{
-    btn.classList.toggle("active", btn.dataset.lang===lang);
-  });
-}
-applyLang(currentLang);
-document.querySelectorAll("[data-lang]").forEach(b=> b.addEventListener("click", ()=>applyLang(b.dataset.lang)));
+// Mobile nav toggle
+const hdr = document.querySelector('.header');
+document.querySelector('.hamburger')?.addEventListener('click', ()=> hdr.classList.toggle('open'));
 
 // Smooth anchor scroll
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener("click", e=>{
-    const id = a.getAttribute("href");
-    if(id && id.length>1){
-      const el = document.querySelector(id);
-      if(el){ e.preventDefault(); el.scrollIntoView({behavior:"smooth", block:"start"}); }
-    }
+  a.addEventListener('click', e=>{
+    const id = a.getAttribute('href'); if(!id || id==='#') return;
+    const el = document.querySelector(id);
+    if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); hdr.classList.remove('open'); }
   });
 });
 
 // Reveal on scroll
 const ioReveal = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); ioReveal.unobserve(e.target); } });
-},{ threshold: .12 });
-document.querySelectorAll("[data-anim]").forEach(el=> ioReveal.observe(el));
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); ioReveal.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('[data-anim]').forEach(el=> ioReveal.observe(el));
 
-// Scrollspy (active nav)
-const sections = Array.from(document.querySelectorAll("section[id]"));
-const navLinks = Array.from(document.querySelectorAll("header nav a[href^='#']"));
+// Scrollspy active link
+const sections = Array.from(document.querySelectorAll('section[id]'));
+const links = Array.from(document.querySelectorAll('header a[href^="#"]'));
 const ioSpy = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
-      const id = "#"+e.target.id;
-      navLinks.forEach(l=> l.classList.toggle("active", l.getAttribute("href")===id));
+      const href = '#'+e.target.id;
+      links.forEach(l=> l.classList.toggle('active', l.getAttribute('href')===href));
     }
   });
-},{ rootMargin: "-40% 0px -55% 0px", threshold: .01 });
+},{rootMargin:'-45% 0px -50% 0px', threshold:.01});
 sections.forEach(sec=> ioSpy.observe(sec));
+
+// i18n toggle
+function updateI18n(lang){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const path = el.dataset.i18n.split('.'); let v = dict[lang];
+    for(const k of path){ if(v) v = v[k]; }
+    if(typeof v === 'string'){
+      if('placeholder' in el) el.placeholder = v;
+      else el.textContent = v;
+    }
+  });
+}
+const langBtns = document.querySelectorAll('.lang-toggle .lang');
+function applyLang(lang){
+  localStorage.setItem('basola_lang', lang);
+  document.documentElement.lang = lang;
+  langBtns.forEach(b=>{const active = b.dataset.lang===lang; b.classList.toggle('active', active); b.setAttribute('aria-selected', active?'true':'false');});
+  updateI18n(lang);
+}
+langBtns.forEach(b=> b.addEventListener('click', ()=> applyLang(b.dataset.lang)));
+applyLang(localStorage.getItem('basola_lang') || 'de');
 

@@ -46,24 +46,26 @@
   <meta property="og:description" content="Dezentrale Solar-Pyrolyse: Plastik → Kraftstoff. Energiezugang & saubere Küsten." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/basola_logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#">
-        <img src="/assets/basola_logo.png" alt="Basola Logo" />
-      </a>
-      <nav class="links" aria-label="Main Navigation">
-        <a href="#tech" data-i18n="nav.tech">Technologie</a>
-        <a href="#impact" data-i18n="nav.impact">Impact</a>
-        <a href="#pilot" data-i18n="nav.pilot">Pilot</a>
-        <a href="#team" data-i18n="nav.team">Team</a>
-        <a href="#kontakt" class="btn small" data-i18n="nav.contact">Kontakt</a>
-        <div class="lang-toggle">
-          <button type="button" data-lang="de" aria-label="Deutsch">DE</button>
-          <button type="button" data-lang="en" aria-label="English">EN</button>
+  <header class="header">
+    <div class="bar container">
+      <a href="#" class="brand"><img src="/assets/basola_logo.png" alt="Basola Logo" loading="lazy"></a>
+      <button class="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+      <div class="nav-right">
+        <nav class="primary-nav" aria-label="Hauptnavigation">
+          <a href="#technology" data-i18n="nav.tech">Technologie</a>
+          <a href="#impact" data-i18n="nav.impact">Impact</a>
+          <a href="#pilot" data-i18n="nav.pilot">Pilot</a>
+          <a href="#team" data-i18n="nav.team">Team</a>
+          <a href="#contact" class="btn small" data-i18n="nav.contact">Kontakt</a>
+        </nav>
+        <div class="lang-toggle" role="tablist" aria-label="Language">
+          <button class="lang" data-lang="de" role="tab" aria-selected="true">DE</button>
+          <button class="lang" data-lang="en" role="tab" aria-selected="false">EN</button>
         </div>
-      </nav>
+      </div>
     </div>
   </header>
 
@@ -80,8 +82,8 @@
           <h1 data-i18n="hero.h1" data-anim>Solar‑Kraftstoff aus Plastikmüll</h1>
           <p class="lead" data-i18n="hero.lead" data-anim>Basola verwandelt lokale Plastikabfälle in Kraftstoff – mit Solarenergie und zirkulärer Technologie. Für saubere Küsten, bezahlbare Energie und neue Jobs.</p>
           <div class="cta" data-anim>
-            <a href="#kontakt" class="btn" data-i18n="hero.cta1">Partner werden</a>
-            <a href="#tech" class="btn ghost" data-i18n="hero.cta2">So funktioniert's</a>
+            <a href="#contact" class="btn" data-i18n="hero.cta1">Partner werden</a>
+            <a href="#technology" class="btn ghost" data-i18n="hero.cta2">So funktioniert's</a>
           </div>
           <ul class="badges" data-anim>
             <li data-i18n="hero.badge1">Off‑Grid</li>
@@ -117,7 +119,7 @@
       </div>
     </section>
 
-    <section id="tech" class="section alt">
+    <section id="technology" class="section alt">
       <div class="container grid-2">
         <div>
           <h2 data-i18n="tech.h2" data-anim>Die Technologie</h2>
@@ -128,23 +130,26 @@
             <li data-i18n="tech.li3">Sicher: Druckentlastung, Gas‑Detektion, Fackel</li>
           </ul>
         </div>
-        <img src="/assets/process_chart.png" alt="Systemskizze: Prozess von Plastikabfall zu Kraftstoff (Basola)" loading="lazy" data-anim class="tech-diagram" />
+        <img src="/assets/process_chart.png" alt="Systemskizze: Prozess von Plastikabfall zu Kraftstoff (BASOLA)" loading="lazy" class="tech-diagram" data-anim />
       </div>
     </section>
 
     <section id="impact" class="section">
       <div class="container">
         <h2 data-i18n="impact.h2" data-anim>Wirkung, die man sieht</h2>
-        <div class="cards-3">
-          <div class="card" data-anim>
+        <div class="impact-grid">
+          <div class="impact-card" data-anim>
+            <div class="badge">🌊</div>
             <h3 data-i18n="impact.c1h3">Saubere Küsten</h3>
             <p data-i18n="impact.c1p">Plastik wird zum Rohstoff statt zum Risiko. Weniger offenes Verbrennen, weniger Verschmutzung.</p>
           </div>
-          <div class="card" data-anim>
+          <div class="impact-card" data-anim>
+            <div class="badge">⚡</div>
             <h3 data-i18n="impact.c2h3">Energiezugang</h3>
             <p data-i18n="impact.c2p">Lokaler Kraftstoff für Boote, Generatoren und kleine Betriebe – unabhängig vom Dieselpreis.</p>
           </div>
-          <div class="card" data-anim>
+          <div class="impact-card" data-anim>
+            <div class="badge">💼</div>
             <h3 data-i18n="impact.c3h3">Lokale Jobs</h3>
             <p data-i18n="impact.c3p">Betrieb, Sammlung, Wartung: Wertschöpfung bleibt vor Ort. Training inklusive.</p>
           </div>
@@ -201,7 +206,7 @@
       </div>
     </section>
 
-    <section id="kontakt" class="section alt">
+    <section id="contact" class="section alt">
       <div class="container grid-2">
         <div>
           <h2 data-i18n="contact.h2" data-anim>Partner werden</h2>

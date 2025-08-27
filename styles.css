@@ -72,27 +72,41 @@ textarea { resize: vertical; }
   .hero-card{justify-self:center; margin-top:1.5rem;}
 }
 
-/* Anchor offset for sticky header */
-section[id]{scroll-margin-top:80px}
-
-/* Active nav state (nur Stil, bestehende Klassen lassen) */
-header nav a.active{color: var(--primary); font-weight: 700}
-
-/* Reveal animation (siehe oben) */
-[data-anim]{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease}
-[data-anim].in{opacity:1; transform:none}
-
-/* (Optional) reduced motion */
-@media (prefers-reduced-motion: reduce){
-  [data-anim]{opacity:1; transform:none; transition:none}
-  html:focus-within{scroll-behavior:auto}
-}
-
-/* Language toggle */
-.lang-toggle{display:flex; gap:.3rem; margin-left:1rem;}
-.lang-toggle button{background:none; border:none; cursor:pointer; padding:0; font:inherit; opacity:.7;}
-.lang-toggle button.active{opacity:1; color:var(--primary); font-weight:700;}
-
 /* Partner logos */
 .partner-logos{display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center; align-items:center;}
 .partner-logos img{max-height:60px; width:auto;}
+
+/* Header */
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.06)}
+.header .bar{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+.brand img{max-height:32px}
+.primary-nav{display:flex;gap:1rem;align-items:center}
+.primary-nav a.active{color:var(--primary);font-weight:700}
+.nav-right{display:flex;align-items:center;gap:.8rem}
+.lang-toggle{display:flex;gap:2px;padding:3px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:999px}
+.lang-toggle .lang{border:0;padding:.35rem .7rem;border-radius:999px;background:transparent;font-weight:600;cursor:pointer}
+.lang-toggle .lang.active{background:linear-gradient(90deg,#FFB703,#FFA703);color:#241a12}
+
+/* Mobile */
+.hamburger{display:none;background:transparent;border:0;gap:4px;flex-direction:column}
+.hamburger span{width:22px;height:2px;background:#333}
+@media (max-width:900px){
+  .primary-nav{display:none}
+  .header.open .primary-nav{display:flex;position:fixed;inset:64px 0 auto 0;flex-direction:column;gap:1rem;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);padding:1rem;border-top:1px solid rgba(0,0,0,.06)}
+  .hamburger{display:flex}
+}
+
+/* Anchor offset + reveal */
+section[id]{scroll-margin-top:84px}
+[data-anim]{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+[data-anim].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){[data-anim]{opacity:1;transform:none;transition:none}}
+
+/* Impact cards polish */
+.impact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem}
+@media (max-width:900px){.impact-grid{grid-template-columns:1fr}}
+.impact-card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,.65));border:1px solid rgba(0,0,0,.06);border-radius:24px;padding:24px;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease}
+.impact-card::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;border-radius:24px 24px 0 0;background:linear-gradient(90deg,#FFB703,#6A2D0F)}
+.impact-card:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.08);border-color:rgba(255,183,3,.35)}
+.impact-card h3{margin:10px 0 8px;font-weight:800;letter-spacing:-.01em}
+.impact-card .badge{width:44px;height:44px;border-radius:12px;background:radial-gradient(circle at 30% 30%,#FFB703 0%,#FFB703 40%,rgba(255,183,3,.2) 100%);display:grid;place-items:center;box-shadow:0 6px 18px rgba(255,183,3,.35)}
