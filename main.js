@@ -1,6 +1,6 @@
 const dict = {
   de: {
-    nav: { tech: "Technologie", impact: "Impact", pilot: "Pilot", team: "Team", contact: "Kontakt" },
+    nav: { tech: "Technologie", impact: "Impact", pilot: "Pilot", team: "Team", impressum: "Impressum", contact: "Kontakt" },
     hero: {
       h1: "Solar‑Kraftstoff aus Plastikmüll",
       lead: "Basola verwandelt lokale Plastikabfälle in Kraftstoff – mit Solarenergie und zirkulärer Technologie. Für saubere Küsten, bezahlbare Energie und neue Jobs.",
@@ -88,10 +88,30 @@ const dict = {
       emailLabel: "E‑Mail:",
       linkedInLabel: "LinkedIn:"
     },
+    people: {
+      back: "← Zurück zur Übersicht",
+      team: { title: "Basola Team – BASOLA", h1: "Basola Team" },
+      advisors: { title: "Advisors – BASOLA", h1: "Advisors" },
+      community: { title: "Community – BASOLA", h1: "Community" }
+    },
+    impressum: {
+      title: "Impressum – BASOLA",
+      h1: "Impressum",
+      p1: "<strong>BASOLA – Ein Projekt von Enactus Karlsruhe e.V.</strong><br>Enactus Karlsruhe e.V.<br>Ludwig-Wilhelm-Straße 18<br>76131 Karlsruhe<br>Deutschland",
+      p2: "<strong>Gesetzlich vertreten durch den Vorstand:</strong><br>Simon Langner, Julia Hilt, Adrian Braess, Marike Kardorff",
+      p3: "<strong>Projektleitung:</strong> Lea Bachmann",
+      p4: "<strong>Inhaltlich verantwortlich gemäß § 55 Abs. 2 RStV:</strong><br>Simon Langner, Anschrift wie oben",
+      p5: "<strong>Kontakt:</strong><br>E-Mail: basola@karlsruhe.enactus.team",
+      p6: "<strong>Registereintrag:</strong><br>Amtsgericht Mannheim – Vereinsregister VR 701085",
+      h2a: "Haftungsausschluss",
+      p7: "Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.",
+      h2b: "Urheberrecht",
+      p8: "Die durch uns erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
+    },
     footer: { copy: "© 2025 Basola", impressum: "Impressum" }
   },
   en: {
-    nav: { tech: "Technology", impact: "Impact", pilot: "Pilot", team: "Team", contact: "Contact" },
+    nav: { tech: "Technology", impact: "Impact", pilot: "Pilot", team: "Team", impressum: "Legal notice", contact: "Contact" },
     hero: {
       h1: "Solar fuel from plastic waste",
       lead: "Basola turns local plastic waste into fuel using solar energy and circular technology. For clean coasts, affordable energy and new jobs.",
@@ -179,6 +199,26 @@ const dict = {
       emailLabel: "Email:",
       linkedInLabel: "LinkedIn:"
     },
+    people: {
+      back: "← Back to overview",
+      team: { title: "Basola Team – BASOLA", h1: "Basola Team" },
+      advisors: { title: "Advisors – BASOLA", h1: "Advisors" },
+      community: { title: "Community – BASOLA", h1: "Community" }
+    },
+    impressum: {
+      title: "Legal notice – BASOLA",
+      h1: "Legal notice",
+      p1: "<strong>BASOLA – A project by Enactus Karlsruhe e.V.</strong><br>Enactus Karlsruhe e.V.<br>Ludwig-Wilhelm-Straße 18<br>76131 Karlsruhe<br>Germany",
+      p2: "<strong>Represented by the board:</strong><br>Simon Langner, Julia Hilt, Adrian Braess, Marike Kardorff",
+      p3: "<strong>Project lead:</strong> Lea Bachmann",
+      p4: "<strong>Content responsibility according to § 55 para. 2 RStV:</strong><br>Simon Langner, address as above",
+      p5: "<strong>Contact:</strong><br>Email: basola@karlsruhe.enactus.team",
+      p6: "<strong>Register entry:</strong><br>Local court Mannheim – Register of associations VR 701085",
+      h2a: "Disclaimer",
+      p7: "The contents of this website were created with the greatest care. However, we cannot guarantee the accuracy, completeness or timeliness of the contents.",
+      h2b: "Copyright",
+      p8: "The content and works created by us on these pages are subject to German copyright law. Duplication, editing, distribution and any kind of use outside the limits of copyright require the written consent of the respective author or creator."
+    },
     footer: { copy: "© 2025 Basola", impressum: "Legal notice" }
   }
 };
@@ -222,6 +262,7 @@ function updateI18n(lang){
     for(const k of path){ if(v) v = v[k]; }
     if(typeof v === 'string'){
       if('placeholder' in el) el.placeholder = v;
+      else if(v.includes('<')) el.innerHTML = v;
       else el.textContent = v;
     }
   });
