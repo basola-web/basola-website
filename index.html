@@ -1,221 +1,190 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Basola – Solar-Kraftstoff aus Plastikmüll</title>
-  <meta name="description" content="Basola wandelt Plastikmüll in solaren Kraftstoff für Off-Grid-Gemeinden – sauber, dezentral, lokal betrieben." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BASOLA – Plastikmüll wird zu Solarkraftstoff</title>
+  <meta name="description" content="BASOLA wandelt lokalen Plastikmüll per solarbetriebener Pyrolyse in Kraftstoff um – dezentral, off-grid, von der Community betrieben.">
+  <link rel="canonical" href="https://basola.de/">
+  <link rel="alternate" hreflang="de" href="https://basola.de/">
+  <link rel="alternate" hreflang="en" href="https://basola.de/en">
+  <link rel="alternate" hreflang="x-default" href="https://basola.de/">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-
-  <link rel="canonical" href="https://basola.de/" />
-  <link rel="alternate" href="https://basola.de/" hreflang="de" />
-  <link rel="alternate" href="https://basola.de/" hreflang="en" />
-  <link rel="alternate" href="https://basola.de/" hreflang="x-default" />
-
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta property="og:title" content="BASOLA – Turning plastic waste into solar fuel">
+  <meta property="og:description" content="BASOLA turns local plastic waste into fuel using solar-powered pyrolysis – decentralized, off-grid, community-operated.">
+  <meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==">
+  <meta property="og:url" content="https://basola.de/">
+  <meta property="og:type" content="website">
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Basola",
-  "url": "https://basola.de/",
-  "logo": "https://basola.de/assets/logo.png",
-  "sameAs": [
-    "https://www.linkedin.com/company/basola"
-  ]
-}
-  </script>
-  <script type="application/ld+json">
-  {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Basola",
-  "url": "https://basola.de/",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://basola.de/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "BASOLA",
+        "url": "https://basola.de"
+      },
+      {
+        "@type": "WebSite",
+        "name": "BASOLA",
+        "url": "https://basola.de",
+        "inLanguage": ["de","en"]
+      }
+    ]
   }
-}
   </script>
-
-  <meta property="og:title" content="Basola – Solar-Kraftstoff aus Plastikmüll" />
-  <meta property="og:description" content="Dezentrale Solar-Pyrolyse: Plastik → Kraftstoff. Energiezugang & saubere Küsten." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/og.jpg" />
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#">
-        <img src="assets/logo.png" alt="Basola Logo" />
-      </a>
-      <nav class="links">
-        <a href="#tech">Technologie</a>
-        <a href="#impact">Impact</a>
-        <a href="#pilot">Pilot</a>
-        <a href="#team">Team</a>
-        <a href="#kontakt" class="btn small">Kontakt</a>
-      </nav>
+  <header class="nav" aria-label="Hauptnavigation">
+    <a href="#hero" class="logo" aria-label="BASOLA">BASOLA</a>
+    <nav>
+      <ul>
+        <li><a href="#challenge" data-i18n="nav.challenge"></a></li>
+        <li><a href="#technology" data-i18n="nav.technology"></a></li>
+        <li><a href="#mission" data-i18n="nav.mission"></a></li>
+        <li><a href="#impact" data-i18n="nav.impact"></a></li>
+        <li><a href="#team" data-i18n="nav.team"></a></li>
+        <li><a href="#partners" data-i18n="nav.partners"></a></li>
+        <li><a href="#get-involved" data-i18n="nav.get_involved"></a></li>
+        <li><a href="#contact" data-i18n="nav.contact"></a></li>
+      </ul>
+    </nav>
+    <div class="lang-toggle">
+      <button id="lang-de" class="active" aria-label="Deutsch">DE</button>
+      <button id="lang-en" aria-label="English">EN</button>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1>Solar‑Kraftstoff aus Plastikmüll</h1>
-          <p class="lead">Basola verwandelt lokale Plastikabfälle in Kraftstoff – mit Solarenergie und zirkulärer Technologie. Für saubere Küsten, bezahlbare Energie und neue Jobs.</p>
-          <div class="cta">
-            <a href="#kontakt" class="btn">Partner werden</a>
-            <a href="#tech" class="btn ghost">So funktioniert's</a>
-          </div>
-          <ul class="badges">
-            <li>Off‑Grid</li>
-            <li>Dezentral</li>
-            <li>Lokal betrieben</li>
-          </ul>
-        </div>
-        <div class="hero-card">
-          <div class="card">
-            <h3>Warum Basola?</h3>
-            <ul>
-              <li><span>♻️</span> Plastik ↓, Energie ↑</li>
-              <li><span>☀️</span> Solar + Syngas, autark</li>
-              <li><span>🛠️</span> Robust & wartungsfreundlich</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="grad"></div>
-    </section>
-
-    <section id="problem" class="section">
-      <div class="container grid-2">
-        <div>
-          <h2>Das Problem</h2>
-          <p>Abgelegene Küstengemeinden kämpfen mit angeschwemmtem Plastik und teurem Diesel. Fehlt Infrastruktur, landen Abfälle oft im Feuer – mit Folgen für Klima, Gesundheit und Tourismus.</p>
-        </div>
-        <div class="kpi-wrap">
-          <div class="kpi"><span>80&nbsp;kg</span><small>Plastik/Tag verwertbar (Pilot)</small></div>
-          <div class="kpi"><span>~70‑80%</span><small>Öl‑Ausbeute je nach Feedstock</small></div>
-          <div class="kpi"><span>&gt;40&nbsp;MJ/kg</span><small>Energiegehalt des Kraftstoffs</small></div>
-        </div>
+    <section class="hero reveal" id="hero">
+      <h1 data-i18n="hero.tagline"></h1>
+      <div class="cta-group">
+        <a href="#technology" class="btn" data-i18n="hero.cta_primary"></a>
+        <a href="#contact" class="btn secondary" data-i18n="hero.cta_secondary"></a>
       </div>
     </section>
 
-    <section id="tech" class="section alt">
-      <div class="container grid-2">
-        <div>
-          <h2>Die Technologie</h2>
-          <p>Plastik wird in einem geschlossenen Reaktor ohne Sauerstoff erhitzt (Pyrolyse). Die Dämpfe kondensieren zu flüssigem Kraftstoff. Nicht‑kondensierbares Gas heizt den Prozess; Strom liefert Solar‑PV mit Speicher.</p>
-          <ul class="list">
-            <li>Multi‑Stage‑Kondensation für Diesel/Gasoline‑Fraktionen</li>
-            <li>Syngas‑Rückführung, geringer externer Energiebedarf</li>
-            <li>Sicher: Druckentlastung, Gas‑Detektion, Fackel</li>
-          </ul>
-        </div>
-        <div class="card card-diagram">
-          <h3>Systemskizze</h3>
-          <ol>
-            <li>Shredder &amp; Feed</li>
-            <li>Reaktor (400–550 °C)</li>
-            <li>Kondensation (mehrstufig)</li>
-            <li>Fuel‑Tank &amp; QC</li>
-            <li>Syngas → Brenner</li>
-            <li>Solar‑PV + Batterie</li>
-          </ol>
-        </div>
-      </div>
+    <section class="quick-intro reveal" id="quick-intro">
+      <p data-i18n="quick_intro"></p>
     </section>
 
-    <section id="impact" class="section">
-      <div class="container">
-        <h2>Wirkung, die man sieht</h2>
-        <div class="cards-3">
-          <div class="card">
-            <h3>Saubere Küsten</h3>
-            <p>Plastik wird zum Rohstoff statt zum Risiko. Weniger offenes Verbrennen, weniger Verschmutzung.</p>
-          </div>
-          <div class="card">
-            <h3>Energiezugang</h3>
-            <p>Lokaler Kraftstoff für Boote, Generatoren und kleine Betriebe – unabhängig vom Dieselpreis.</p>
-          </div>
-          <div class="card">
-            <h3>Lokale Jobs</h3>
-            <p>Betrieb, Sammlung, Wartung: Wertschöpfung bleibt vor Ort. Training inklusive.</p>
-          </div>
-        </div>
-      </div>
+    <section class="challenge reveal" id="challenge">
+      <h2 data-i18n="nav.challenge"></h2>
+      <p data-i18n="challenge"></p>
     </section>
 
-    <section id="pilot" class="section alt">
-      <div class="container grid-2">
-        <div>
-          <h2>Pilot: Ladrilleros, Kolumbien</h2>
-          <p>Start in einer abgelegenen Pazifik‑Gemeinde mit starken Partnern und klaren Zielen: weniger Plastik, bezahlbare Energie, Community‑Ownership.</p>
-          <ul class="list">
-            <li>Partner: lokale NGOs, Hochschulen, Enactus</li>
-            <li>Setup: Off‑Grid, 1 Batch/Tag &approx; 80 kg Plastics</li>
-            <li>Outputs: Diesel‑ähnliches Öl, Syngas, Char</li>
+    <section class="technology reveal" id="technology">
+      <h2 data-i18n="nav.technology"></h2>
+      <p data-i18n="technology.text"></p>
+      <svg class="process-img" viewBox="0 0 400 250" role="img" aria-label="Process illustration">
+        <rect width="400" height="250" fill="#eee" stroke="#ccc"/>
+        <line x1="0" y1="0" x2="400" y2="250" stroke="#ccc"/>
+        <line x1="400" y1="0" x2="0" y2="250" stroke="#ccc"/>
+      </svg>
+    </section>
+
+    <section class="mission reveal" id="mission">
+      <h2 data-i18n="nav.mission"></h2>
+      <p data-i18n="mission.text"></p>
+      <blockquote data-i18n="mission.quote"></blockquote>
+    </section>
+
+    <section class="impact reveal" id="impact">
+      <h2 data-i18n="impact.headline"></h2>
+      <div class="impact-cards">
+        <div class="card">
+          <h3 data-i18n="impact.environmental.title"></h3>
+          <ul>
+            <li data-i18n="impact.environmental.list.0"></li>
+            <li data-i18n="impact.environmental.list.1"></li>
+            <li data-i18n="impact.environmental.list.2"></li>
           </ul>
         </div>
         <div class="card">
-          <h3>Roadmap</h3>
-          <ol>
-            <li>Prototyp fertigstellen</li>
-            <li>Test &amp; Optimierung</li>
-            <li>Pilotbetrieb vor Ort</li>
-            <li>Replikation &amp; Scale</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section id="team" class="section">
-      <div class="container">
-        <h2>Team</h2>
-        <p>Interdisziplinär aus Engineering, Energie &amp; Business. Unterstützt durch lokale Community‑Partner.</p>
-        <div class="team-grid">
-          <div class="member"><div class="avatar">B</div><h4>Basola Team</h4><small>Engineering &amp; Ops</small></div>
-          <div class="member"><div class="avatar">A</div><h4>Advisors</h4><small>Tech &amp; Impact</small></div>
-          <div class="member"><div class="avatar">C</div><h4>Community</h4><small>Ladrilleros</small></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="kontakt" class="section alt">
-      <div class="container grid-2">
-        <div>
-          <h2>Partner werden</h2>
-          <p>Ihr wollt unterstützen, investieren oder mit uns pilotieren? Meldet euch.</p>
-          <form class="form" name="contact" method="post" action="#" onsubmit="alert('Danke! Diese Demo speichert nicht – backend folgt.'); return false;">
-            <div class="row">
-              <input type="text" name="name" placeholder="Name" required>
-              <input type="email" name="email" placeholder="E‑Mail" required>
-            </div>
-            <textarea name="message" rows="5" placeholder="Nachricht"></textarea>
-            <button class="btn" type="submit">Senden</button>
-          </form>
-          <p class="micro">Tipp: In Cloudflare Pages kannst du später eine Function als Mail‑Backend anhängen.</p>
+          <h3 data-i18n="impact.social.title"></h3>
+          <ul>
+            <li data-i18n="impact.social.list.0"></li>
+            <li data-i18n="impact.social.list.1"></li>
+            <li data-i18n="impact.social.list.2"></li>
+            <li data-i18n="impact.social.list.3"></li>
+          </ul>
         </div>
         <div class="card">
-          <h3>Kontakt</h3>
-          <p><strong>E‑Mail:</strong> hi@deinedomain.tld</p>
-          <p><strong>LinkedIn:</strong> /company/basola</p>
+          <h3 data-i18n="impact.climate.title"></h3>
+          <ul>
+            <li data-i18n="impact.climate.list.0"></li>
+          </ul>
         </div>
       </div>
+    </section>
+
+    <section class="team reveal" id="team">
+      <h2 data-i18n="nav.team"></h2>
+      <div class="team-photo" role="img" aria-label="Team photo placeholder"></div>
+      <p data-i18n="team.text"></p>
+      <figure class="founder">
+        <div class="founder-photo" role="img" aria-label="Founder photo placeholder"></div>
+        <figcaption data-i18n="team.founder_name"></figcaption>
+      </figure>
+    </section>
+
+    <section class="partners reveal" id="partners">
+      <h2 data-i18n="nav.partners"></h2>
+      <ul class="partner-logos">
+        <li data-i18n="partners.list.0"></li>
+        <li data-i18n="partners.list.1"></li>
+        <li data-i18n="partners.list.2"></li>
+        <li data-i18n="partners.list.3"></li>
+      </ul>
+    </section>
+
+    <section class="get-involved reveal" id="get-involved">
+      <h2 data-i18n="nav.get_involved"></h2>
+      <ul>
+        <li data-i18n="get_involved.0"></li>
+        <li data-i18n="get_involved.1"></li>
+        <li data-i18n="get_involved.2"></li>
+        <li data-i18n="get_involved.3"></li>
+      </ul>
+    </section>
+
+    <section class="contact reveal" id="contact">
+      <h2 data-i18n="nav.contact"></h2>
+      <form action="/submit" method="POST" id="contact-form">
+        <label>
+          <span data-i18n="contact.form.name"></span>
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          <span data-i18n="contact.form.email"></span>
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          <span data-i18n="contact.form.message"></span>
+          <textarea name="message" required></textarea>
+        </label>
+        <p class="form-hint" data-i18n="contact.form_hint"></p>
+        <button type="submit" class="btn" data-i18n="contact.form.submit"></button>
+      </form>
+      <p>E-Mail: <a href="mailto:basola@karlsruhe.enactus.team">basola@karlsruhe.enactus.team</a></p>
+      <button class="btn secondary" id="waiting-list" data-i18n="contact.waiting_list_btn"></button>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container foot-inner">
-      <span>© 2025 Basola</span>
-      <a href="#" class="micro">Impressum</a>
-    </div>
+    <p>© <span id="year"></span> BASOLA</p>
+    <a href="#" data-i18n="impressum"></a>
   </footer>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" id="modal-close" aria-label="Close">×</button>
+      <p data-i18n="modal.text"></p>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
 </body>
 </html>
