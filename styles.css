@@ -13,7 +13,7 @@ a { color: inherit; text-decoration: none; }
 .container { width: min(1100px, 92%); margin: 0 auto; }
 .nav { position: sticky; top:0; background: rgba(255,255,255,.7); backdrop-filter: blur(8px); border-bottom: 1px solid #e5e7eb; z-index: 10; }
 .nav-inner { display:flex; align-items:center; justify-content:space-between; padding: .6rem 0; }
-.brand img { height: 28px; }
+.brand img { height:auto; max-height:28px; }
 .links a { margin-left: 1rem; font-weight: 500; opacity:.9; }
 .links .btn.small { padding:.45rem .8rem; font-size:.9rem; }
 
