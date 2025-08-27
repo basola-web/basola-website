@@ -81,7 +81,18 @@ const dict = {
     },
     pilot: {
       h2: "Pilot: Ladrilleros, Kolumbien",
-      p: "Zwischen Mangroven und Meer, eine Stunde Bootsfahrt: Diesel teuer, Plastikmüll am Strand. Wir machen daraus lokalen Kraftstoff."
+      p: "Zwischen Mangroven und Meer, eine Stunde Bootsfahrt: Diesel teuer, Plastikmüll am Strand. Wir machen daraus lokalen Kraftstoff.",
+      f1h3: "100 kg Plastik/Tag",
+      f1p: "aus Haushalten (+ zusätzlich Meeresmüll).",
+      f2h3: "1.000 Einwohner",
+      f2p: "nur per Boot erreichbar (~1 h von Buenaventura).",
+      f3h3: "Offene Verbrennung",
+      f3p: "Plastik wird derzeit offen verbrannt.",
+      f4h3: "Teurer Sprit",
+      f4p: "durch aufwändigen Transport.",
+      f5h3: "1 Prototyp",
+      f5p: "in Kooperation mit Plástico Precioso & Universidad del Valle.",
+      maplink: "Auf Google Maps ansehen"
     },
     team: {
       h2: "Team",
@@ -210,7 +221,18 @@ const dict = {
     },
     pilot: {
       h2: "Pilot: Ladrilleros, Colombia",
-      p: "Between mangroves and sea, one hour by boat: diesel is expensive, plastic litters the beach. We turn it into local fuel."
+      p: "Between mangroves and sea, one hour by boat: diesel is expensive, plastic litters the beach. We turn it into local fuel.",
+      f1h3: "100 kg plastic/day",
+      f1p: "from households (+ additional marine debris).",
+      f2h3: "1,000 residents",
+      f2p: "boat-only (~1 h from Buenaventura).",
+      f3h3: "Open burning",
+      f3p: "Plastic is currently burned openly.",
+      f4h3: "Costly fuel",
+      f4p: "due to laborious transport.",
+      f5h3: "1 prototype",
+      f5p: "with Plástico Precioso & Universidad del Valle.",
+      maplink: "View on Google Maps"
     },
     team: {
       h2: "Team",

@@ -226,11 +226,40 @@
       <div class="container">
         <h2 data-i18n="pilot.h2" data-anim>Pilot: Ladrilleros, Kolumbien</h2>
         <p data-i18n="pilot.p" data-anim>Zwischen Mangroven und Meer, eine Stunde Bootsfahrt: Diesel teuer, Plastikmüll am Strand. Wir machen daraus lokalen Kraftstoff.</p>
-        <div class="pilot-gallery" data-anim>
-          <video src="assets/bootsfahrt_nach_ladrilleros.MP4" autoplay muted loop playsinline></video>
-          <img src="/assets/Ladrilleros.png" alt="Strand von Ladrilleros" loading="lazy">
+        <div class="pilot-grid">
+          <img src="/assets/Ladrilleros.png" alt="Strand von Ladrilleros" class="pilot-image" loading="lazy" data-anim>
+          <div class="pilot-info">
+            <div class="pilot-cards">
+              <div class="pilot-card" data-anim>
+                <div class="badge">🗑️</div>
+                <h3 data-i18n="pilot.f1h3">100 kg Plastik/Tag</h3>
+                <p data-i18n="pilot.f1p">aus Haushalten (+ zusätzlich Meeresmüll).</p>
+              </div>
+              <div class="pilot-card" data-anim>
+                <div class="badge">🚤</div>
+                <h3 data-i18n="pilot.f2h3">1.000 Einwohner</h3>
+                <p data-i18n="pilot.f2p">nur per Boot erreichbar (~1 h von Buenaventura).</p>
+              </div>
+              <div class="pilot-card" data-anim>
+                <div class="badge">🔥</div>
+                <h3 data-i18n="pilot.f3h3">Offene Verbrennung</h3>
+                <p data-i18n="pilot.f3p">Plastik wird derzeit offen verbrannt.</p>
+              </div>
+              <div class="pilot-card" data-anim>
+                <div class="badge">⛽</div>
+                <h3 data-i18n="pilot.f4h3">Teurer Sprit</h3>
+                <p data-i18n="pilot.f4p">durch aufwändigen Transport.</p>
+              </div>
+              <div class="pilot-card" data-anim>
+                <div class="badge">🤝</div>
+                <h3 data-i18n="pilot.f5h3">1 Prototyp</h3>
+                <p data-i18n="pilot.f5p">in Kooperation mit Plástico Precioso &amp; Universidad del Valle.</p>
+              </div>
+            </div>
+            <div id="map" class="map pilot-map" data-anim></div>
+            <a href="https://maps.app.goo.gl/umMRicdgExyHxivo9" target="_blank" rel="noopener" class="map-link" data-i18n="pilot.maplink">Auf Google Maps ansehen</a>
+          </div>
         </div>
-        <div id="map" class="map" data-anim></div>
       </div>
     </section>
 
