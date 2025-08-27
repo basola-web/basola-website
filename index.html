@@ -93,33 +93,35 @@
             <li data-i18n="hero.badge3">Lokal betrieben</li>
           </ul>
         </div>
-        <div class="hero-card">
-          <div class="card" data-anim>
-            <h3 data-i18n="hero.card.h3">Warum Basola?</h3>
-            <ul>
-              <li><span>♻️</span><span data-i18n="hero.card.li1">Plastik ↓, Energie ↑</span></li>
-              <li><span>☀️</span><span data-i18n="hero.card.li2">Solar + Syngas, autark</span></li>
-              <li><span>🛠️</span><span data-i18n="hero.card.li3">Robust & wartungsfreundlich</span></li>
-            </ul>
-          </div>
-        </div>
       </div>
       <div class="grad"></div>
     </section>
 
     <section id="problem" class="section">
-      <div class="container grid-2">
-        <div>
-          <h2 data-i18n="problem.h2" data-anim>Das Problem</h2>
-          <p data-i18n="problem.p" data-anim>Ladrilleros an der Pazifikküste: angeschwemmter Müll, Diesel teuer, keine Abfuhr.</p>
-          <ul class="badges" data-anim>
-            <li data-i18n="problem.b1">Boat-only (1h ab Buenaventura)</li>
-            <li data-i18n="problem.b2">Remote Küstengemeinde</li>
-            <li data-i18n="problem.b3">Plastik angeschwemmt, oft offen verbrannt</li>
-          </ul>
-          <p class="micro" data-i18n="problem.fact" data-anim>80 kg Kunststoff → ~40 L Fuel/Tag, Reaktor 400–550 °C, PV-elektrische Heizung, fraktionierte Kondensation, Syngas-Rückführung.</p>
+      <div class="container">
+        <h2 data-i18n="problem.h2" data-anim>Das Problem</h2>
+        <div class="problem-grid">
+          <div class="problem-card" tabindex="0" data-anim>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18l-3-4H6l-3 4z" fill="currentColor"/><path d="M6 14V6h12v8" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            <h3 data-i18n="problem.c1h3">Nur per Boot erreichbar</h3>
+            <p data-i18n="problem.c1p">Abgelegene Küstengemeinden ohne regelmäßige Abfuhr.</p>
+          </div>
+          <div class="problem-card" tabindex="0" data-anim>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2h6v4h-6zM8 6h8l1 3v11l-1 2H8l-1-2V9z" fill="currentColor"/></svg>
+            <h3 data-i18n="problem.c2h3">Plastik wird angespült</h3>
+            <p data-i18n="problem.c2p">Häufig offene Verbrennung direkt am Strand.</p>
+          </div>
+          <div class="problem-card" tabindex="0" data-anim>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c-3 5-6 7-6 11a6 6 0 0012 0c0-4-3-6-6-11z" fill="currentColor"/></svg>
+            <h3 data-i18n="problem.c3h3">Teurer Diesel</h3>
+            <p data-i18n="problem.c3p">Energieversorgung unsicher und kostenintensiv.</p>
+          </div>
+          <div class="problem-card" tabindex="0" data-anim>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8 8 5 10 5 14a7 7 0 0014 0C19 10 16 8 12 2z" fill="currentColor"/><path d="M12 12v6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+            <h3 data-i18n="problem.c4h3">Umweltbelastung</h3>
+            <p data-i18n="problem.c4p">Wasser/Erde/ Luft leiden unter Müll &amp; Verbrennung.</p>
+          </div>
         </div>
-        <img src="/assets/Ladrilleros.png" alt="Küstendorf Ladrilleros" loading="lazy" data-anim>
       </div>
     </section>
 
@@ -214,9 +216,29 @@
       <div class="container">
         <h2 data-i18n="pilot.h2" data-anim>Pilot: Ladrilleros, Kolumbien</h2>
         <p data-i18n="pilot.p" data-anim>Zwischen Mangroven und Meer, eine Stunde Bootsfahrt: Diesel teuer, Plastikmüll am Strand. Wir machen daraus lokalen Kraftstoff.</p>
-        <div class="pilot-gallery" data-anim>
-          <video src="assets/bootsfahrt_nach_ladrilleros.MP4" autoplay muted loop playsinline></video>
-          <img src="/assets/Ladrilleros.png" alt="Strand von Ladrilleros" loading="lazy">
+        <div class="pilot-grid">
+          <img src="/assets/Ladrilleros.png" alt="Strand von Ladrilleros" class="pilot-image" loading="lazy" data-anim>
+          <div class="pilot-info">
+            <div class="pilot-cards">
+                <div class="pilot-card" data-anim>
+                  <div class="badge">🗑️</div>
+                  <h3 data-i18n="pilot.f1h3">100 kg Plastik/Tag</h3>
+                  <p data-i18n="pilot.f1p">inkl. Meeresmüll</p>
+                </div>
+                <div class="pilot-card" data-anim>
+                  <div class="badge">🚤</div>
+                  <h3 data-i18n="pilot.f2h3">1.000 Einwohner</h3>
+                  <p data-i18n="pilot.f2p">nur per Boot (~1 h)</p>
+                </div>
+                <div class="pilot-card" data-anim>
+                  <div class="badge">🔥</div>
+                  <h3 data-i18n="pilot.f3h3">Offene Verbrennung</h3>
+                  <p data-i18n="pilot.f3p">Plastik wird verbrannt</p>
+                </div>
+              </div>
+            <div id="map" class="map pilot-map" data-anim></div>
+            <a href="https://maps.app.goo.gl/umMRicdgExyHxivo9" target="_blank" rel="noopener" class="map-link" data-i18n="pilot.maplink">Auf Google Maps ansehen</a>
+          </div>
         </div>
         <div id="map" class="map" data-anim></div>
       </div>
@@ -273,10 +295,15 @@
   </main>
 
   <footer class="footer">
-    <div class="container foot-inner">
-      <span data-i18n="footer.copy">© 2025 Basola</span>
-      <a href="impressum.html" class="micro" data-i18n="footer.impressum">Impressum</a>
+    <div class="container foot-top">
+      <p class="foot-info micro" data-i18n="footer.info"><strong>BASOLA – Ein Projekt von Enactus Karlsruhe e.V.</strong><br>Ludwig-Wilhelm-Straße 18<br>76131 Karlsruhe<br>Deutschland<br>E-Mail: <a href="mailto:basola@karlsruhe.enactus.team">basola@karlsruhe.enactus.team</a></p>
+      <nav class="foot-nav">
+        <a href="impressum.html" data-i18n="footer.impressum">Impressum</a>
+        <a href="datenschutz.html" data-i18n="footer.datenschutz">Datenschutz</a>
+        <a href="#contact" data-i18n="footer.contact">Kontakt</a>
+      </nav>
     </div>
+    <div class="foot-copy micro" data-i18n="footer.copy">© 2025 Basola</div>
   </footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>

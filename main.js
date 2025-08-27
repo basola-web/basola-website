@@ -12,21 +12,18 @@ const dict = {
       cta2: "So funktioniert's",
       badge1: "Off‑Grid",
       badge2: "Dezentral",
-      badge3: "Lokal betrieben",
-      card: {
-        h3: "Warum Basola?",
-        li1: "Plastik ↓, Energie ↑",
-        li2: "Solar + Syngas, autark",
-        li3: "Robust & wartungsfreundlich"
-      }
+      badge3: "Lokal betrieben"
     },
     problem: {
       h2: "Das Problem",
-      p: "Ladrilleros an der Pazifikküste: angeschwemmter Müll, Diesel teuer, keine Abfuhr.",
-      b1: "Boat-only (1h ab Buenaventura)",
-      b2: "Remote Küstengemeinde",
-      b3: "Plastik angeschwemmt, oft offen verbrannt",
-      fact: "80 kg Kunststoff → ~40 L Fuel/Tag, Reaktor 400–550 °C, PV-elektrische Heizung, fraktionierte Kondensation, Syngas-Rückführung."
+      c1h3: "Nur per Boot erreichbar",
+      c1p: "Abgelegene Küstengemeinden ohne regelmäßige Abfuhr.",
+      c2h3: "Plastik wird angespült",
+      c2p: "Häufig offene Verbrennung direkt am Strand.",
+      c3h3: "Teurer Diesel",
+      c3p: "Energieversorgung unsicher und kostenintensiv.",
+      c4h3: "Umweltbelastung",
+      c4p: "Wasser/Erde/ Luft leiden unter Müll & Verbrennung.",
     },
     usp: {
       h2: "Unser USP – Warum BASOLA?",
@@ -78,7 +75,14 @@ const dict = {
     },
     pilot: {
       h2: "Pilot: Ladrilleros, Kolumbien",
-      p: "Zwischen Mangroven und Meer, eine Stunde Bootsfahrt: Diesel teuer, Plastikmüll am Strand. Wir machen daraus lokalen Kraftstoff."
+      p: "Zwischen Mangroven und Meer, eine Stunde Bootsfahrt: Diesel teuer, Plastikmüll am Strand. Wir machen daraus lokalen Kraftstoff.",
+      f1h3: "100 kg Plastik/Tag",
+      f1p: "inkl. Meeresmüll",
+      f2h3: "1.000 Einwohner",
+      f2p: "nur per Boot (~1 h)",
+      f3h3: "Offene Verbrennung",
+      f3p: "Plastik wird verbrannt",
+      maplink: "Auf Google Maps ansehen"
     },
     team: {
       h2: "Team",
@@ -123,7 +127,22 @@ const dict = {
       h2b: "Urheberrecht",
       p8: "Die durch uns erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
     },
-    footer: { copy: "© 2025 Basola", impressum: "Impressum" }
+    privacy: {
+      title: "Datenschutz – BASOLA",
+      description: "Hinweise zum Datenschutz für die BASOLA Website.",
+      h1: "Datenschutz",
+      p1: "Verantwortlich für die Datenverarbeitung: Enactus Karlsruhe e.V., Ludwig-Wilhelm-Straße 18, 76131 Karlsruhe, Deutschland, E-Mail: basola@karlsruhe.enactus.team.",
+      p2: "Wir erheben personenbezogene Daten nur, soweit dies zur Bereitstellung dieser Website erforderlich ist. Server-Logfiles werden zur Sicherstellung des Betriebs für maximal sieben Tage gespeichert.",
+      p3: "Wenn Sie uns per E-Mail kontaktieren, verwenden wir Ihre Angaben ausschließlich zur Bearbeitung der Anfrage.",
+      p4: "Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer Daten. Wenden Sie sich dazu an die oben genannte Adresse."
+    },
+    footer: {
+      copy: "© 2025 Basola",
+      impressum: "Impressum",
+      datenschutz: "Datenschutz",
+      contact: "Kontakt",
+      info: "<strong>BASOLA – Ein Projekt von Enactus Karlsruhe e.V.</strong><br>Ludwig-Wilhelm-Straße 18<br>76131 Karlsruhe<br>Deutschland<br>E-Mail: <a href=\"mailto:basola@karlsruhe.enactus.team\">basola@karlsruhe.enactus.team</a>"
+    }
   },
   en: {
     nav: { tech: "Technology", impact: "Impact", pilot: "Pilot", team: "Team", impressum: "Legal notice", contact: "Contact" },
@@ -138,21 +157,18 @@ const dict = {
       cta2: "How it works",
       badge1: "Off-grid",
       badge2: "Decentralized",
-      badge3: "Locally operated",
-      card: {
-        h3: "Why Basola?",
-        li1: "Less plastic, more energy",
-        li2: "Solar + syngas, autonomous",
-        li3: "Robust & easy to maintain"
-      }
+      badge3: "Locally operated"
     },
     problem: {
-      h2: "The Problem",
-      p: "Ladrilleros on the Pacific coast: plastic washes ashore, diesel is costly, no waste pickup.",
-      b1: "Boat-only (1h from Buenaventura)",
-      b2: "Remote coastal community",
-      b3: "Plastic washed ashore, often openly burned",
-      fact: "80 kg plastic → ~40 L fuel/day, reactor 400–550 °C, PV-electric heating, fractional condensation, syngas recirculation."
+      h2: "The Challenge",
+      c1h3: "Boat-only access",
+      c1p: "Remote coastal communities without regular waste pickup.",
+      c2h3: "Plastic washes ashore",
+      c2p: "Often openly burned right on the beach.",
+      c3h3: "Expensive diesel",
+      c3p: "Energy supply is unreliable and costly.",
+      c4h3: "Environmental burden",
+      c4p: "Water, soil and air suffer from waste and burning.",
     },
     usp: {
       h2: "Our USP – Why BASOLA?",
@@ -204,7 +220,14 @@ const dict = {
     },
     pilot: {
       h2: "Pilot: Ladrilleros, Colombia",
-      p: "Between mangroves and sea, one hour by boat: diesel is expensive, plastic litters the beach. We turn it into local fuel."
+      p: "Between mangroves and sea, one hour by boat: diesel is expensive, plastic litters the beach. We turn it into local fuel.",
+      f1h3: "100 kg plastic/day",
+      f1p: "incl. marine debris",
+      f2h3: "1,000 residents",
+      f2p: "boat-only (~1 h)",
+      f3h3: "Open burning",
+      f3p: "Plastic is burned",
+      maplink: "View on Google Maps"
     },
     team: {
       h2: "Team",
@@ -249,7 +272,22 @@ const dict = {
       h2b: "Copyright",
       p8: "The content and works created by us on these pages are subject to German copyright law. Duplication, editing, distribution and any kind of use outside the limits of copyright require the written consent of the respective author or creator."
     },
-    footer: { copy: "© 2025 Basola", impressum: "Legal notice" }
+    privacy: {
+      title: "Privacy policy – BASOLA",
+      description: "Information on data protection for the BASOLA website.",
+      h1: "Privacy policy",
+      p1: "Controller for data processing: Enactus Karlsruhe e.V., Ludwig-Wilhelm-Straße 18, 76131 Karlsruhe, Germany, Email: basola@karlsruhe.enactus.team.",
+      p2: "We collect personal data only as necessary to provide this website. Server log files are stored for security reasons for up to seven days.",
+      p3: "If you contact us via email, we use your data solely to process the request.",
+      p4: "You have the right to information, rectification and deletion of your data. Please contact the address above."
+    },
+    footer: {
+      copy: "© 2025 Basola",
+      impressum: "Legal notice",
+      datenschutz: "Privacy",
+      contact: "Contact",
+      info: "<strong>BASOLA – A project by Enactus Karlsruhe e.V.</strong><br>Ludwig-Wilhelm-Straße 18<br>76131 Karlsruhe<br>Germany<br>Email: <a href=\"mailto:basola@karlsruhe.enactus.team\">basola@karlsruhe.enactus.team</a>"
+    }
   }
 };
 
