@@ -56,12 +56,13 @@ textarea { resize: vertical; }
 .footer { border-top:1px solid #e5e7eb; padding:1.2rem 0; background:#fff; }
 .foot-inner { display:flex; justify-content:space-between; align-items:center; }
 
-.card-diagram ol { margin:0; padding-left:1.2rem; }
+.tech-diagram { padding-top:1rem; }
 
 @media (max-width: 900px) {
   .hero-inner, .grid-2 { grid-template-columns: 1fr; }
   .cards-3, .team-grid, .kpi-wrap { grid-template-columns: 1fr; }
   .links {}
+  .tech-diagram { margin: 0 auto; }
 }
 
 /* Anchor offset for sticky header */
