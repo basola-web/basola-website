@@ -20,20 +20,26 @@ a { color: inherit; text-decoration: none; }
 .hero { position: relative; background: radial-gradient(1200px 500px at 70% -20%, var(--accent) 0%, transparent 50%), linear-gradient(180deg, #fff 0%, #fff 60%, #fafafa 100%); }
 .hero-video-bg{position:absolute; inset:0; overflow:hidden; z-index:0;}
 .hero-video-bg video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
-.hero-video-bg .overlay{position:absolute; inset:0; background:rgba(0,0,0,.35); pointer-events:none;}
+.hero-video-bg .overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.35) 40%, rgba(11,15,20,.75) 100%), radial-gradient(800px 360px at 30% 85%, rgba(255,183,3,.18), transparent 60%); pointer-events:none;}
 .hero-inner { position:relative; z-index:1; display:grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; padding: 6rem 0 4rem; align-items: center; }
-.hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height:1.05; color: var(--dark); }
-.lead { font-size: 1.125rem; opacity:.85; margin:.9rem 0 1.2rem; }
+.hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height:1.05; max-width:12ch; letter-spacing:-.015em; color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.5); }
+.lead { font-size: 1.125rem; margin:.9rem 0 1.2rem; color:#f8f8f8; opacity:.92; }
 .cta { display:flex; gap:.8rem; margin:1.2rem 0 1rem; }
 .badges { display:flex; gap:.6rem; list-style:none; padding:0; margin:0; flex-wrap:wrap; }
 .badges li { background:#fff; border:1px solid #e5e7eb; padding:.35rem .6rem; border-radius:999px; font-size:.88rem; }
 
+/* USP */
+.usp-list{list-style:disc; padding-left:1.1rem; columns:2; column-gap:1.5rem;}
+.usp-list li{break-inside:avoid; margin:.4rem 0;}
+.badges.kpi{justify-content:flex-start;margin-top:1rem;}
+
 .hero-card{justify-self:end;}
 .hero-card .card{background:rgba(255,255,255,.85); border:1px solid rgba(255,255,255,.6); backdrop-filter:blur(4px); box-shadow:0 8px 24px rgba(0,0,0,.1);}
 
-.btn { display:inline-block; background: var(--primary); color:#fff; padding:.8rem 1.1rem; border-radius: .9rem; font-weight:600; box-shadow: 0 6px 16px rgba(106,45,15,.18); transition: transform .12s ease; }
-.btn:hover { transform: translateY(-1px); }
+.btn { display:inline-block; background: var(--primary); color:#fff; padding:.8rem 1.1rem; border-radius: .9rem; font-weight:600; box-shadow: 0 6px 16px rgba(106,45,15,.18); transition: transform .12s ease, box-shadow .12s ease; }
+.btn:hover { transform: translateY(-1px); box-shadow:0 0 0 3px rgba(255,183,3,.4),0 6px 16px rgba(106,45,15,.18); }
 .btn.ghost { background: transparent; color: var(--primary); border: 1.5px solid var(--primary); box-shadow:none; }
+.btn.ghost:hover{box-shadow:0 0 0 3px rgba(255,183,3,.4);}
 
 .section { padding: 4rem 0; }
 .section.alt { background: #fafafa; }
@@ -48,6 +54,13 @@ a { color: inherit; text-decoration: none; }
 
 .list { padding-left: 1.1rem; }
 .list li { margin: .4rem 0; }
+
+/* Business model */
+.model-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:1.5rem;}
+@media(max-width:900px){.model-grid{grid-template-columns:1fr;}}
+.model-card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:1.4rem;text-align:center;transition:transform .2s ease,box-shadow .2s ease;}
+.model-card:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.08);}
+.model-card .icon{font-size:2rem;margin-bottom:.5rem;}
 
 .cards-3 { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; }
 .team-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; margin-top:1rem; }
@@ -64,6 +77,12 @@ textarea { resize: vertical; }
 .foot-inner { display:flex; justify-content:space-between; align-items:center; }
 
 .tech-diagram { padding-top:1rem; }
+
+/* Pilot */
+.pilot-gallery{display:flex;gap:1rem;margin-top:1rem;}
+.pilot-gallery video,.pilot-gallery img{flex:1;border-radius:12px;height:180px;object-fit:cover;}
+@media(max-width:900px){.pilot-gallery{flex-direction:column;}}
+.map{height:300px;border-radius:12px;margin-top:1rem;}
 
 @media (max-width: 900px) {
   .hero-inner, .grid-2 { grid-template-columns: 1fr; }
