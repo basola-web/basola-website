@@ -1,0 +1,12 @@
+[data-anim] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+[data-anim].visible {
+  opacity: 1;
+  transform: none;
+}
+html:has(body.reduce-motion) [data-anim] {
+  transition: none;
+}

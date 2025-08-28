@@ -1,0 +1,18 @@
+---
+const { t } = Astro.props;
+---
+<section id="technology" data-anim>
+  <div class="cols">
+    <div>
+      <h2>{t.heading}</h2>
+      <p>{t.text}</p>
+    </div>
+    <div>
+      <img src="/assets/process_chart.png" loading="lazy" alt="Systemskizze: Prozess von Plastikabfall zu Kraftstoff (BASOLA)" />
+    </div>
+  </div>
+</section>
+<style>
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;}
+@media(max-width:800px){.cols{grid-template-columns:1fr;}}
+</style>

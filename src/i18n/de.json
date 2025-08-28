@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "technology": "Technologie",
+    "impact": "Impact",
+    "pilot": "Pilot",
+    "team": "Team",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Solar-Kraftstoff aus Plastikmüll – dort, wo kein LKW kommt.",
+    "lead": "Dezentrale Solar-Pyrolyse verwandelt nicht recycelbare Kunststoffe in lokalen Treibstoff – für boat-only Küstengemeinden.",
+    "ctaPrimary": "So funktioniert’s",
+    "ctaSecondary": "Partner werden"
+  },
+  "problem": {
+    "heading": "Problem",
+    "text": "Ladrilleros ist nur per Boot erreichbar (~1 h ab Buenaventura). Diesel ist teuer, angeschwemmter Müll wird offen verbrannt."
+  },
+  "how": {
+    "heading": "So funktioniert’s",
+    "text": "Shredder → Pyrolyse (O₂-frei 400–550 °C) → Fraktionierte Kondensation → Fuel; Syngas heizt mit."
+  },
+  "business": {
+    "heading": "Business Model",
+    "fuel": "Fuel-Sales lokal (Boote/Generatoren)",
+    "gate": "Gate-Fee für Abnahme nicht recycelbarer Plastiken",
+    "biochar": "Biochar/Carbon-Erlöse (Potenzial)",
+    "service": "Service & Training (Betrieb, Wartung, Community-Ownership)"
+  },
+  "contact": {
+    "heading": "Kontakt",
+    "name": "Name",
+    "email": "E-Mail",
+    "org": "Organisation",
+    "message": "Nachricht",
+    "role": "Ich bin",
+    "roles": {
+      "partner": "Partner",
+      "investor": "Investor",
+      "ngo": "NPO",
+      "other": "Andere"
+    },
+    "submit": "Senden"
+  }
+}

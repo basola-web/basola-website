@@ -1,0 +1,24 @@
+---
+import "../styles/theme.css";
+import "../styles/globals.css";
+import "../styles/animations.css";
+const { lang = 'en', title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title ? `${title} | BASOLA` : 'BASOLA'}</title>
+  <link rel="icon" type="image/png" href="/assets/basola_logo.png" />
+</head>
+<body>
+  <slot />
+  <script>
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); }});
+    }, { threshold: 0.2 });
+    document.querySelectorAll('[data-anim]').forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>

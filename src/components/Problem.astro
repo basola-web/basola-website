@@ -1,0 +1,26 @@
+---
+const { t } = Astro.props;
+---
+<section id="problem" data-anim>
+  <div class="cols">
+    <div>
+      <h2>{t.heading}</h2>
+      <p>{t.text}</p>
+      <div class="badges">
+        <span class="badge">Boat-only</span>
+        <span class="badge">Remote coastal community</span>
+        <span class="badge">Non-recyclables</span>
+      </div>
+      <div class="numbers">~80 kg Plastik/Tag • offenes Verbrennen • Diesel teuer</div>
+    </div>
+    <div>
+      <img src="/assets/Ladrilleros.png" alt="Ladrilleros" loading="lazy" />
+    </div>
+  </div>
+</section>
+<style>
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;}
+.badge{background:var(--color-brown);color:#fff;padding:.25rem .75rem;border-radius:999px;margin-right:.5rem;}
+.numbers{margin-top:1rem;font-weight:600;}
+@media(max-width:800px){.cols{grid-template-columns:1fr;}}
+</style>
