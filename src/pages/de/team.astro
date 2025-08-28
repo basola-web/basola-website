@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import t from '../../i18n/de.json';
+const lang='de';
+---
+<BaseLayout lang={lang} title="Team">
+  <Header lang={lang} t={t} />
+  <main style="padding:4rem 1rem;">
+    <h1>Team</h1>
+    <p>Coming soon...</p>
+  </main>
+  <Footer lang={lang} />
+</BaseLayout>

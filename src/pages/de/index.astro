@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import Problem from '../../components/Problem.astro';
+import How from '../../components/HowItWorks.astro';
+import Business from '../../components/BusinessModel.astro';
+import Footer from '../../components/Footer.astro';
+import de from '../../i18n/de.json';
+const lang='de';
+const t=de;
+---
+<BaseLayout lang={lang} title="Home">
+  <Header lang={lang} t={t} />
+  <Hero lang={lang} t={t.hero} />
+  <Problem t={t.problem} />
+  <How t={t.how} />
+  <Business t={t.business} />
+  <Footer lang={lang} />
+</BaseLayout>
