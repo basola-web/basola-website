@@ -1,13 +1,9 @@
 ---
 const { lang } = Astro.props;
+const imprintLink = lang === 'de' ? '/de/impressum' : '/imprint';
+const imprintText = lang === 'de' ? 'Impressum' : 'Imprint';
 ---
-<footer class="footer">
+<footer class="bg-secondary text-white text-center py-8 mt-12">
   <p>&copy; {new Date().getFullYear()} BASOLA</p>
-  <nav>
-    <a href={lang==='de'?'/de/imprint':'/en/imprint'}>Impressum</a>
-  </nav>
+  <a href={imprintLink} class="text-primary hover:underline">{imprintText}</a>
 </footer>
-<style>
-.footer{background:var(--color-brown);color:#fff;padding:2rem;text-align:center;}
-.footer a{color:var(--color-yellow);}
-</style>

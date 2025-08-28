@@ -1,0 +1,14 @@
+---
+const { t } = Astro.props;
+---
+<section id="solution" class="bg-gray-50 text-secondary">
+  <div class="max-w-5xl mx-auto md:flex md:items-center md:gap-8">
+    <div class="md:w-1/2 mb-6 md:mb-0">
+      <h2 class="text-3xl font-bold mb-4">{t.heading}</h2>
+      <p>{t.text}</p>
+    </div>
+    <div class="md:w-1/2">
+      <img src="/assets/process_chart.png" alt="Process chart" />
+    </div>
+  </div>
+</section>

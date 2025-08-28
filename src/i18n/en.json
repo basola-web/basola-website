@@ -1,8 +1,8 @@
 {
   "nav": {
-    "technology": "Technology",
+    "problem": "Problem",
+    "solution": "Solution",
     "impact": "Impact",
-    "pilot": "Pilot",
     "team": "Team",
     "contact": "Contact"
   },
@@ -16,8 +16,12 @@
     "heading": "Problem",
     "text": "Ladrilleros can only be reached by boat (~1 h from Buenaventura). Diesel is expensive; washed-up waste is openly burned."
   },
-  "how": {
-    "heading": "How it works",
+  "story": {
+    "heading": "Story",
+    "text": "Remote village Ladrilleros is surrounded by plastic and diesel scarcity."
+  },
+  "solution": {
+    "heading": "Solution",
     "text": "Shredder → Pyrolysis (O₂-free 400–550 °C) → Fractional condensation → Fuel; syngas feeds the heat."
   },
   "business": {
@@ -26,6 +30,18 @@
     "gate": "Gate fee for taking non-recyclable plastics",
     "biochar": "Biochar/carbon revenues (potential)",
     "service": "Service & training (operations, maintenance, community ownership)"
+  },
+  "impact": {
+    "heading": "Impact",
+    "text": "Triple benefit for environment, community and climate."
+  },
+  "team": {
+    "heading": "Team",
+    "text": "Meet the people behind BASOLA."
+  },
+  "partners": {
+    "heading": "Partners",
+    "text": "Organisations supporting us."
   },
   "contact": {
     "heading": "Contact",

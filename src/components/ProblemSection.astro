@@ -1,0 +1,30 @@
+---
+const { t } = Astro.props;
+---
+<section id="problem" class="bg-white text-secondary">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">{t.heading}</h2>
+    <p class="mb-8">{t.text}</p>
+    <div class="grid gap-6 md:grid-cols-3">
+      <div class="p-4 shadow rounded">
+        <div class="text-4xl font-bold text-primary"><span id="stat-plastic">0</span> t</div>
+        <div class="uppercase text-sm">Plastic/year</div>
+      </div>
+      <div class="p-4 shadow rounded">
+        <div class="text-4xl font-bold text-primary"><span id="stat-co2">0</span> kg</div>
+        <div class="uppercase text-sm">CO₂/day saved</div>
+      </div>
+      <div class="p-4 shadow rounded">
+        <div class="text-4xl font-bold text-primary"><span id="stat-fuel">0</span> L</div>
+        <div class="uppercase text-sm">Diesel/day replaced</div>
+      </div>
+    </div>
+  </div>
+</section>
+<script is:client="load">
+  import { CountUp } from 'countup.js';
+  const opts = { duration: 2 };
+  new CountUp('stat-plastic', 12000000, opts).start();
+  new CountUp('stat-co2', 86, opts).start();
+  new CountUp('stat-fuel', 40, opts).start();
+</script>

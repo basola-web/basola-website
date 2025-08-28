@@ -1,0 +1,26 @@
+---
+const { t } = Astro.props;
+---
+<section id="business" class="text-secondary">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8">{t.heading}</h2>
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div class="p-4 bg-gray-100 rounded">
+        <div class="text-xl font-bold mb-2">Fuel</div>
+        <p>{t.fuel}</p>
+      </div>
+      <div class="p-4 bg-gray-100 rounded">
+        <div class="text-xl font-bold mb-2">Gate</div>
+        <p>{t.gate}</p>
+      </div>
+      <div class="p-4 bg-gray-100 rounded">
+        <div class="text-xl font-bold mb-2">Biochar</div>
+        <p>{t.biochar}</p>
+      </div>
+      <div class="p-4 bg-gray-100 rounded">
+        <div class="text-xl font-bold mb-2">Service</div>
+        <p>{t.service}</p>
+      </div>
+    </div>
+  </div>
+</section>
