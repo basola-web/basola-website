@@ -1,0 +1,14 @@
+---
+const { title, subtitle, cta } = Astro.props;
+---
+<section class="relative h-screen flex items-center justify-center text-center text-white" aria-label="Background video of boat ride in Ladrilleros">
+  <video autoplay muted loop playsinline preload="none" poster="/assets/Ladrilleros_Strand.png" class="absolute inset-0 object-cover w-full h-full">
+    <source src="/hero-video.mp4" type="video/mp4" />
+  </video>
+  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="relative z-10 px-4 space-y-4">
+    <h1 class="text-4xl md:text-6xl font-bold text-primary">{title}</h1>
+    <p class="text-lg md:text-2xl">{subtitle}</p>
+    <a href="#contact" class="bg-primary text-secondary font-bold py-3 px-6 rounded">{cta}</a>
+  </div>
+</section>

@@ -1,45 +1,92 @@
 {
   "nav": {
-    "technology": "Technologie",
+    "problem": "Problem",
+    "solution": "Lösung",
     "impact": "Impact",
-    "pilot": "Pilot",
     "team": "Team",
     "contact": "Kontakt"
   },
   "hero": {
-    "title": "Solar-Kraftstoff aus Plastikmüll – dort, wo kein LKW kommt.",
-    "lead": "Dezentrale Solar-Pyrolyse verwandelt nicht recycelbare Kunststoffe in lokalen Treibstoff – für boat-only Küstengemeinden.",
-    "ctaPrimary": "So funktioniert’s",
-    "ctaSecondary": "Partner werden"
+    "title": "Solar-Treibstoff aus Plastikmüll",
+    "subtitle": "Dezentrale Plastikreduktion für Küstenregionen",
+    "cta": "Unterstütze unsere Mission"
   },
   "problem": {
-    "heading": "Problem",
-    "text": "Ladrilleros ist nur per Boot erreichbar (~1 h ab Buenaventura). Diesel ist teuer, angeschwemmter Müll wird offen verbrannt."
+    "heading": "Das Problem",
+    "text": "Abgelegene Gemeinden wie Ladrilleros ersticken im Plastik und zahlen hohe Dieselpreise.",
+    "stats": {
+      "plastic": "Plastik im Ozean / Jahr",
+      "co2": "Eingesparte CO₂ pro Tag",
+      "fuel": "Ersparter Diesel pro Tag"
+    }
   },
-  "how": {
-    "heading": "So funktioniert’s",
-    "text": "Shredder → Pyrolyse (O₂-frei 400–550 °C) → Fraktionierte Kondensation → Fuel; Syngas heizt mit."
+  "story": {
+    "heading": "Ladrilleros",
+    "paragraphs": [
+      "Nur per Boot erreichbar – Infrastruktur stark begrenzt.",
+      "Mangels Entsorgung wird Müll offen verbrannt."
+    ]
+  },
+  "solution": {
+    "heading": "Unsere Lösung",
+    "steps": [
+      {"title": "Solarenergie", "text": "Module liefern Wärme."},
+      {"title": "Pyrolyse", "text": "Plastik wird ohne Sauerstoff zu Öl."},
+      {"title": "Nutzung", "text": "Öl treibt Boote an; Gas speist den Prozess."}
+    ]
   },
   "business": {
-    "heading": "Business Model",
-    "fuel": "Fuel-Sales lokal (Boote/Generatoren)",
-    "gate": "Gate-Fee für Abnahme nicht recycelbarer Plastiken",
-    "biochar": "Biochar/Carbon-Erlöse (Potenzial)",
-    "service": "Service & Training (Betrieb, Wartung, Community-Ownership)"
+    "heading": "Geschäftsmodell",
+    "items": [
+      {"value": "10.000€", "label": "Invest"},
+      {"value": "21€/Tag", "label": "OPEX"},
+      {"value": "40€/Tag", "label": "Einnahmen"},
+      {"value": "+19€/Tag", "label": "Überschuss"},
+      {"value": "18 Monate", "label": "Amortisation"}
+    ]
+  },
+  "impact": {
+    "heading": "Wirkung",
+    "items": [
+      {"title": "Umwelt", "text": "Entfernt 80kg Plastik täglich"},
+      {"title": "Gemeinschaft", "text": "Schafft lokale Jobs & Treibstoff"},
+      {"title": "Klima", "text": "Spart 86kg CO₂ pro Tag"}
+    ]
+  },
+  "team": {
+    "heading": "Team & Gemeinschaft",
+    "groups": {
+      "team": [
+        {"name": "Max Mustermann", "role": "Leitung", "img": "/assets/basola_logo.png"}
+      ],
+      "community": [
+        {"name": "Lokaler Partner", "role": "Gemeinde", "img": "/assets/basola_logo.png"}
+      ],
+      "advisors": [
+        {"name": "Berater", "role": "Mentor", "img": "/assets/basola_logo.png"}
+      ]
+    }
+  },
+  "partners": {
+    "heading": "Partner",
+    "logos": [
+      {"src": "/assets/enactus_karlsruhe_logo.png", "alt": "Enactus Karlsruhe"},
+      {"src": "/assets/ngo_uramba_logo.png", "alt": "Uramba"},
+      {"src": "/assets/boreal_lights_logo.png", "alt": "Boreal Lights"}
+    ]
   },
   "contact": {
     "heading": "Kontakt",
     "name": "Name",
     "email": "E-Mail",
-    "org": "Organisation",
-    "message": "Nachricht",
-    "role": "Ich bin",
-    "roles": {
-      "partner": "Partner",
-      "investor": "Investor",
-      "ngo": "NPO",
-      "other": "Andere"
+    "reason": "Wie möchten Sie helfen?",
+    "reasons": {
+      "donation": "Spenden",
+      "volunteer": "Volunteer werden",
+      "partner": "Technologie-Partner",
+      "general": "Allgemein"
     },
+    "message": "Nachricht",
     "submit": "Senden"
   }
 }

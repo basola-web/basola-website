@@ -1,22 +1,3 @@
-html, body {
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: system-ui, sans-serif;
-  color: var(--color-dark);
-  background: #fff;
-  line-height: 1.5;
-}
-section {
-  padding: 4rem 1rem;
-}
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-a {
-  color: var(--color-brown);
-  text-decoration: none;
-}
+body { @apply text-secondary bg-white; }
+a { @apply text-secondary hover:text-primary; }
+section { @apply py-16 px-4; }

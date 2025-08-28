@@ -1,7 +1,10 @@
 import { defineConfig } from 'astro/config';
-
-// Basic Astro configuration
+import tailwind from '@astrojs/tailwind';
 export default defineConfig({
-  srcDir: 'src',
   site: 'https://basola.example',
+  integrations: [tailwind()],
+  i18n: {
+    locales: ['en', 'de'],
+    defaultLocale: 'en',
+  },
 });

@@ -1,0 +1,28 @@
+---
+import '../styles/tailwind.css';
+import '../styles/globals.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const { lang = 'en', meta = {}, t } = Astro.props;
+const title = meta.title || 'BASOLA';
+const desc = meta.description || '';
+---
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  {desc && <meta name="description" content={desc} />}
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="alternate" hreflang="en" href="/" />
+  <link rel="alternate" hreflang="de" href="/de/" />
+</head>
+<body class="min-h-screen flex flex-col">
+  <Header lang={lang} t={t.nav} />
+  <main class="flex-1">
+    <slot />
+  </main>
+  <Footer lang={lang} />
+</body>
+</html>

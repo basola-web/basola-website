@@ -1,0 +1,16 @@
+---
+const { heading, items } = Astro.props;
+---
+<section id="impact" class="bg-gray-50 text-secondary py-16">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-8">{heading}</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {items.map(item => (
+        <div class="p-6 rounded-lg shadow bg-primary text-secondary">
+          <div class="text-2xl font-bold mb-2">{item.title}</div>
+          <p>{item.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,20 +1,24 @@
 ---
-import BaseLayout from '../../layouts/Base.astro';
-import Header from '../../components/Header.astro';
-import Hero from '../../components/Hero.astro';
-import Problem from '../../components/Problem.astro';
-import How from '../../components/HowItWorks.astro';
-import Business from '../../components/BusinessModel.astro';
-import Footer from '../../components/Footer.astro';
-import de from '../../i18n/de.json';
-const lang='de';
-const t=de;
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import ProblemSection from '../../components/ProblemSection.astro';
+import StorySection from '../../components/StorySection.astro';
+import SolutionSection from '../../components/SolutionSection.astro';
+import BusinessSection from '../../components/BusinessSection.astro';
+import ImpactSection from '../../components/ImpactSection.astro';
+import TeamSection from '../../components/TeamSection.astro';
+import PartnersSection from '../../components/PartnersSection.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import t from '../../i18n/de.json';
 ---
-<BaseLayout lang={lang} title="Home">
-  <Header lang={lang} t={t} />
-  <Hero lang={lang} t={t.hero} />
-  <Problem t={t.problem} />
-  <How t={t.how} />
-  <Business t={t.business} />
-  <Footer lang={lang} />
+<BaseLayout lang="de" t={t} meta={{ title: t.hero.title, description: t.hero.subtitle }}>
+  <HeroSection {...t.hero} />
+  <ProblemSection heading={t.problem.heading} text={t.problem.text} stats={t.problem.stats} />
+  <StorySection heading={t.story.heading} paragraphs={t.story.paragraphs} />
+  <SolutionSection heading={t.solution.heading} steps={t.solution.steps} />
+  <BusinessSection heading={t.business.heading} items={t.business.items} />
+  <ImpactSection heading={t.impact.heading} items={t.impact.items} />
+  <TeamSection heading={t.team.heading} groups={t.team.groups} />
+  <PartnersSection heading={t.partners.heading} logos={t.partners.logos} />
+  <ContactSection heading={t.contact.heading} t={t.contact} />
 </BaseLayout>

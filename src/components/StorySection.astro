@@ -1,0 +1,12 @@
+---
+const { heading, paragraphs } = Astro.props;
+---
+<section id="story" class="bg-gray-50 text-secondary py-16">
+  <div class="max-w-6xl mx-auto md:flex gap-8 items-center px-4">
+    <img src="/assets/Ladrilleros.png" alt="Ladrilleros" class="md:w-1/2 w-full rounded opacity-80" loading="lazy" />
+    <div class="md:w-1/2 space-y-4">
+      <h2 class="text-3xl font-bold">{heading}</h2>
+      {paragraphs.map(p => <p>{p}</p>)}
+    </div>
+  </div>
+</section>

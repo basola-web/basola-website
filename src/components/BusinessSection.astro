@@ -1,0 +1,16 @@
+---
+const { heading, items } = Astro.props;
+---
+<section id="business" class="bg-white text-secondary py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8">{heading}</h2>
+    <div class="flex flex-wrap gap-4 text-center">
+      {items.map(item => (
+        <div class="flex-1 min-w-[150px] bg-gray-100 p-4 rounded">
+          <div class="text-xl font-bold">{item.value}</div>
+          <div class="text-sm">{item.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+const { heading, steps } = Astro.props;
+---
+<section id="solution" class="py-16 text-secondary">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-8">{heading}</h2>
+    <svg viewBox="0 0 300 120" class="mx-auto w-64" xmlns="http://www.w3.org/2000/svg">
+      <rect x="130" y="40" width="40" height="40" fill="#42210B" />
+      <path id="arrow1" d="M40 60 H120" stroke="#F2C94C" stroke-width="4" fill="none" stroke-dasharray="80" stroke-dashoffset="80" />
+      <polygon points="80,55 120,60 80,65" fill="#F2C94C" />
+      <path id="arrow2" d="M170 60 H250" stroke="#F2C94C" stroke-width="4" fill="none" stroke-dasharray="80" stroke-dashoffset="80" />
+      <polygon points="210,55 250,60 210,65" fill="#F2C94C" />
+    </svg>
+    <div class="grid md:grid-cols-3 gap-6 mt-8 text-left">
+      {steps.map(s => <div><h3 class="font-semibold mb-2">{s.title}</h3><p>{s.text}</p></div>)}
+    </div>
+  </div>
+</section>
+<script is:client="visible">
+  document.querySelectorAll('#arrow1, #arrow2').forEach(el => {
+    el.animate([{strokeDashoffset:80},{strokeDashoffset:0}], {duration:1000, fill:'forwards'});
+  });
+</script>

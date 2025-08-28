@@ -1,0 +1,21 @@
+---
+const { heading, logos } = Astro.props;
+---
+<section id="partners" class="py-16 text-secondary">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-8">{heading}</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        {logos.map(l => (
+          <div class="swiper-slide flex items-center justify-center">
+            <img src={l.src} alt={l.alt} class="h-12" loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+<script is:client="load">
+  import Swiper from 'swiper/bundle';
+  new Swiper('.swiper', { slidesPerView:3, loop:true, autoplay:{delay:3000}, breakpoints:{640:{slidesPerView:4},1024:{slidesPerView:6}}});
+</script>
