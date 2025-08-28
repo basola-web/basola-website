@@ -1,13 +1,13 @@
 ---
 const { lang } = Astro.props;
+const label = lang === 'en' ? 'Imprint' : 'Impressum';
 ---
-<footer class="footer">
-  <p>&copy; {new Date().getFullYear()} BASOLA</p>
-  <nav>
-    <a href={lang==='de'?'/de/imprint':'/en/imprint'}>Impressum</a>
-  </nav>
+<footer class="bg-secondary text-white mt-8">
+  <div class="max-w-6xl mx-auto p-6 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div class="font-bold">BASOLA</div>
+    <nav class="flex gap-4">
+      <a href={lang === 'en' ? '/imprint' : '/de/impressum'} class="hover:text-primary">{label}</a>
+    </nav>
+    <div class="text-sm">&copy; 2025 BASOLA</div>
+  </div>
 </footer>
-<style>
-.footer{background:var(--color-brown);color:#fff;padding:2rem;text-align:center;}
-.footer a{color:var(--color-yellow);}
-</style>

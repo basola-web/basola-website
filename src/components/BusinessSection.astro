@@ -1,0 +1,31 @@
+---
+const { t } = Astro.props;
+---
+<section id="business" class="py-20 bg-gray-50 text-secondary">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-4">{t.heading}</h2>
+    <p class="mb-8">{t.text}</p>
+    <div class="flex flex-wrap gap-4 text-center">
+      <div class="flex-1 bg-gray-100 p-4 rounded">
+        <div class="text-xl font-bold">10.000€</div>
+        <div class="text-sm">CAPEX</div>
+      </div>
+      <div class="flex-1 bg-gray-100 p-4 rounded">
+        <div class="text-xl font-bold">21€/day</div>
+        <div class="text-sm">OPEX</div>
+      </div>
+      <div class="flex-1 bg-gray-100 p-4 rounded">
+        <div class="text-xl font-bold">40€/day</div>
+        <div class="text-sm">Revenue</div>
+      </div>
+      <div class="flex-1 bg-yellow-100 p-4 rounded">
+        <div class="text-xl font-bold">+19€/day</div>
+        <div class="text-sm">Surplus</div>
+      </div>
+      <div class="flex-1 bg-green-100 p-4 rounded">
+        <div class="text-xl font-bold">18 months</div>
+        <div class="text-sm">Payback</div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+---
+const { t } = Astro.props;
+---
+<section id="contact" class="py-20 bg-white text-secondary">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-4 text-center">{t.heading}</h2>
+    <form action="/api/contact" method="POST" class="max-w-md mx-auto">
+      <div class="mb-4">
+        <label class="block text-sm font-medium mb-1">{t.name}</label>
+        <input type="text" name="name" required class="w-full border border-gray-300 p-2 rounded" />
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium mb-1">{t.email}</label>
+        <input type="email" name="email" required class="w-full border border-gray-300 p-2 rounded" />
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium mb-1">{t.reasonLabel}</label>
+        <select name="reason" class="w-full border border-gray-300 p-2 rounded">
+          <option value="donation">{t.reasons.donation}</option>
+          <option value="volunteer">{t.reasons.volunteer}</option>
+          <option value="partner">{t.reasons.partner}</option>
+          <option value="general">{t.reasons.general}</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium mb-1">{t.message}</label>
+        <textarea name="message" rows="4" required class="w-full border border-gray-300 p-2 rounded"></textarea>
+      </div>
+      <button type="submit" class="bg-primary text-secondary font-bold py-2 px-4 rounded">{t.submit}</button>
+    </form>
+  </div>
+</section>

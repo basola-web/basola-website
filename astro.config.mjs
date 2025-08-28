@@ -1,7 +1,17 @@
 import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
+import cloudflare from '@astrojs/cloudflare';
 
-// Basic Astro configuration
 export default defineConfig({
-  srcDir: 'src',
   site: 'https://basola.example',
+  integrations: [tailwind()],
+  output: 'server',
+  adapter: cloudflare(),
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en','de'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  }
 });

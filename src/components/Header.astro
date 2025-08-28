@@ -1,21 +1,33 @@
 ---
-import LangToggle from './LangToggle.astro';
-const { lang, t } = Astro.props;
-const nav = t.nav;
+import { getRelativeLocaleUrl } from 'astro:i18n';
+const { lang } = Astro.props;
+const labels = {
+  problem: { en: 'Problem', de: 'Problem' },
+  solution: { en: 'Solution', de: 'Lösung' },
+  impact: { en: 'Impact', de: 'Wirkung' },
+  team: { en: 'Team', de: 'Team' },
+  contact: { en: 'Contact', de: 'Kontakt' },
+};
+const switchLocale = lang === 'en' ? 'de' : 'en';
+const switchUrl = getRelativeLocaleUrl(Astro.url, switchLocale);
+const items = ['problem','solution','impact','team','contact'];
 ---
-<header class="header">
-  <a href={lang==='de'?'/de/':'/en/'} class="logo"><img src="/assets/basola_logo.png" alt="BASOLA" height="40"/></a>
-  <nav class="nav-links">
-    <a href={lang==='de'?'/de/technology':'/en/technology'}>{nav.technology}</a>
-    <a href={lang==='de'?'/de/impact':'/en/impact'}>{nav.impact}</a>
-    <a href={lang==='de'?'/de/pilot':'/en/pilot'}>{nav.pilot}</a>
-    <a href={lang==='de'?'/de/team':'/en/team'}>{nav.team}</a>
-    <a href={lang==='de'?'/de/contact':'/en/contact'}>{nav.contact}</a>
-  </nav>
-  <LangToggle currentLang={lang}/>
+<header class="sticky top-0 bg-white/90 backdrop-blur z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+    <a href={lang === 'en' ? '/' : '/de/'} class="text-2xl font-bold text-secondary">BASOLA</a>
+    <nav class="hidden md:flex gap-6">
+      {items.map(id => <a href={`#${id}`} class="hover:text-primary">{labels[id][lang]}</a>)}
+      <a href={switchUrl} class="font-semibold">{switchLocale.toUpperCase()}</a>
+    </nav>
+    <button id="menu-btn" class="md:hidden" aria-label="Menu">☰</button>
+  </div>
+  <div id="mobile-menu" class="hidden flex-col md:hidden bg-white/90 px-4 pb-4">
+    {items.map(id => <a href={`#${id}`} class="py-2 border-b border-secondary/10">{labels[id][lang]}</a>)}
+    <a href={switchUrl} class="py-2">{switchLocale.toUpperCase()}</a>
+  </div>
+  <script is:client>
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
 </header>
-<style>
-.header{position:sticky;top:0;height:var(--header-height);backdrop-filter:blur(8px);background:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:space-between;padding:0 1rem;z-index:1000;}
-.nav-links{display:flex;gap:1rem;}
-.nav-links a{color:var(--color-dark);font-weight:500;}
-</style>

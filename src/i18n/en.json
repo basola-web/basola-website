@@ -1,45 +1,55 @@
 {
-  "nav": {
-    "technology": "Technology",
-    "impact": "Impact",
-    "pilot": "Pilot",
-    "team": "Team",
-    "contact": "Contact"
-  },
   "hero": {
-    "title": "Solar fuel from plastic waste — where no truck comes.",
-    "lead": "Decentralised solar pyrolysis turns non-recyclable plastics into local fuel for boat-only coastal communities.",
-    "ctaPrimary": "How it works",
-    "ctaSecondary": "Become a partner"
+    "title": "Solar Fuel from Plastic Waste",
+    "subtitle": "Decentralized plastic reduction for coastal communities",
+    "cta": "Support Our Mission"
   },
   "problem": {
-    "heading": "Problem",
-    "text": "Ladrilleros can only be reached by boat (~1 h from Buenaventura). Diesel is expensive; washed-up waste is openly burned."
+    "heading": "The Problem",
+    "text": "Remote communities like Ladrilleros are drowning in plastic waste and diesel shortage.",
+    "stats": {
+      "plastic": "Plastic in the ocean per year",
+      "co2": "CO₂ saved per day",
+      "fuel": "Diesel replaced per day"
+    },
+    "more": "Over 100kg of plastic is burned daily while fuel is scarce and expensive."
   },
-  "how": {
-    "heading": "How it works",
-    "text": "Shredder → Pyrolysis (O₂-free 400–550 °C) → Fractional condensation → Fuel; syngas feeds the heat."
+  "story": {
+    "heading": "Ladrilleros",
+    "text": "Story content coming soon."
+  },
+  "solution": {
+    "heading": "The Solution",
+    "text": "Solar-powered pyrolysis turns plastic into fuel."
   },
   "business": {
     "heading": "Business Model",
-    "fuel": "Local fuel sales (boats/generators)",
-    "gate": "Gate fee for taking non-recyclable plastics",
-    "biochar": "Biochar/carbon revenues (potential)",
-    "service": "Service & training (operations, maintenance, community ownership)"
+    "text": "Through fuel sales the system sustains itself."
+  },
+  "impact": {
+    "heading": "Impact",
+    "text": "BASOLA creates environmental, social and climate impact."
+  },
+  "team": {
+    "heading": "Team & Community",
+    "text": "Meet the people behind BASOLA."
+  },
+  "partners": {
+    "heading": "Partners & Supporters",
+    "text": "We thank our partners."
   },
   "contact": {
-    "heading": "Contact",
+    "heading": "Get in Touch",
     "name": "Name",
     "email": "Email",
-    "org": "Organisation",
-    "message": "Message",
-    "role": "I am",
-    "roles": {
-      "partner": "Partner",
-      "investor": "Investor",
-      "ngo": "NPO",
-      "other": "Other"
+    "reasonLabel": "How can you help?",
+    "reasons": {
+      "donation": "Donation",
+      "volunteer": "Volunteer",
+      "partner": "Technology partner",
+      "general": "General contact"
     },
-    "submit": "Send"
+    "message": "Message",
+    "submit": "Send Message"
   }
 }

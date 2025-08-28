@@ -1,45 +1,55 @@
 {
-  "nav": {
-    "technology": "Technologie",
-    "impact": "Impact",
-    "pilot": "Pilot",
-    "team": "Team",
-    "contact": "Kontakt"
-  },
   "hero": {
-    "title": "Solar-Kraftstoff aus Plastikmüll – dort, wo kein LKW kommt.",
-    "lead": "Dezentrale Solar-Pyrolyse verwandelt nicht recycelbare Kunststoffe in lokalen Treibstoff – für boat-only Küstengemeinden.",
-    "ctaPrimary": "So funktioniert’s",
-    "ctaSecondary": "Partner werden"
+    "title": "Solar-Treibstoff aus Plastikmüll",
+    "subtitle": "Dezentrale Plastikreduktion für Küstenregionen",
+    "cta": "Unterstütze unsere Mission"
   },
   "problem": {
-    "heading": "Problem",
-    "text": "Ladrilleros ist nur per Boot erreichbar (~1 h ab Buenaventura). Diesel ist teuer, angeschwemmter Müll wird offen verbrannt."
+    "heading": "Das Problem",
+    "text": "Abgelegene Gemeinden wie Ladrilleros ersticken im Plastikmüll und leiden unter Dieselknappheit.",
+    "stats": {
+      "plastic": "Plastik im Ozean pro Jahr",
+      "co2": "CO₂-Einsparung pro Tag",
+      "fuel": "Ersparter Diesel pro Tag"
+    },
+    "more": "Über 100kg Plastik werden täglich verbrannt, während Treibstoff knapp und teuer ist."
   },
-  "how": {
-    "heading": "So funktioniert’s",
-    "text": "Shredder → Pyrolyse (O₂-frei 400–550 °C) → Fraktionierte Kondensation → Fuel; Syngas heizt mit."
+  "story": {
+    "heading": "Ladrilleros",
+    "text": "Story-Inhalt folgt."
+  },
+  "solution": {
+    "heading": "Die Lösung",
+    "text": "Solarbetriebene Pyrolyse verwandelt Plastik in Treibstoff."
   },
   "business": {
-    "heading": "Business Model",
-    "fuel": "Fuel-Sales lokal (Boote/Generatoren)",
-    "gate": "Gate-Fee für Abnahme nicht recycelbarer Plastiken",
-    "biochar": "Biochar/Carbon-Erlöse (Potenzial)",
-    "service": "Service & Training (Betrieb, Wartung, Community-Ownership)"
+    "heading": "Geschäftsmodell",
+    "text": "Durch Treibstoffverkauf trägt sich die Anlage selbst."
+  },
+  "impact": {
+    "heading": "Wirkung",
+    "text": "BASOLA erzielt Umwelt-, Sozial- und Klima-Impact."
+  },
+  "team": {
+    "heading": "Team & Gemeinschaft",
+    "text": "Lerne die Menschen hinter BASOLA kennen."
+  },
+  "partners": {
+    "heading": "Partner & Unterstützer",
+    "text": "Wir danken unseren Partnern."
   },
   "contact": {
     "heading": "Kontakt",
     "name": "Name",
     "email": "E-Mail",
-    "org": "Organisation",
-    "message": "Nachricht",
-    "role": "Ich bin",
-    "roles": {
-      "partner": "Partner",
-      "investor": "Investor",
-      "ngo": "NPO",
-      "other": "Andere"
+    "reasonLabel": "Wie möchten Sie helfen?",
+    "reasons": {
+      "donation": "Spenden",
+      "volunteer": "Volunteer werden",
+      "partner": "Technologie-Partner",
+      "general": "Allgemeiner Kontakt"
     },
-    "submit": "Senden"
+    "message": "Nachricht",
+    "submit": "Nachricht senden"
   }
 }
