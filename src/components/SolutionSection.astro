@@ -1,0 +1,11 @@
+---
+const { t } = Astro.props;
+---
+<section id="solution" class="py-16">
+  <h2 class="text-3xl font-bold text-center mb-8">{t.solution.heading}</h2>
+  <ol class="space-y-4 max-w-3xl mx-auto list-decimal list-inside">
+    <li>{t.solution.step1}</li>
+    <li>{t.solution.step2}</li>
+    <li>{t.solution.step3}</li>
+  </ol>
+</section>

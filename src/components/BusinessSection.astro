@@ -1,0 +1,13 @@
+---
+const { t } = Astro.props;
+---
+<section id="business" class="py-16 bg-gray-50">
+  <h2 class="text-3xl font-bold text-center mb-8">{t.business.heading}</h2>
+  <div class="flex flex-wrap gap-4 justify-center text-center">
+    <div class="p-4 bg-gray-100 rounded w-40"><div class="font-bold">{t.business.capex}</div></div>
+    <div class="p-4 bg-gray-100 rounded w-40"><div class="font-bold">{t.business.opex}</div></div>
+    <div class="p-4 bg-gray-100 rounded w-40"><div class="font-bold">{t.business.revenue}</div></div>
+    <div class="p-4 bg-yellow-100 rounded w-40"><div class="font-bold">{t.business.surplus}</div></div>
+    <div class="p-4 bg-green-100 rounded w-40"><div class="font-bold">{t.business.payback}</div></div>
+  </div>
+</section>

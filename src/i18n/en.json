@@ -1,45 +1,61 @@
 {
   "nav": {
-    "technology": "Technology",
+    "problem": "Problem",
+    "solution": "Solution",
     "impact": "Impact",
-    "pilot": "Pilot",
     "team": "Team",
     "contact": "Contact"
   },
   "hero": {
-    "title": "Solar fuel from plastic waste — where no truck comes.",
-    "lead": "Decentralised solar pyrolysis turns non-recyclable plastics into local fuel for boat-only coastal communities.",
-    "ctaPrimary": "How it works",
-    "ctaSecondary": "Become a partner"
+    "title": "Solar fuel from plastic waste",
+    "subtitle": "Decentralized plastic reduction for coastal communities",
+    "cta": "Support Our Mission"
   },
   "problem": {
-    "heading": "Problem",
-    "text": "Ladrilleros can only be reached by boat (~1 h from Buenaventura). Diesel is expensive; washed-up waste is openly burned."
+    "heading": "The Problem",
+    "text": "Remote communities like Ladrilleros drown in plastic waste while diesel is scarce and expensive.",
+    "stats": {
+      "plastic": "12M t plastic/year in oceans",
+      "co2": "86 kg CO₂/day saved",
+      "fuel": "40 L diesel/day replaced"
+    }
   },
-  "how": {
-    "heading": "How it works",
-    "text": "Shredder → Pyrolysis (O₂-free 400–550 °C) → Fractional condensation → Fuel; syngas feeds the heat."
+  "story": {
+    "heading": "Ladrilleros",
+    "text": "Only reachable by boat, waste is burned and fuel is costly."
+  },
+  "solution": {
+    "heading": "Our Solution",
+    "step1": "Solar energy heats the reactor",
+    "step2": "Pyrolysis turns plastic into fuel",
+    "step3": "Fuel powers local boats"
   },
   "business": {
     "heading": "Business Model",
-    "fuel": "Local fuel sales (boats/generators)",
-    "gate": "Gate fee for taking non-recyclable plastics",
-    "biochar": "Biochar/carbon revenues (potential)",
-    "service": "Service & training (operations, maintenance, community ownership)"
+    "capex": "10,000€ CAPEX",
+    "opex": "21€/day OPEX",
+    "revenue": "40€/day revenue",
+    "surplus": "+19€/day surplus",
+    "payback": "18 months payback"
+  },
+  "impact": {
+    "heading": "Impact",
+    "environment": "Removes 80kg plastic per day",
+    "social": "Creates local jobs & income",
+    "climate": "Saves 86kg CO₂ emissions daily"
+  },
+  "team": {
+    "heading": "Team & Community"
+  },
+  "partners": {
+    "heading": "Partners & Supporters"
   },
   "contact": {
-    "heading": "Contact",
+    "heading": "Get in Touch",
     "name": "Name",
     "email": "Email",
-    "org": "Organisation",
+    "reason": "How can you help?",
     "message": "Message",
-    "role": "I am",
-    "roles": {
-      "partner": "Partner",
-      "investor": "Investor",
-      "ngo": "NPO",
-      "other": "Other"
-    },
     "submit": "Send"
   }
 }

@@ -1,0 +1,10 @@
+---
+const { t } = Astro.props;
+---
+<section id="story" class="py-16 bg-gray-50">
+  <h2 class="text-3xl font-bold text-center mb-8">{t.story.heading}</h2>
+  <div class="md:flex items-center gap-8 max-w-5xl mx-auto">
+    <img src="/Ladrilleros.png" alt="Ladrilleros" class="w-full md:w-1/2 rounded" />
+    <p class="mt-4 md:mt-0 md:w-1/2">{t.story.text}</p>
+  </div>
+</section>

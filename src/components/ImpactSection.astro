@@ -1,0 +1,11 @@
+---
+const { t } = Astro.props;
+---
+<section id="impact" class="py-16">
+  <h2 class="text-3xl font-bold text-center mb-8">{t.impact.heading}</h2>
+  <div class="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
+    <div class="p-6 bg-primary text-secondary rounded"><p class="font-bold">{t.impact.environment}</p></div>
+    <div class="p-6 bg-primary text-secondary rounded"><p class="font-bold">{t.impact.social}</p></div>
+    <div class="p-6 bg-primary text-secondary rounded"><p class="font-bold">{t.impact.climate}</p></div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import '../styles/tailwind.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const { lang = 'en', t, title, description } = Astro.props;
+const other = lang === 'de' ? 'en' : 'de';
+let alternateUrl = '';
+try {
+  alternateUrl = getRelativeLocaleUrl(Astro.url, other);
+} catch {}
+---
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title ? `${title} | BASOLA` : 'BASOLA'}</title>
+  <meta name="description" content={description || t.hero.subtitle} />
+  {alternateUrl && <link rel="alternate" hreflang={other} href={alternateUrl} />}
+</head>
+<body class="text-secondary">
+  <Header lang={lang} t={t} />
+  <main>
+    <slot />
+  </main>
+  <Footer lang={lang} />
+</body>
+</html>

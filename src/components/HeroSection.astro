@@ -1,0 +1,14 @@
+---
+const { t } = Astro.props;
+---
+<section id="hero" class="relative min-h-screen flex items-center justify-center text-center text-white">
+  <video autoplay muted loop playsinline preload="none" class="absolute inset-0 w-full h-full object-cover">
+    <source src="/hero-video.mp4" type="video/mp4" />
+  </video>
+  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="relative z-10 max-w-2xl p-4">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">{t.hero.title}</h1>
+    <p class="mb-6">{t.hero.subtitle}</p>
+    <a href="#contact" class="bg-primary text-secondary font-bold py-2 px-4 rounded">{t.hero.cta}</a>
+  </div>
+</section>

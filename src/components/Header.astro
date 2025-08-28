@@ -1,21 +1,28 @@
 ---
-import LangToggle from './LangToggle.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 const { lang, t } = Astro.props;
-const nav = t.nav;
+const other = lang === 'de' ? 'en' : 'de';
+let switchUrl = other === 'de' ? '/de/' : '/';
+try {
+  switchUrl = getRelativeLocaleUrl(Astro.url, other) + Astro.url.hash;
+} catch {}
 ---
-<header class="header">
-  <a href={lang==='de'?'/de/':'/en/'} class="logo"><img src="/assets/basola_logo.png" alt="BASOLA" height="40"/></a>
-  <nav class="nav-links">
-    <a href={lang==='de'?'/de/technology':'/en/technology'}>{nav.technology}</a>
-    <a href={lang==='de'?'/de/impact':'/en/impact'}>{nav.impact}</a>
-    <a href={lang==='de'?'/de/pilot':'/en/pilot'}>{nav.pilot}</a>
-    <a href={lang==='de'?'/de/team':'/en/team'}>{nav.team}</a>
-    <a href={lang==='de'?'/de/contact':'/en/contact'}>{nav.contact}</a>
-  </nav>
-  <LangToggle currentLang={lang}/>
+<header class="sticky top-0 bg-white/80 backdrop-blur z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+    <a href={lang === 'de' ? '/de/' : '/'} class="text-2xl font-bold text-secondary">BASOLA</a>
+    <button id="menu-btn" class="md:hidden text-secondary">☰</button>
+    <nav id="menu" class="hidden md:flex gap-4 text-secondary">
+      <a href="#problem" class="hover:text-primary">{t.nav.problem}</a>
+      <a href="#solution" class="hover:text-primary">{t.nav.solution}</a>
+      <a href="#impact" class="hover:text-primary">{t.nav.impact}</a>
+      <a href="#team" class="hover:text-primary">{t.nav.team}</a>
+      <a href="#contact" class="hover:text-primary">{t.nav.contact}</a>
+      <a href={switchUrl} class="font-bold hover:text-primary">{other.toUpperCase()}</a>
+    </nav>
+  </div>
+  <script is:client>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    btn?.addEventListener('click', () => menu.classList.toggle('hidden'));
+  </script>
 </header>
-<style>
-.header{position:sticky;top:0;height:var(--header-height);backdrop-filter:blur(8px);background:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:space-between;padding:0 1rem;z-index:1000;}
-.nav-links{display:flex;gap:1rem;}
-.nav-links a{color:var(--color-dark);font-weight:500;}
-</style>

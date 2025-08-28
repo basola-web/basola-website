@@ -1,16 +1,24 @@
 ---
-export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ProblemSection from '../components/ProblemSection.astro';
+import StorySection from '../components/StorySection.astro';
+import SolutionSection from '../components/SolutionSection.astro';
+import BusinessSection from '../components/BusinessSection.astro';
+import ImpactSection from '../components/ImpactSection.astro';
+import TeamSection from '../components/TeamSection.astro';
+import PartnersSection from '../components/PartnersSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import en from '../i18n/en.json';
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <script is:inline>
-    const saved = localStorage.getItem('lang');
-    const lang = saved || (navigator.language.startsWith('de') ? 'de' : 'en');
-    window.location.replace('/' + lang + '/');
-  </script>
-  <noscript><meta http-equiv="refresh" content="0; url=/de/" /></noscript>
-</head>
-<body></body>
-</html>
+<BaseLayout lang="en" t={en}>
+  <HeroSection t={en} />
+  <ProblemSection t={en} />
+  <StorySection t={en} />
+  <SolutionSection t={en} />
+  <BusinessSection t={en} />
+  <ImpactSection t={en} />
+  <TeamSection t={en} />
+  <PartnersSection t={en} />
+  <ContactSection t={en} />
+</BaseLayout>

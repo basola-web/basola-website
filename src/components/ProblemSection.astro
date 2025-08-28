@@ -1,0 +1,28 @@
+---
+import { CountUp } from 'countup.js';
+const { t } = Astro.props;
+---
+<section id="problem" class="py-16">
+  <h2 class="text-3xl font-bold text-center mb-4">{t.problem.heading}</h2>
+  <p class="text-center mb-8">{t.problem.text}</p>
+  <div class="grid gap-8 md:grid-cols-3 text-center">
+    <div>
+      <div class="text-4xl font-bold text-primary"><span id="stat-plastic">0</span></div>
+      <p>{t.problem.stats.plastic}</p>
+    </div>
+    <div>
+      <div class="text-4xl font-bold text-primary"><span id="stat-co2">0</span></div>
+      <p>{t.problem.stats.co2}</p>
+    </div>
+    <div>
+      <div class="text-4xl font-bold text-primary"><span id="stat-fuel">0</span></div>
+      <p>{t.problem.stats.fuel}</p>
+    </div>
+  </div>
+  <script is:client="load">
+    const opts = { duration: 2 };
+    new CountUp('stat-plastic', 12, opts).start();
+    new CountUp('stat-co2', 86, opts).start();
+    new CountUp('stat-fuel', 40, opts).start();
+  </script>
+</section>
