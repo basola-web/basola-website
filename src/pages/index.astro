@@ -1,0 +1,16 @@
+---
+export const prerender = true;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <script is:inline>
+    const saved = localStorage.getItem('lang');
+    const lang = saved || (navigator.language.startsWith('de') ? 'de' : 'en');
+    window.location.replace('/' + lang + '/');
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=/de/" /></noscript>
+</head>
+<body></body>
+</html>
