@@ -66,6 +66,8 @@ a { color: inherit; text-decoration: none; }
 .model-card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;padding:1.4rem;text-align:center;transition:transform .2s ease,box-shadow .2s ease;}
 .model-card:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.08);}
 .model-card .icon{font-size:2rem;margin-bottom:.5rem;}
+.model-card h3{margin:.6rem 0 .25rem}
+.model-card p{margin:0}
 
 .cards-3 { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; }
 .team-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; margin-top:1rem; }
@@ -166,3 +168,148 @@ section[id]{scroll-margin-top:84px}
 .person-card{border:1px solid rgba(0,0,0,.06);border-radius:12px;padding:1rem;text-align:center;transition:transform .2s ease,box-shadow .2s ease}
 .person-card:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.08)}
 .person-card img{width:100%;height:auto;border-radius:12px;margin-bottom:.5rem}
+
+/* Pilot layout */
+.pilot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "cards cards"
+    "image map"
+    "link link";
+  gap: 1rem;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+@media (max-width:900px) {
+  .pilot-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "cards"
+      "image"
+      "map"
+      "link";
+  }
+}
+
+.pilot-info {
+  display: contents;
+}
+
+.pilot-cards {
+  grid-area:cards;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 1rem;
+}
+
+@media (max-width:900px) {
+  .pilot-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pilot-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 16px;
+  padding: 1.2rem;
+  display: flex;              /* NEU: Badge und Text nebeneinander */
+  align-items: center;        /* vertikal ausrichten */
+  gap: .8rem;                 /* Abstand zwischen Icon und Text */
+}
+
+.pilot-card .badge {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: radial-gradient(circle at 30% 30%, #FFB703 0%, #FFB703 40%, rgba(255,183,3,.2) 100%);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 18px rgba(255,183,3,.15);
+  margin: 0; /* vorher margin-bottom entfernt */
+}
+
+.pilot-image,
+.pilot-map {
+  display: flex;
+}
+
+.pilot-image img,
+.pilot-map .map {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Bild füllt Fläche */
+  border-radius: 12px;
+}
+
+/* gleiche Höhe erzwingen */
+.pilot-image,
+.pilot-map {
+  min-height: 320px;  /* Höhe für beide gleich */
+}
+
+
+.map-link {
+  grid-area: link;
+  display: inline-block;
+  margin-top: .5rem;
+  color: #1d4ed8;
+}
+
+.map {
+  height: 320px;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 12px;
+}
+
+/* ensure equal height when .pilot-image is the img itself */
+img.pilot-image {
+  grid-area: image;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.06);
+  display: block;
+  align-self: start;
+}
+.pilot-map { grid-area: map; align-self: start; display: block; }
+
+/* Ensure image and map perfectly align and stretch */
+.pilot-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+img.pilot-image,.pilot-map,.map{margin:0}
+.pilot-map .leaflet-container{width:100% !important;height:100% !important}
+.pilot-cards{margin-bottom:1rem}
+
+/* Partners: fine-tune specific logo sizes */
+.partner-logos{display:flex;gap:2rem;align-items:center;flex-wrap:wrap}
+.partner-logos img{max-height:54px;height:auto}
+.partner-logos img[alt*="Enactus"], .logo-enactus{max-height:68px}
+.partner-logos img[alt*="Boreal"], .logo-boreal{max-height:46px}
+.partner-logos img[alt*="KIT"], .logo-kit{max-height:46px}
+
+/* Contact card as full-width 2x1 grid with pictograms */
+section#contact .card{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:center}
+section#contact .card h3{grid-column:1/-1;margin-top:0}
+section#contact .card p{position:relative;padding-left:2rem;margin:.2rem 0}
+section#contact .card p:nth-of-type(1)::before{content:"📧";position:absolute;left:.25rem;top:.1rem}
+section#contact .card p:nth-of-type(2)::before{content:"🔗";position:absolute;left:.25rem;top:.1rem}
+@media(max-width:900px){section#contact .card{grid-template-columns:1fr}}
+
+/* Photo banner */
+.photo-banner .banner-image{width:100%;height:360px;object-fit:cover;border-radius:16px;display:block}
+.photo-banner .container{width:min(1100px,92%)}
+
+/* align image and map perfectly flush, remove any extra spacing */
+img.pilot-image{ margin:0; }
+.pilot-map{ margin:0; padding:0; }
+.map{ margin:0; }
+
+/* hide duplicate map under pilot (keep only .pilot-map) */
+section#pilot > .container > .map:not(.pilot-map) {
+  display: none;
+}
+
