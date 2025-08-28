@@ -13,12 +13,12 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@astrojs/node": "^9.4.3",
     "@astrojs/tailwind": "^6.0.2",
     "astro": "^5.13.4",
     "tailwindcss": "^3.4.17"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.6",
     "countup.js": "^2.9.0"
   }
 }
