@@ -94,7 +94,6 @@ textarea { resize: vertical; }
 .pilot-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.5rem;align-items:start}
 @media(max-width:900px){.pilot-grid{grid-template-columns:1fr}}
 .pilot-image{border-radius:24px;width:100%;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-.pilot-info{display:flex;flex-direction:column;gap:1.5rem}
 .pilot-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem}
 .pilot-card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,.65));border:1px solid rgba(0,0,0,.06);border-radius:24px;padding:20px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
 .pilot-card::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;border-radius:24px 24px 0 0;background:linear-gradient(90deg,#FFB703,#6A2D0F)}
@@ -193,9 +192,6 @@ section[id]{scroll-margin-top:84px}
   }
 }
 
-.pilot-info {
-  display: contents;
-}
 
 .pilot-cards {
   grid-area:cards;
@@ -291,13 +287,13 @@ img.pilot-image,.pilot-map,.map{margin:0}
 .partner-logos img[alt*="Boreal"], .logo-boreal{max-height:46px}
 .partner-logos img[alt*="KIT"], .logo-kit{max-height:46px}
 
-/* Contact card as full-width 2x1 grid with pictograms */
-section#contact .card{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:center}
-section#contact .card h3{grid-column:1/-1;margin-top:0}
-section#contact .card p{position:relative;padding-left:2rem;margin:.2rem 0}
-section#contact .card p:nth-of-type(1)::before{content:"📧";position:absolute;left:.25rem;top:.1rem}
-section#contact .card p:nth-of-type(2)::before{content:"🔗";position:absolute;left:.25rem;top:.1rem}
-@media(max-width:900px){section#contact .card{grid-template-columns:1fr}}
+/* Contact card next to form with pictograms */
+section#contact .contact-card{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:center;align-self:end}
+section#contact .contact-card h3{grid-column:1/-1;margin-top:0}
+section#contact .contact-card p{position:relative;padding-left:2rem;margin:.2rem 0}
+section#contact .contact-card p:nth-of-type(1)::before{content:"📧";position:absolute;left:.25rem;top:.1rem}
+section#contact .contact-card p:nth-of-type(2)::before{content:"🔗";position:absolute;left:.25rem;top:.1rem}
+@media(max-width:900px){section#contact .contact-card{grid-template-columns:1fr;align-self:unset}}
 
 /* Photo banner */
 .photo-banner .banner-image{width:100%;height:360px;object-fit:cover;border-radius:16px;display:block}
