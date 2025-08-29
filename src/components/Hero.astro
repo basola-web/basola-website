@@ -1,18 +1,33 @@
 ---
 const {
-  title = 'Solar-Kraftstoff aus Plastikmüll – dort, wo es niemand abholt.',
-  subtitle = 'Dezentrale Solar-Pyrolyse verwandelt nicht recycelbare Kunststoffe in lokalen Treibstoff – für Küstenorte, die nur per Boot erreichbar sind.',
-  ctaPrimary = { href: '#contact', label: 'Partner werden' },
-  ctaSecondary = { href: '#technology', label: 'So funktioniert’s' },
-  badges = [
-    { icon: '🔋', label: 'Off-Grid' },
-    { icon: '🌍', label: 'Dezentral' },
-    { icon: '⚓', label: 'Lokal betrieben' },
-  ],
+  lang = 'de',
+  title =
+    lang === 'de'
+      ? 'Solar-Kraftstoff aus Plastikmüll – dort, wo es niemand abholt.'
+      : 'Solar fuel from plastic waste — where no one comes to collect.',
+  subtitle =
+    lang === 'de'
+      ? 'Unsere kleinskalige Solar-Pyrolyseanlage verwandelt nicht recycelbare Kunststoffe in lokalen Treibstoff – eine autarke Lösung für abgelegene Regionen ohne funktionierende Entsorgung und Energieversorgung.'
+      : 'Our small-scale solar pyrolysis system converts non-recyclable plastics into local fuel – an autonomous solution for remote regions lacking waste management and reliable energy supply.',
+  ctaPrimary = { href: '#contact', label: lang === 'de' ? 'Partner werden' : 'Become a partner' },
+  ctaSecondary = { href: '#solution', label: lang === 'de' ? 'So funktioniert’s' : 'How it works' },
+  badges =
+    lang === 'de'
+      ? [
+          { icon: '🔋', label: 'Off-Grid' },
+          { icon: '🌍', label: 'Dezentral' },
+          { icon: '⚓', label: 'Lokal betrieben' },
+        ]
+      : [
+          { icon: '🔋', label: 'Off-grid' },
+          { icon: '🌍', label: 'Decentralized' },
+          { icon: '⚓', label: 'Locally operated' },
+        ],
   videoSrc = '/assets/bootsfahrt_nach_ladrilleros.MP4',
   poster = '/assets/Ladrilleros_Strand.png',
 } = Astro.props;
 
+const srLabel = lang === 'de' ? 'Weiter scrollen' : 'Scroll down';
 const [firstLine, secondLine = ''] = title.split(/\s+[–—]\s+/);
 ---
 
@@ -80,7 +95,7 @@ const [firstLine, secondLine = ''] = title.split(/\s+[–—]\s+/);
   <!-- Scroll Hint -->
   <a href="#problem" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition">
     <div class="animate-bounce">▿</div>
-    <span class="sr-only">Weiter scrollen</span>
+    <span class="sr-only">{srLabel}</span>
   </a>
 
   <!-- Parallax + Reveal -->

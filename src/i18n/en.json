@@ -8,9 +8,9 @@
   },
   "hero": {
     "title": "Solar fuel from plastic waste — where no one picks it up.",
-    "lead": "Decentralised solar pyrolysis turns non-recyclable plastics into local fuel for boat-only coastal communities.",
-    "ctaPrimary": "How it works",
-    "ctaSecondary": "Become a partner"
+    "lead": "Our small-scale solar pyrolysis system converts non-recyclable plastics into local fuel – an autonomous solution for remote regions lacking waste management and reliable energy supply.",
+    "ctaPrimary": "Become a partner",
+    "ctaSecondary": "How it works"
   },
   "problem": {
     "heading": "Problem",
@@ -41,13 +41,13 @@
   },
   "partners": {
     "heading": "Partners",
-    "text": "Organisations supporting us."
+    "text": "Organizations supporting us."
   },
   "contact": {
     "heading": "Contact",
     "name": "Name",
     "email": "Email",
-    "org": "Organisation",
+    "org": "Organization",
     "message": "Message",
     "role": "I am",
     "roles": {

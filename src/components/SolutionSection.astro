@@ -5,40 +5,91 @@ interface Step {
   icon: string;
 }
 
-const steps: Step[] = [
-  {
-    title: 'Müll',
-    description: 'Gemischter Kunststoffabfall wird lokal gesammelt und dient als Ausgangsstoff.',
-    icon: '/assets/icons/waste.svg',
-  },
-  {
-    title: 'Schredder',
-    description: 'Zerkleinerung zu homogenen Flakes für die Weiterverarbeitung.',
-    icon: '/assets/icons/shredder.svg',
-  },
-  {
-    title: 'Solarbetriebene Pyrolyse',
-    description: 'Thermische Zersetzung bei 400–550 °C unter Ausschluss von Sauerstoff – primär durch Solarwärme erhitzt.',
-    icon: '/assets/icons/pyrolysis.svg',
-  },
-  {
-    title: 'Fraktionierte Kondensation',
-    description: 'Die entstehenden Gase werden durch Abkühlung in Fraktionen getrennt.',
-    icon: '/assets/icons/condensation.svg',
-  },
-  {
-    title: 'Fuel',
-    description: 'Flüssiger synthetischer Kraftstoff (z. B. Benzin/Diesel) als Endprodukt.',
-    icon: '/assets/icons/fuel.svg',
-  },
-];
+const {
+  lang = 'de',
+  sectionId = 'solution',
+} = Astro.props;
+
+const i18n =
+  lang === 'de'
+    ? {
+        heading: '♻️ Unsere Lösung: Sauberer Treibstoff aus Plastikmüll',
+        desc: 'Ein geschlossener Prozess, der Plastikmüll mit Sonnenenergie in nutzbaren synthetischen Kraftstoff verwandelt.',
+        steps: [
+          {
+            title: 'Müll',
+            description:
+              'Gemischter Kunststoffabfall wird lokal gesammelt und dient als Ausgangsstoff.',
+            icon: '/assets/icons/waste.svg',
+          },
+          {
+            title: 'Schredder',
+            description:
+              'Zerkleinerung zu homogenen Flakes für die Weiterverarbeitung.',
+            icon: '/assets/icons/shredder.svg',
+          },
+          {
+            title: 'Solarbetriebene Pyrolyse',
+            description:
+              'Thermische Zersetzung bei 400–550 °C unter Ausschluss von Sauerstoff – primär durch Solarwärme erhitzt.',
+            icon: '/assets/icons/pyrolysis.svg',
+          },
+          {
+            title: 'Fraktionierte Kondensation',
+            description:
+              'Die entstehenden Gase werden durch Abkühlung in Fraktionen getrennt.',
+            icon: '/assets/icons/condensation.svg',
+          },
+          {
+            title: 'Fuel',
+            description:
+              'Flüssiger synthetischer Kraftstoff (z. B. Benzin/Diesel) als Endprodukt.',
+            icon: '/assets/icons/fuel.svg',
+          },
+        ],
+      }
+    : {
+        heading: '♻️ Our solution: Clean fuel from plastic waste',
+        desc: 'A closed process that uses solar energy to convert plastic waste into usable synthetic fuel.',
+        steps: [
+          {
+            title: 'Waste',
+            description:
+              'Mixed plastic waste is collected locally and serves as feedstock.',
+            icon: '/assets/icons/waste.svg',
+          },
+          {
+            title: 'Shredder',
+            description: 'Shredding into homogeneous flakes for further processing.',
+            icon: '/assets/icons/shredder.svg',
+          },
+          {
+            title: 'Solar-powered pyrolysis',
+            description:
+              'Thermal decomposition at 400–550 °C without oxygen — primarily heated by solar energy.',
+            icon: '/assets/icons/pyrolysis.svg',
+          },
+          {
+            title: 'Fractional condensation',
+            description: 'Cooling separates the gases into fractions.',
+            icon: '/assets/icons/condensation.svg',
+          },
+          {
+            title: 'Fuel',
+            description: 'Liquid synthetic fuel (e.g., gasoline/diesel) as the end product.',
+            icon: '/assets/icons/fuel.svg',
+          },
+        ],
+      };
+
+const steps: Step[] = i18n.steps;
 ---
 
-<section id="loesung" class="font-sans tracking-tight">
+<section id={sectionId} class="font-sans tracking-tight">
   <div class="py-16 mx-auto max-w-6xl px-6">
     <header class="mb-10 text-center">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-[#723100]">♻️ Unsere Lösung: Sauberer Treibstoff aus Plastikmüll</h2>
-      <p class="mt-4 text-lg text-[#723100]/90 max-w-3xl mx-auto">Ein geschlossener Prozess, der Plastikmüll mit Sonnenenergie in nutzbaren synthetischen Kraftstoff verwandelt.</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-[#723100]">{i18n.heading}</h2>
+      <p class="mt-4 text-lg text-[#723100]/90 max-w-3xl mx-auto">{i18n.desc}</p>
     </header>
 
     <div id="process" class="relative">
