@@ -5,6 +5,10 @@ module.exports = {
       colors: {
         primary: '#F2C94C',
         secondary: '#42210B',
+        basola: { brown: '#6A2D0F', yellow: '#FFB703' },
+      },
+      boxShadow: {
+        glow: '0 0 0.75rem rgba(255, 183, 3, .55)',
       },
     },
   },

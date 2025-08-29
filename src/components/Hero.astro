@@ -1,0 +1,103 @@
+---
+const {
+  title = 'Solar-Kraftstoff aus Plastikmüll – dort, wo es niemand abholt.',
+  subtitle = 'Dezentrale Solar-Pyrolyse verwandelt nicht recycelbare Kunststoffe in lokalen Treibstoff – für Küstenorte, die nur per Boot erreichbar sind.',
+  ctaPrimary = { href: '#contact', label: 'Partner werden' },
+  ctaSecondary = { href: '#technology', label: 'So funktioniert’s' },
+  badges = [
+    { icon: '🔋', label: 'Off-Grid' },
+    { icon: '🌍', label: 'Dezentral' },
+    { icon: '⚓', label: 'Lokal betrieben' },
+  ],
+  videoSrc = '/assets/bootsfahrt_nach_ladrilleros.MP4',
+  poster = '/assets/hero_poster.jpg',
+} = Astro.props;
+---
+
+<section id="hero" class="relative isolate min-h-[92vh] flex items-center overflow-hidden">
+  <!-- Background Video -->
+  <video
+    class="absolute inset-0 w-full h-full object-cover will-change-transform"
+    src={videoSrc}
+    poster={poster}
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="none"
+  ></video>
+
+  <!-- Dual Overlay: unten dunkler, gelber Glow radial -->
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/35 to-black/70"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(800px_360px_at_25%_85%,rgba(255,183,3,.18),transparent_60%)]"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 mx-auto w-full max-w-6xl px-6">
+    <div class="max-w-3xl text-white">
+      <h1
+        class="font-extrabold tracking-tight leading-[1.05] text-5xl sm:text-6xl md:text-7xl drop-shadow-[0_2px_8px_rgba(0,0,0,.35)] opacity-0 translate-y-4 transition-all duration-700 will-change-transform"
+        data-anim="reveal"
+      >
+        <span class="text-basola-yellow">Solar-Kraftstoff</span> aus Plastikmüll<br/>
+        <span class="font-semibold">dort, wo es niemand abholt.</span>
+      </h1>
+
+      <p
+        class="mt-5 text-lg md:text-xl text-white/90 max-w-2xl opacity-0 translate-y-4 transition-all duration-700 delay-100"
+        data-anim="reveal"
+      >
+        {subtitle}
+      </p>
+
+      <!-- CTAs -->
+      <div class="mt-8 flex flex-wrap items-center gap-4 opacity-0 translate-y-4 transition-all duration-700 delay-200" data-anim="reveal">
+        <a href={ctaPrimary.href}
+           class="inline-flex items-center gap-2 rounded-xl bg-basola-yellow px-5 py-3 font-semibold text-basola-brown shadow-glow hover:shadow-lg hover:-translate-y-0.5 transition">
+            🤝 {ctaPrimary.label}
+        </a>
+
+        <a href={ctaSecondary.href}
+           class="inline-flex items-center gap-2 rounded-xl border border-basola-yellow/70 px-5 py-3 font-semibold text-white/95 hover:bg-white/10 hover:-translate-y-0.5 transition">
+            ⚡ {ctaSecondary.label}
+        </a>
+      </div>
+
+      <!-- Feature Pills -->
+      <ul class="mt-6 flex flex-wrap gap-3">
+        {badges.map((b) => (
+          <li class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur px-3 py-1.5 text-sm text-white/95">
+            <span>{b.icon}</span><span>{b.label}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Scroll Hint -->
+  <a href="#problem" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition">
+    <div class="animate-bounce">▿</div>
+    <span class="sr-only">Weiter scrollen</span>
+  </a>
+
+  <!-- Parallax + Reveal -->
+  <script is:client>
+    // Reveal on load
+    const els = document.querySelectorAll('[data-anim="reveal"]');
+    requestAnimationFrame(() => els.forEach(el => el.classList.remove('opacity-0','translate-y-4')));
+
+    // Gentle parallax on mouse move (desktop only)
+    const section = document.getElementById('hero');
+    const vid = section?.querySelector('video');
+    if (matchMedia('(pointer:fine)').matches && vid) {
+      section.addEventListener('mousemove', (e) => {
+        const r = section.getBoundingClientRect();
+        const x = (e.clientX - r.width / 2) / r.width;
+        const y = (e.clientY - r.height / 2) / r.height;
+        vid.style.transform = `scale(1.03) translate(${x * 6}px, ${y * 6}px)`;
+      });
+      section.addEventListener('mouseleave', () => (vid.style.transform = 'scale(1) translate(0,0)'));
+    }
+  </script>
+</section>

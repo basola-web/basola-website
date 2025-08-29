@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import HeroSection from '../../components/HeroSection.astro';
+import Hero from '../../components/Hero.astro';
 import ProblemSection from '../../components/ProblemSection.astro';
 import StorySection from '../../components/StorySection.astro';
 import SolutionSection from '../../components/SolutionSection.astro';
@@ -14,7 +14,12 @@ const lang = 'en';
 const t = en;
 ---
 <BaseLayout lang={lang} t={t} title="Solar fuel from plastic waste">
-  <HeroSection t={t.hero} />
+  <Hero
+    title="Solar fuel from plastic waste — where no one comes to collect."
+    subtitle="Decentralized solar pyrolysis turns non-recyclable plastics into local fuel — for boat-only coastal communities."
+    ctaPrimary={{ href: '#contact', label: 'Become a partner' }}
+    ctaSecondary={{ href: '#technology', label: 'How it works' }}
+  />
   <ProblemSection t={t.problem} />
   <StorySection t={t.story || {}} />
   <SolutionSection t={t.solution} />

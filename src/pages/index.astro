@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroSection from '../components/HeroSection.astro';
+import Hero from '../components/Hero.astro';
 import ProblemSection from '../components/ProblemSection.astro';
 import StorySection from '../components/StorySection.astro';
 import SolutionSection from '../components/SolutionSection.astro';
@@ -14,7 +14,12 @@ const lang = 'de';
 const t = de;
 ---
 <BaseLayout lang={lang} t={t} title="Solarkraftstoff aus Plastikmüll">
-  <HeroSection t={t.hero} />
+  <Hero
+    title="Solar-Kraftstoff aus Plastikmüll – dort, wo es niemand abholt."
+    subtitle="Dezentrale Solar-Pyrolyse verwandelt nicht recycelbare Kunststoffe in lokalen Treibstoff – für Küstenorte, die nur per Boot erreichbar sind."
+    ctaPrimary={{ href: '#contact', label: 'Partner werden' }}
+    ctaSecondary={{ href: '#technology', label: 'So funktioniert’s' }}
+  />
   <ProblemSection t={t.problem} />
   <StorySection t={t.story || {}} />
   <SolutionSection t={t.solution} />
