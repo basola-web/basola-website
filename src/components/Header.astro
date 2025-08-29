@@ -4,7 +4,7 @@ const nav = Astro.props.t.nav;
 const current = Astro.currentLocale;
 const other = current === 'de' ? 'en' : 'de';
 ---
-<header class="bg-white/80 backdrop-blur sticky top-0 z-50">
+<header class="sticky top-0 z-50 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/60">
   <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
   <a href={getRelativeLocaleUrl(current)} class="text-2xl font-bold text-secondary">
     <img src="/assets/basola_logo.png" alt="BASOLA logo" class="h-8" />
