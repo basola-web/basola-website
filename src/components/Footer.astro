@@ -5,16 +5,28 @@ const privacyText = lang === 'en' ? 'Privacy' : 'Datenschutz';
 const contactText = lang === 'en' ? 'Contact' : 'Kontakt';
 const imprintHref = lang === 'en' ? '/en/imprint' : '/de/impressum';
 const privacyHref = lang === 'en' ? '/en/privacy-policy' : '/de/datenschutz';
+const nameLine =
+  lang === 'en'
+    ? 'BASOLA – A project of Enactus Karlsruhe e.V.'
+    : 'BASOLA – Ein Projekt des Enactus Karlsruhe e.V.';
 ---
 <footer class="bg-[#2C1B0F] text-white py-8 mt-12 text-sm">
   <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row md:justify-between md:items-start">
     <div class="mb-6 md:mb-0 text-center md:text-left space-y-1">
-      <p>Name: Enactus Karlsruhe e.V.</p>
+      <p>{nameLine}</p>
       <p>
-        Email:
         <a href="mailto:basola@karlsruhe.enactus.team" class="text-[#FBC02D] hover:underline">basola@karlsruhe.enactus.team</a>
       </p>
-      <p>Adresse: Adenauerring 7, 76131 Karlsruhe</p>
+      <p>
+        <a
+          href="https://www.google.com/maps?q=Adenauerring+7,+76131+Karlsruhe"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-[#FBC02D] hover:underline"
+        >
+          Adenauerring 7, 76131 Karlsruhe
+        </a>
+      </p>
     </div>
     <div class="flex flex-col md:flex-row justify-center md:justify-end gap-6">
       <a href={imprintHref} class="text-[#FBC02D] hover:underline">{imprintText}</a>
