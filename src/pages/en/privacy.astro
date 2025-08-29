@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PrivacyContent from '../../components/PrivacyContent.astro';
+import en from '../../i18n/en.json';
+const lang = 'en';
+const t = en;
+---
+<BaseLayout lang={lang} t={t} title="Privacy / Datenschutz">
+  <PrivacyContent />
+</BaseLayout>

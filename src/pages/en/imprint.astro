@@ -1,12 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ImpressumContent from '../../components/ImpressumContent.astro';
 import en from '../../i18n/en.json';
 const lang = 'en';
 const t = en;
 ---
-<BaseLayout lang={lang} t={t} title="Imprint">
-  <section class="max-w-3xl mx-auto py-20 px-4 text-secondary">
-    <h1 class="text-3xl font-bold mb-4">Imprint</h1>
-    <p>Site operator information...</p>
-  </section>
+<BaseLayout lang={lang} t={t} title="Imprint / Impressum">
+  <ImpressumContent />
 </BaseLayout>
