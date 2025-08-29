@@ -35,6 +35,23 @@ const problemProps = {
   contextChips: ['📍 ≈ 60 min Boot von Buenaventura'],
   contextBullets: ['~100 kg Plastik täglich', 'Diesel ~35% teurer als in der Stadt', 'Kein geregeltes Abholsystem'],
 };
+const solutionProps = {
+  title: 'Lösung',
+  pitch: 'Shredder → pyrolyse (O₂-frei, 400–550 °C) → fraktionierte Kondensation → Fuel. Syn-Gas heizt mit.',
+  facts: ['O₂-frei', '400–550 °C', '≈50 % Fuel', 'Syn-Gas rückgeführt'],
+  steps: [
+    { key: 'waste', label: 'Plastikabfall', icon: '/assets/icons/waste.svg', tip: 'Lokales, gemischtes Plastik' },
+    { key: 'shred', label: 'Shredder', icon: '/assets/icons/shredder.svg', tip: 'Vorzerkleinerung' },
+    { key: 'pyro', label: 'Pyrolyse', icon: '/assets/icons/pyrolysis.svg', tip: 'Thermisch, ohne O₂ – keine Flamme' },
+    { key: 'cond', label: 'Kondensation', icon: '/assets/icons/condensation.svg', tip: 'Fraktionierte Kondensation' },
+    { key: 'fuel', label: 'Fuel', icon: '/assets/icons/fuel.svg', tip: 'Lokaler Treibstoff' },
+  ],
+  outputs: [
+    { title: 'Fuel', value: '~50 %', note: 'lokal nutzbar' },
+    { title: 'Syn-Gas', value: 'Eigenenergie', note: 'heizt Prozess' },
+    { title: 'Biochar', value: 'optional', note: 'Sequestrierung möglich' },
+  ],
+};
 ---
 <BaseLayout lang={lang} t={t} title="Solarkraftstoff aus Plastikmüll">
   <Hero
@@ -45,7 +62,7 @@ const problemProps = {
   />
   <ProblemSection {...problemProps} />
   <StorySection t={t.story || {}} />
-  <SolutionSection t={t.solution} />
+  <SolutionSection {...solutionProps} />
   <BusinessSection t={t.business} />
   <ImpactSection t={t.impact} />
   <TeamSection t={t.team} />
