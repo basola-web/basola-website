@@ -1,0 +1,9 @@
+---
+const { t } = Astro.props;
+---
+<section id="story" class="text-secondary">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8">{t.heading || 'Story'}</h2>
+    <p>{t.text || 'Story content goes here.'}</p>
+  </div>
+</section>

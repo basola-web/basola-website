@@ -1,0 +1,23 @@
+---
+const { t } = Astro.props;
+---
+<section id="contact" class="text-secondary">
+  <div class="max-w-md mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center">{t.heading}</h2>
+    <form class="space-y-4" method="post" action="#">
+      <div>
+        <label class="block text-sm mb-1">{t.name}</label>
+        <input type="text" class="w-full border p-2 rounded" />
+      </div>
+      <div>
+        <label class="block text-sm mb-1">{t.email}</label>
+        <input type="email" class="w-full border p-2 rounded" />
+      </div>
+      <div>
+        <label class="block text-sm mb-1">{t.message}</label>
+        <textarea class="w-full border p-2 rounded" rows="4"></textarea>
+      </div>
+      <button type="submit" class="bg-primary text-secondary font-bold py-2 px-4 rounded">{t.submit}</button>
+    </form>
+  </div>
+</section>
