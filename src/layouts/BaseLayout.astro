@@ -5,7 +5,7 @@ import "../styles/animations.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { getRelativeLocaleUrl } from 'astro:i18n';
-const { lang = 'en', t = {}, title = 'BASOLA', description = '' } = Astro.props;
+const { lang = 'en', t = {}, title = 'BASOLA', description = '', mainClass = '' } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang={lang} class="scroll-smooth">
@@ -20,7 +20,7 @@ const { lang = 'en', t = {}, title = 'BASOLA', description = '' } = Astro.props;
 </head>
 <body class="font-sans text-secondary">
   <Header t={t} />
-  <main>
+  <main class={mainClass}>
     <slot />
   </main>
   <Footer lang={lang} />

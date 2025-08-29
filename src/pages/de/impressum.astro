@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import de from '../../i18n/de.json';
+const lang = 'de';
+const t = de;
+---
+<BaseLayout lang={lang} t={t} title="Impressum" mainClass="prose prose-lg max-w-3xl mx-auto px-4 py-10">
+  <h1>Impressum</h1>
+  <p>BASOLA ist ein eigenständiges Projekt von Enactus Karlsruhe e.V.</p>
+  <p>Enactus Karlsruhe e.V.<br/>Adenauerring 7<br/>76131 Karlsruhe</p>
+  <p>Gesetzlich wird der Verein von allen Vorstandsmitgliedern gemeinsam vertreten:<br/>Simon Langner, Julia Hilt, Adrian Braess, Marike Kardorff</p>
+  <p>Projektleitung: Lea Bachmann</p>
+  <p>E-Mail: <a href="mailto:basola@karlsruhe.enactus.team" class="text-[#FBC02D] hover:underline">basola@karlsruhe.enactus.team</a></p>
+  <p>Registergericht / Registernummer: Amtsgericht – Vereinsregister – Mannheim, VR 701085</p>
+  <p>Inhaltlich verantwortlich gemäß § 55 Abs. 2 RStV: Simon Langner</p>
+  <p>Haftungshinweis: Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+  <p>Copyright: Inhalt und Struktur dieser Website sind urheberrechtlich geschützt. Die Vervielfältigung von Informationen oder Daten, insbesondere die Verwendung von Texten, Textteilen oder Bildmaterial, bedarf der vorherigen schriftlichen Zustimmung von Enactus Karlsruhe e.V.</p>
+  <p>Streitbeilegung: Die EU-Kommission stellt eine Plattform zur Online-Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-[#FBC02D] hover:underline">https://ec.europa.eu/consumers/odr/</a><br/>Wir sind nicht bereit oder verpflichtet, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+</BaseLayout>
