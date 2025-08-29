@@ -6,8 +6,8 @@ export default defineConfig({
   site: 'https://basola.example',
   integrations: [tailwind()],
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'de'],
+    defaultLocale: 'de',
+    locales: ['de', 'en'],
     routing: {
       prefixDefaultLocale: false,
     },

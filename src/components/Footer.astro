@@ -4,6 +4,7 @@ const imprintLink = lang === 'de' ? '/de/impressum' : '/imprint';
 const imprintText = lang === 'de' ? 'Impressum' : 'Imprint';
 ---
 <footer class="bg-secondary text-white text-center py-8 mt-12">
+  <img src="/assets/basola_logo.png" alt="BASOLA logo" class="h-8 mx-auto mb-2" />
   <p>&copy; {new Date().getFullYear()} BASOLA</p>
   <a href={imprintLink} class="text-primary hover:underline">{imprintText}</a>
 </footer>

@@ -6,7 +6,9 @@ const other = current === 'de' ? 'en' : 'de';
 ---
 <header class="bg-white/80 backdrop-blur sticky top-0 z-50">
   <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
-    <a href={getRelativeLocaleUrl(current)} class="text-2xl font-bold text-secondary">BASOLA</a>
+  <a href={getRelativeLocaleUrl(current)} class="text-2xl font-bold text-secondary">
+    <img src="/assets/basola_logo.png" alt="BASOLA logo" class="h-8" />
+  </a>
     <button id="menu-toggle" class="md:hidden text-secondary">☰</button>
     <nav id="menu" class="hidden md:flex space-x-4 text-secondary">
       <a href="#problem" class="hover:text-primary">{nav.problem}</a>
