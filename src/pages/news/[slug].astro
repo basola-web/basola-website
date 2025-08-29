@@ -25,6 +25,7 @@ const more = (await getCollection('news', ({ data: d }) => d.lang === data.lang 
     <meta property="og:title" content={data.title} />
     <meta property="og:description" content={data.summary} />
     <link rel="icon" type="image/png" href="/assets/basola_favicon.png" />
+
     {data.heroImage && <meta property="og:image" content={data.heroImage} />}
     <script type="application/ld+json">
       {JSON.stringify({
