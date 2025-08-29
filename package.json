@@ -13,6 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@astrojs/react": "^4.3.0",
     "@astrojs/tailwind": "^5.0.0",
     "@tailwindcss/typography": "^0.5.16",
     "astro": "^5.13.4",
@@ -21,6 +22,9 @@
   },
   "dependencies": {
     "countup.js": "^2.6.2",
-    "maplibre-gl": "^5.7.0"
+    "framer-motion": "^10.18.0",
+    "maplibre-gl": "^5.7.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
