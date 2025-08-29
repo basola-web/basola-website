@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 interface Step {
   title: string;
@@ -39,14 +40,11 @@ const steps: Step[] = [
 ];
 
 const ProcessFlow: React.FC = () => {
-  const [active, setActive] = useState(false);
-
-  useEffect(() => {
-    setActive(true);
-  }, []);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
-    <section id="loesung" className="font-sans tracking-tight">
+    <section id="loesung" ref={ref} className="font-sans tracking-tight">
       <div className="py-16 mx-auto max-w-6xl px-6">
         <header className="mb-10 text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#723100]">
@@ -59,20 +57,21 @@ const ProcessFlow: React.FC = () => {
 
         <div className="relative">
           <div className="absolute top-12 left-0 w-full h-[4px] bg-[#723100]/20" />
-          <div
-            className={`absolute top-12 left-0 h-[4px] bg-[#ffd600] transition-all duration-1000 ease-in-out ${
-              active ? 'w-full' : 'w-0'
-            }`}
+          <motion.div
+            className="absolute top-12 left-0 h-[4px] bg-[#ffd600]"
+            initial={{ width: 0 }}
+            animate={isInView ? { width: '100%' } : { width: 0 }}
+            transition={{ duration: 1, ease: 'easeInOut' }}
           />
 
           <div className="flex flex-col md:flex-row md:justify-between gap-12">
             {steps.map((s, i) => (
-              <div
+              <motion.div
                 key={s.title}
-                className={`flex flex-col items-center flex-1 transition-all duration-500 ease-in-out ${
-                  active ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
-                style={{ transitionDelay: `${i * 100}ms` }}
+                className="flex flex-col items-center flex-1"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: i * 0.2, duration: 0.5, ease: 'easeInOut' }}
               >
                 <div className="w-24 h-24 flex items-center justify-center rounded-full border border-[#723100] bg-white p-3 mb-4">
                   <img src={s.icon} alt={s.title} className="w-full h-full" />
@@ -81,7 +80,7 @@ const ProcessFlow: React.FC = () => {
                   <h3 className="font-semibold text-[#723100] mb-2">{s.title}</h3>
                   <p className="text-sm text-[#723100]/80">{s.description}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
