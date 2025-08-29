@@ -1,0 +1,98 @@
+---
+const {
+  lang='de',
+  i18n = (lang==='de'
+    ? { title:'Wo wir arbeiten',
+        subtitle:'Buenaventura → Playa de Ladrilleros (nur per Boot erreichbar)',
+        badge:'≈ 60 min Boot von Buenaventura',
+        gmaps:'In Google Maps öffnen' }
+    : { title:'Where we operate',
+        subtitle:'Buenaventura → Playa de Ladrilleros (boat-only access)',
+        badge:'≈ 60 min by boat from Buenaventura',
+        gmaps:'Open in Google Maps' }),
+  // Start/Ziel:
+  origin = [-77.082224, 3.888441],       // Buenaventura [lng, lat]
+  dest   = [-77.351330, 3.928646],       // Ladrilleros [lng, lat]
+  // Optional eigene Zwischenpunkte, sonst generierte Kurve:
+  waypoints = [
+    [-77.12, 3.87],
+    [-77.20, 3.86],
+    [-77.28, 3.88]
+  ],
+  sectionId = 'route-map'
+} = Astro.props;
+
+const gmapsHref = `https://www.google.com/maps/dir/?api=1&origin=${origin[1]},${origin[0]}&destination=${dest[1]},${dest[0]}&travelmode=transit`;
+const route = {
+  type:'Feature',
+  geometry:{ type:'LineString', coordinates:[origin, ...waypoints, dest] }
+};
+---
+
+<section id={sectionId} class="relative rounded-2xl bg-white ring-1 ring-black/5 shadow-sm overflow-hidden">
+  <header class="px-5 pt-5">
+    <h3 class="text-xl font-bold text-basola-brown">{i18n.title}</h3>
+    <p class="text-basola-brown/75">{i18n.subtitle}</p>
+  </header>
+
+  <div class="relative mt-4 h-[420px] w-full">
+    <div id="ml-map" class="h-full w-full"></div>
+    <img id="ml-fallback" src="/assets/Ladrilleros.png" alt={i18n.subtitle} class="absolute inset-0 h-full w-full object-cover" />
+  </div>
+
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute right-4 top-4 pointer-events-auto rounded-full bg-white/90 border border-basola-yellow px-3 py-1 text-sm text-basola-brown shadow-sm">
+      {i18n.badge}
+    </div>
+    <a href={gmapsHref} target="_blank" rel="noopener"
+       class="absolute right-4 bottom-4 pointer-events-auto inline-flex items-center gap-2 rounded-xl border border-basola-yellow bg-white px-3 py-2 text-basola-brown hover:bg-basola-yellow/10">
+      ↗ {i18n.gmaps}
+    </a>
+  </div>
+
+  <script is:client>
+    import maplibregl from 'maplibre-gl';
+    const styleUrl='https://demotiles.maplibre.org/style.json'; // leichter Standardstyle
+    const line = JSON.parse(`{ "type":"Feature","geometry":${JSON.stringify(route.geometry)} }`);
+    const sectionId = '{sectionId}';
+
+    const map=new maplibregl.Map({
+      container:'ml-map', style:styleUrl, attributionControl:true
+    });
+
+    // Fit to bounds
+    const b=new maplibregl.LngLatBounds();
+    line.geometry.coordinates.forEach(c=>b.extend(c));
+    map.fitBounds(b,{padding:60, animate:false});
+
+    map.on('load', ()=>{
+      document.getElementById('ml-fallback')?.remove();
+      map.addSource('route',{ type:'geojson', data: line });
+      map.addLayer({ id:'route-bg', type:'line', source:'route',
+        paint:{ 'line-color':'#6A2D0F','line-width':6,'line-opacity':0.25,'line-cap':'round','line-join':'round' }});
+      map.addLayer({ id:'route-line', type:'line', source:'route',
+        paint:{ 'line-color':'#FFB703','line-width':4,'line-cap':'round','line-join':'round','line-opacity':0.95 }});
+
+      // Marker: Start/Boot
+      const boat=document.createElement('div'); boat.innerHTML='⛵'; boat.style.fontSize='18px';
+      const mk=new maplibregl.Marker({element:boat}).setLngLat(line.geometry.coordinates[0]).addTo(map);
+
+      // Zeichnen/Bewegung
+      const coords=line.geometry.coordinates;
+      let i=0;
+      const step=()=>{ i=Math.min(i+1, coords.length-1); mk.setLngLat(coords[i]);
+        if(i<coords.length-1) requestAnimationFrame(step);
+      };
+
+      const io=new IntersectionObserver(es=>{
+        if(es[0].isIntersecting){ requestAnimationFrame(step); io.disconnect(); }
+      },{threshold:.4});
+      io.observe(document.getElementById(sectionId));
+    });
+
+    map.on('error', e=>{
+      console.warn('Map error', e?.error);
+      document.getElementById('ml-map')?.remove();
+    });
+  </script>
+</section>
