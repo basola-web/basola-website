@@ -1,95 +1,89 @@
 ---
-interface Step { key: string; label: string; icon: string; tip: string; }
-interface Output { title: string; value: string; note: string; }
-const {
-  title = 'Lösung',
-  pitch = 'Shredder → pyrolyse (O₂-frei, 400–550 °C) → fraktionierte Kondensation → Fuel. Syn-Gas heizt mit.',
-  facts = ['O₂-frei','400–550 °C','≈50 % Fuel','Syn-Gas rückgeführt'],
-  steps = [
-    { key:'waste', label:'Plastic waste', icon:'/assets/icons/waste.svg', tip:'Lokales, gemischtes Plastik' },
-    { key:'shred', label:'Shredder', icon:'/assets/icons/shredder.svg', tip:'Vorzerkleinerung' },
-    { key:'pyro', label:'Pyrolysis', icon:'/assets/icons/pyrolysis.svg', tip:'Thermisch, ohne O₂ – keine Flamme' },
-    { key:'cond', label:'Condensation', icon:'/assets/icons/condensation.svg', tip:'Fraktionierte Kondensation' },
-    { key:'fuel', label:'Fuel', icon:'/assets/icons/fuel.svg', tip:'Lokaler Treibstoff' }
-  ] as Step[],
-  outputs = [
-    { title:'Fuel', value:'~50 %', note:'lokal nutzbar' },
-    { title:'Syn-Gas', value:'Eigenenergie', note:'heizt Prozess' },
-    { title:'Biochar', value:'optional', note:'Sequestrierung möglich' }
-  ] as Output[],
-} = Astro.props;
+interface Step {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const steps: Step[] = [
+  {
+    title: 'Müll',
+    description: 'Gemischter Kunststoffabfall wird lokal gesammelt und dient als Ausgangsstoff.',
+    icon: '/assets/icons/waste.svg',
+  },
+  {
+    title: 'Schredder',
+    description: 'Zerkleinerung zu homogenen Flakes für die Weiterverarbeitung.',
+    icon: '/assets/icons/shredder.svg',
+  },
+  {
+    title: 'Solarbetriebene Pyrolyse',
+    description: 'Thermische Zersetzung bei 400–550 °C unter Ausschluss von Sauerstoff – primär durch Solarwärme erhitzt.',
+    icon: '/assets/icons/pyrolysis.svg',
+  },
+  {
+    title: 'Fraktionierte Kondensation',
+    description: 'Die entstehenden Gase werden durch Abkühlung in Fraktionen getrennt.',
+    icon: '/assets/icons/condensation.svg',
+  },
+  {
+    title: 'Fuel',
+    description: 'Flüssiger synthetischer Kraftstoff (z. B. Benzin/Diesel) als Endprodukt.',
+    icon: '/assets/icons/fuel.svg',
+  },
+];
 ---
-<section id="solution" class="relative py-16 bg-neutral-50">
-  <div class="mx-auto max-w-6xl px-6 grid gap-10 md:grid-cols-5">
-    <!-- left content -->
-    <div class="md:col-span-2">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-basola-brown mb-3">{title}</h2>
-      <p class="text-basola-brown/85">{pitch}</p>
-      <div class="mt-4 flex flex-wrap gap-2">
-        {facts.map(f => <span class="rounded-full border border-basola-yellow/80 text-basola-brown bg-white/80 px-3 py-1 text-sm">{f}</span>)}
-      </div>
-      <button class="mt-6 inline-flex items-center gap-2 rounded-xl border border-basola-yellow px-4 py-2 text-sm text-basola-brown hover:bg-white">
-        ▶︎ Kurz erklärt
-      </button>
-    </div>
 
-    <!-- right timeline -->
-    <div class="md:col-span-3">
-      <div class="rounded-2xl bg-white ring-1 ring-black/5 shadow-sm p-6">
-        <!-- progress line -->
-        <div class="relative mb-8">
-          <div class="h-1 w-full bg-basola-brown/15 rounded-full overflow-hidden">
-            <div id="lineFill" class="h-full w-0 bg-basola-yellow transition-[width] duration-1500"></div>
-          </div>
-          <div class="absolute inset-x-0 -top-2 flex justify-between">
-            {steps.map((s,i) =>
-              <div class="relative group flex flex-col items-center w-20 md:w-24">
-                <img src={s.icon} alt={s.label} class="h-10 w-10 object-contain drop-shadow-sm opacity-0 translate-y-2 transition duration-700" data-step-icon />
-                <div class="mt-1 text-xs text-basola-brown/80">{s.label}</div>
-                <div class="pointer-events-none absolute -top-10 hidden group-hover:block bg-black/80 text-white text-[11px] rounded px-2 py-1">{s.tip}</div>
-                <span class="absolute -bottom-3 h-3 w-3 rounded-full bg-basola-yellow/70 shadow-glow opacity-0" data-step-dot></span>
-              </div>
-            )}
-          </div>
-        </div>
+<section id="loesung" class="font-sans tracking-tight">
+  <div class="py-16 mx-auto max-w-6xl px-6">
+    <header class="mb-10 text-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-[#723100]">♻️ Unsere Lösung: Sauberer Treibstoff aus Plastikmüll</h2>
+      <p class="mt-4 text-lg text-[#723100]/90 max-w-3xl mx-auto">Ein geschlossener Prozess, der Plastikmüll mit Sonnenenergie in nutzbaren synthetischen Kraftstoff verwandelt.</p>
+    </header>
 
-        <!-- outputs -->
-        <div class="grid gap-4 md:grid-cols-3">
-          {outputs.map(o =>
-            <div class="rounded-xl bg-neutral-50 p-4 ring-1 ring-black/5">
-              <div class="text-sm text-basola-brown/70">{o.title}</div>
-              <div class="text-xl font-bold text-basola-brown">{o.value}</div>
-              <div class="text-xs text-basola-brown/70">{o.note}</div>
+    <div id="process" class="relative">
+      <div class="absolute top-12 left-0 w-full h-[4px] bg-[#723100]/20"></div>
+      <div id="progress" class="absolute top-12 left-0 h-[4px] bg-[#ffd600] w-0 transition-[width] duration-1000 ease-in-out"></div>
+
+      <div class="flex flex-col md:flex-row md:justify-between gap-12">
+        {steps.map((s, i) => (
+          <div
+            class="flex flex-col items-center flex-1 opacity-0 translate-y-4 transition-all duration-500 ease-in-out"
+            style={`transition-delay: ${i * 100}ms;`}
+            data-step
+          >
+            <div class="w-24 h-24 flex items-center justify-center rounded-full border border-[#723100] bg-white p-3 mb-4">
+              <img src={s.icon} alt={s.title} class="w-full h-full" />
             </div>
-          )}
-        </div>
-
-        <p class="mt-4 text-xs text-basola-brown/60">Kein Sauerstoff, keine offene Verbrennung. Emissionen deutlich reduziert.</p>
+            <div class="bg-white rounded-xl shadow-md p-4 text-left w-full min-h-[120px]">
+              <h3 class="font-semibold text-[#723100] mb-2">{s.title}</h3>
+              <p class="text-sm text-[#723100]/80">{s.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </div>
 
-  <!-- subtle background grid -->
-  <div class="pointer-events-none absolute inset-0 [background:radial-gradient(circle_at_1px_1px,rgba(106,45,15,.06)_1px,transparent_1px)] [background-size:22px_22px]"></div>
-
   <script is:client>
-    // reveal icons + animate line
-    const el = document.getElementById('solution');
-    const icons = el.querySelectorAll('[data-step-icon]');
-    const dots = el.querySelectorAll('[data-step-dot]');
-    const line = el.querySelector('#lineFill');
+    const section = document.getElementById('process');
+    const steps = section?.querySelectorAll('[data-step]');
+    const progress = document.getElementById('progress');
 
-    const io = new IntersectionObserver((ents)=>{
-      ents.forEach(e=>{
-        if(!e.isIntersecting) return;
-        line.style.width = '100%';
-        icons.forEach((ico,idx)=> setTimeout(()=>{
-          ico.classList.remove('opacity-0','translate-y-2');
-          dots[idx].classList.remove('opacity-0');
-        }, 150*idx));
-        io.disconnect();
-      });
-    },{threshold:.35});
-    io.observe(el);
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            progress?.classList.add('w-full');
+            steps?.forEach((s) => s.classList.add('opacity-100', 'translate-y-0'));
+            io.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (section) io.observe(section);
   </script>
 </section>
+
