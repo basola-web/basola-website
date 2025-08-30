@@ -1,89 +1,146 @@
 ---
-interface KPI { id: string; value: number; suffix: string; label: string; }
-interface Split { fuelPct: number; syngasPct: number; restPct: number; }
+interface KPI {
+  icon: string;
+  alt: string;
+  title: string;
+  value: string;
+  label: string;
+  explanation: string;
+}
 
-const {
-  lang = 'de',
-  title = lang === 'de' ? 'Impact in Ladrilleros' : 'Impact in Ladrilleros',
-  subtitle = lang === 'de'
-    ? 'Plastik wird lokale Energie – für Umwelt, Menschen & Zukunft.'
-    : 'Turning plastic into local energy — for people, planet & the future.',
-  kpis = (lang === 'de'
-    ? [
-        { id:'k1', value:80, suffix:' kg/Tag', label:'Sauber verarbeitet statt verbrannt/angeschwemmt' },
-        { id:'k2', value:50, suffix:'+ t CO₂/Jahr', label:'Vermieden (≈2,3 kg CO₂ pro kg Plastik)' },
-        { id:'k3', value:2,  suffix:' Jobs', label:'Vollzeit, ≥2× kolumb. Mindestlohn' },
-        { id:'k4', value:100, suffix:'%', label:'Saubere Luft – keine offene Verbrennung' },
-        { id:'k5', value:1, suffix:' Community', label:'Strandreinigung wird vergütete Ressource' },
-        { id:'k6', value:1, suffix:' Solar', label:'Überschuss stärkt Resilienz der Stromversorgung' },
-      ]
-    : [
-        { id:'k1', value:80, suffix:' kg/day', label:'Cleanly processed (no burning/dumping)' },
-        { id:'k2', value:50, suffix:'+ t CO₂/year', label:'Avoided (≈2.3 kg CO₂ per kg plastic)' },
-        { id:'k3', value:2,  suffix:' jobs', label:'Full-time, ≥2× min wage' },
-        { id:'k4', value:100, suffix:'%', label:'Cleaner air — no open burning' },
-        { id:'k5', value:1, suffix:' community', label:'Beach plastics become paid resource' },
-        { id:'k6', value:1, suffix:' solar', label:'Surplus boosts grid resilience' },
-      ]) as KPI[],
-  split = { fuelPct:50, syngasPct:40, restPct:10 } as Split,
-  sectionId = 'impact',
-} = Astro.props;
+const { lang = 'de' } = Astro.props;
+
+const content =
+  lang === 'de'
+    ? {
+        intro:
+          'Ladrilleros liegt im Nationalpark Uramba, etwa eine Stunde per Boot von Buenaventura entfernt, an Kolumbiens Pazifikküste. Die Gemeinde mit rund 900 Einwohner*innen produziert allein durch Haushaltsabfälle täglich über 100 kg Plastik. Zusätzlich spülen die Flüsse <strong>Río Cauca</strong>, <strong>Río Cali</strong> und <strong>Río Atrato</strong> große Mengen Müll an die Küste. Um die Natur zu schützen, sammeln Bewohner*innen Plastik vom Strand. Da es jedoch keine Entsorgungssysteme gibt und sich der Rücktransport oft nicht lohnt, wird der Abfall verbrannt. In der Tourismussaison verschärft sich das Problem. Gleichzeitig ist Treibstoff extrem teuer, da fast alles per Boot von Buenaventura geliefert werden muss – während nahezu jede*r im Dorf ein Boot besitzt. Elektrische Alternativen fehlen.<br /><br />Unser Projekt bringt eine lokale Lösung für zwei Probleme: Umweltverschmutzung und Energiezugang.',
+        kpis: [
+          {
+            icon: '/assets/icons/sdg12.png',
+            alt: 'SDG 12',
+            title: 'SDG 12',
+            value: '80 kg',
+            label: 'Plastikreduktion pro Tag',
+            explanation: 'durch Recycling & Strandreinigung',
+          },
+          {
+            icon: '/assets/icons/sdg13.png',
+            alt: 'SDG 13',
+            title: 'SDG 13',
+            value: '86 kg',
+            label: 'CO₂-Reduktion pro Tag',
+            explanation: '≈2,3 kg CO₂ pro kg Plastik',
+          },
+          {
+            icon: '/assets/icons/sdg8.png',
+            alt: 'SDG 8',
+            title: 'SDG 8',
+            value: '2 Jobs',
+            label: 'Vollzeit bei doppeltem Mindestlohn',
+            explanation: 'Lokale Arbeitsplätze',
+          },
+          {
+            icon: '/assets/icons/sdg8.png',
+            alt: 'SDG 8',
+            title: 'SDG 8',
+            value: '1.123 USD',
+            label: 'Monatlicher Umsatz durch Produkte',
+            explanation: 'aus Kraftstoff & Nebenprodukten',
+          },
+        ],
+        quote: {
+          text:
+            '„Mit einer Anlage zur Umwandlung von Plastikmüll in Kraftstoff könnte unsere Gemeinschaft das Müllproblem in den Küstenregionen und den Gemeinden lösen. So könnten alle Menschen ihren Abfall bringen, um ihn umzuwandeln, und wenn möglich, nach der Umwandlung diesen Kraftstoff nutzen…“',
+          name: 'Olber Grueso',
+          role: 'Bewohner & Unternehmer in Ladrilleros',
+        },
+      }
+    : {
+        intro:
+          "Ladrilleros sits in Uramba National Park about an hour by boat from Buenaventura on Colombia’s Pacific coast. The community of roughly 900 residents generates over 100 kg of plastic daily from household waste alone. In addition, the rivers <strong>Río Cauca</strong>, <strong>Río Cali</strong> and <strong>Río Atrato</strong> wash large amounts of trash onto the shore. To protect nature, residents collect plastic from the beach. With no disposal system and little incentive to ship it back, the waste is burned. Tourism season worsens the problem. At the same time, fuel is extremely expensive since nearly everything must be brought by boat from Buenaventura, while almost everyone in the village owns a boat. Electric alternatives are missing.<br /><br />Our project delivers a local solution to two problems: pollution and access to energy.",
+        kpis: [
+          {
+            icon: '/assets/icons/sdg12.png',
+            alt: 'SDG 12',
+            title: 'SDG 12',
+            value: '80 kg',
+            label: 'Plastic reduced per day',
+            explanation: 'through recycling & beach cleanup',
+          },
+          {
+            icon: '/assets/icons/sdg13.png',
+            alt: 'SDG 13',
+            title: 'SDG 13',
+            value: '86 kg',
+            label: 'CO₂ reduction per day',
+            explanation: '≈2.3 kg CO₂ per kg plastic',
+          },
+          {
+            icon: '/assets/icons/sdg8.png',
+            alt: 'SDG 8',
+            title: 'SDG 8',
+            value: '2 jobs',
+            label: 'Full-time at double minimum wage',
+            explanation: 'Local employment',
+          },
+          {
+            icon: '/assets/icons/sdg8.png',
+            alt: 'SDG 8',
+            title: 'SDG 8',
+            value: '1,123 USD',
+            label: 'Monthly revenue from products',
+            explanation: 'from fuel & by-products',
+          },
+        ],
+        quote: {
+          text:
+            '“With a facility to convert plastic waste into fuel, our community could solve the waste problem in the coastal regions and villages. People could bring their trash to be transformed and, if possible, use the fuel afterwards…”',
+          name: 'Olber Grueso',
+          role: 'Resident & entrepreneur in Ladrilleros',
+        },
+      };
 ---
 
-<section id={sectionId} class="relative py-16 bg-[#FFB703]/20">
+<section id="impact" class="relative py-16 bg-[#FFB703]/20">
   <div class="mx-auto max-w-6xl px-6">
     <header class="mb-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-basola-brown">{title}</h2>
-      <p class="mt-2 text-basola-brown/80">{subtitle}</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-basola-brown">Impact in Ladrilleros</h2>
     </header>
 
-    <!-- KPI Grid -->
-    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {kpis.map(k => (
-        <div class="rounded-2xl bg-white ring-1 ring-black/5 shadow-sm p-6">
-          <div class="text-4xl font-extrabold text-basola-yellow">
-            <span id={k.id}>0</span>{k.suffix}
-          </div>
-          <div class="mt-1 text-sm text-basola-brown/80">{k.label}</div>
+    <p class="mx-auto max-w-4xl text-basola-brown/80" set:html={content.intro}></p>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {content.kpis.map((k) => (
+        <div
+          class="rounded-2xl bg-white ring-1 ring-black/5 shadow-sm p-6 text-center flex flex-col items-center"
+          data-anim
+        >
+          <img src={k.icon} alt={k.alt} title={k.title} class="mb-4 h-12 w-12" />
+          <div class="text-3xl font-extrabold text-basola-yellow">{k.value}</div>
+          <p class="mt-1 font-semibold text-basola-brown">{k.label}</p>
+          <p class="mt-1 text-sm text-basola-brown/70">{k.explanation}</p>
         </div>
       ))}
     </div>
 
-    <!-- Output Split -->
-    <div class="mt-10 rounded-2xl bg-white ring-1 ring-black/5 shadow-sm p-6">
-      <div class="mb-3 flex items-center justify-between">
-        <span class="font-semibold text-basola-brown">{lang==='de'?'Output-Verteilung':'Output split'}</span>
-        <span class="text-sm text-basola-brown/70">
-          Fuel {split.fuelPct}% · Syngas {split.syngasPct}% · Rest {split.restPct}%
-        </span>
+    <div
+      class="mt-16 flex flex-col items-center md:flex-row md:items-center md:space-x-8"
+      data-anim
+    >
+      <img
+        src="/assets/Team/Olber.png"
+        alt="Olber Grueso"
+        title="Olber Grueso"
+        class="mb-6 md:mb-0 mx-auto"
+        style="max-width:150px;border-radius:9999px"
+      />
+      <div class="text-center md:text-left max-w-xl">
+        <p class="italic text-basola-brown/90">{content.quote.text}</p>
+        <p class="mt-4 font-semibold text-basola-brown">{content.quote.name}</p>
+        <p class="text-sm text-basola-brown/70">{content.quote.role}</p>
       </div>
-      <div class="h-4 w-full overflow-hidden rounded-full bg-basola-brown/10">
-        <div class="h-full bg-basola-yellow" style={`width:${split.fuelPct}%`}></div>
-        <div class="h-full bg-[#F8D26A]" style={`width:${split.syngasPct}%`}></div>
-        <div class="h-full bg-basola-brown/40" style={`width:${split.restPct}%`}></div>
-      </div>
-      <p class="mt-3 text-xs text-basola-brown/70">
-        {lang==='de'
-          ? 'Kein Sauerstoff, keine offene Verbrennung. Syngas heizt den Prozess.'
-          : 'No oxygen, no open burning. Syngas powers the process.'}
-      </p>
     </div>
   </div>
-
-  <!-- CountUp + Reveal -->
-  <script is:client>
-    const ease=(t)=>(--t)*t*t+1;
-    const animate=(el,to,dur=1200)=>{const s=performance.now();const step=n=>{const p=Math.min(1,(n-s)/dur);el.textContent=Math.round(ease(p)*to).toLocaleString('de-DE');if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)};
-    const once=(root)=>{const ids=[...document.querySelectorAll('#impact [id^="k"]')];
-      const io=new IntersectionObserver(es=>{
-        if(es[0].isIntersecting){ids.forEach((el,i)=>animate(el,Number(el.id==='k2'?el.textContent:el.getAttribute('data-to')||el.textContent),900+80*i));io.disconnect()}
-      },{threshold:.35});
-      io.observe(document.getElementById('impact'));
-    };
-    // set data-to for kpis
-    document.querySelectorAll('#impact [id^="k"]').forEach(el=>{
-      const t=el.textContent; el.setAttribute('data-to', t); el.textContent='0';
-    });
-    once(document.getElementById('impact'));
-  </script>
 </section>
+
