@@ -1,0 +1,37 @@
+---
+const { t } = Astro.props;
+---
+<section id="container-solution" class="mx-auto max-w-6xl px-6 py-16 flex flex-col md:flex-row items-center gap-8 opacity-0 translate-y-4 transition-all duration-700">
+  <img src="/assets/Containersolution_basola.png" alt="Modulare Containerlösung" class="w-full md:w-1/2 object-contain" />
+  <div class="flex-1 text-secondary">
+    <h2 class="text-3xl font-extrabold mb-6 text-basola-brown">{t?.heading ?? 'Modulare Containerlösung'}</h2>
+    <ul class="space-y-4 text-lg">
+      <li class="flex items-start gap-3 p-2 rounded hover:bg-primary/20 transition-colors">
+        <span class="text-2xl" aria-hidden="true">🧱</span>
+        <span>{t?.bullets?.[0] ?? 'Containerbasierte small-scale Lösung'}</span>
+      </li>
+      <li class="flex items-start gap-3 p-2 rounded hover:bg-primary/20 transition-colors">
+        <span class="text-2xl" aria-hidden="true">☀️</span>
+        <span>{t?.bullets?.[1] ?? 'Solarenergie dient als nachhaltige und autarke Energiequelle'}</span>
+      </li>
+      <li class="flex items-start gap-3 p-2 rounded hover:bg-primary/20 transition-colors">
+        <span class="text-2xl" aria-hidden="true">🛠️</span>
+        <span>{t?.bullets?.[2] ?? 'Einfache Inbetriebnahme und Wartung'}</span>
+      </li>
+    </ul>
+    <p class="mt-6 text-sm text-secondary/80">{t?.note ?? 'Die Containerlösung ist vollständig energieautark und kann ohne große Infrastruktur in Betrieb genommen werden.'}</p>
+  </div>
+</section>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-4');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  const el = document.getElementById('container-solution');
+  if (el) observer.observe(el);
+</script>
