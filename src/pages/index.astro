@@ -53,19 +53,9 @@ const problemProps = {
   <ProblemSection {...problemProps} />
   <StorySection t={t.story || {}} />
   <ProcessFlow client:load />
-  <ContainerSolution t={t.container} />
-  <BusinessSection t={t.business} />
-  <ImpactSection lang="de"
-    kpis={[
-      { id:'k1', value:80, suffix:' kg/Tag', label:'Sauber verarbeitet statt verbrannt/angeschwemmt' },
-      { id:'k2', value:50, suffix:'+ t CO₂/Jahr', label:'Vermieden (≈2,3 kg CO₂ pro kg Plastik)' },
-      { id:'k3', value:2,  suffix:' Jobs', label:'Vollzeit, ≥2× kolumb. Mindestlohn' },
-      { id:'k4', value:100, suffix:'%',  label:'Saubere Luft – keine offene Verbrennung' },
-      { id:'k5', value:1,  suffix:' Community', label:'Strandreinigung wird vergütete Ressource' },
-      { id:'k6', value:1,  suffix:' Solar', label:'Überschuss stärkt Resilienz der Stromversorgung' },
-    ]}
-    split={{ fuelPct:50, syngasPct:40, restPct:10 }}
-  />
+    <ContainerSolution t={t.container} />
+    <ImpactSection lang="de" />
+    <BusinessSection t={t.business} />
 
   <RouteMap lang="de"
     origin={[-77.082224, 3.888441]}

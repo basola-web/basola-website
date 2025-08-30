@@ -1,89 +1,169 @@
 ---
-interface KPI { id: string; value: number; suffix: string; label: string; }
-interface Split { fuelPct: number; syngasPct: number; restPct: number; }
+interface Tile {
+  value?: number;
+  label?: string;
+  suffix?: string;
+  title: string;
+  description: string;
+  color: string;
+}
 
 const {
   lang = 'de',
-  title = lang === 'de' ? 'Impact in Ladrilleros' : 'Impact in Ladrilleros',
-  subtitle = lang === 'de'
-    ? 'Plastik wird lokale Energie – für Umwelt, Menschen & Zukunft.'
-    : 'Turning plastic into local energy — for people, planet & the future.',
-  kpis = (lang === 'de'
+  heading = lang === 'de' ? 'Impact in Ladrilleros' : 'Impact in Ladrilleros',
+  subheading =
+    lang === 'de'
+      ? 'Plastik wird lokale Energie – für Umwelt, Menschen & Zukunft.'
+      : 'Plastic becomes local energy — for people, planet & future.',
+  tiles = (lang === 'de'
     ? [
-        { id:'k1', value:80, suffix:' kg/Tag', label:'Sauber verarbeitet statt verbrannt/angeschwemmt' },
-        { id:'k2', value:50, suffix:'+ t CO₂/Jahr', label:'Vermieden (≈2,3 kg CO₂ pro kg Plastik)' },
-        { id:'k3', value:2,  suffix:' Jobs', label:'Vollzeit, ≥2× kolumb. Mindestlohn' },
-        { id:'k4', value:100, suffix:'%', label:'Saubere Luft – keine offene Verbrennung' },
-        { id:'k5', value:1, suffix:' Community', label:'Strandreinigung wird vergütete Ressource' },
-        { id:'k6', value:1, suffix:' Solar', label:'Überschuss stärkt Resilienz der Stromversorgung' },
+        {
+          value: 80,
+          suffix: ' kg',
+          title: 'Plastikabfälle pro Tag',
+          description: 'Reduziert im Dorf gesammelt & verarbeitet.',
+          color: '#c97b00'
+        },
+        {
+          value: 86,
+          suffix: ' kg',
+          title: 'weniger CO₂ pro Tag',
+          description: 'Keine Verbrennung – kein CO₂-Ausstoß.',
+          color: '#2a7736'
+        },
+        {
+          value: 2,
+          suffix: ' Jobs',
+          title: 'Vollzeitstellen',
+          description: 'Geschaffen mit doppeltem kolumb. Mindestlohn.',
+          color: '#8b001a'
+        },
+        {
+          value: 1123,
+          suffix: ' USD',
+          title: 'Umsatz pro Monat',
+          description: 'Bruttoumsatz aus lokalem Kraftstoffverkauf.',
+          color: '#8b001a'
+        },
+        {
+          label: 'Community',
+          title: 'vergütete Strandreinigung',
+          description: 'Plastik wird zur Wertressource.',
+          color: '#c97b00'
+        },
+        {
+          value: 100,
+          suffix: '% Solar',
+          title: 'Energieautarkie',
+          description: 'Betrieb durch Sonnenenergie.',
+          color: '#f9c700'
+        }
       ]
     : [
-        { id:'k1', value:80, suffix:' kg/day', label:'Cleanly processed (no burning/dumping)' },
-        { id:'k2', value:50, suffix:'+ t CO₂/year', label:'Avoided (≈2.3 kg CO₂ per kg plastic)' },
-        { id:'k3', value:2,  suffix:' jobs', label:'Full-time, ≥2× min wage' },
-        { id:'k4', value:100, suffix:'%', label:'Cleaner air — no open burning' },
-        { id:'k5', value:1, suffix:' community', label:'Beach plastics become paid resource' },
-        { id:'k6', value:1, suffix:' solar', label:'Surplus boosts grid resilience' },
-      ]) as KPI[],
-  split = { fuelPct:50, syngasPct:40, restPct:10 } as Split,
-  sectionId = 'impact',
+        {
+          value: 80,
+          suffix: ' kg',
+          title: 'Plastic waste per day',
+          description: 'Collected & processed in the village.',
+          color: '#c97b00'
+        },
+        {
+          value: 86,
+          suffix: ' kg',
+          title: 'less CO₂ per day',
+          description: 'No burning — no CO₂ emissions.',
+          color: '#2a7736'
+        },
+        {
+          value: 2,
+          suffix: ' jobs',
+          title: 'full-time jobs',
+          description: 'Created with double Colombian minimum wage.',
+          color: '#8b001a'
+        },
+        {
+          value: 1123,
+          suffix: ' USD',
+          title: 'revenue per month',
+          description: 'Gross revenue from local fuel sales.',
+          color: '#8b001a'
+        },
+        {
+          label: 'Community',
+          title: 'paid beach cleanup',
+          description: 'Plastic becomes a valuable resource.',
+          color: '#c97b00'
+        },
+        {
+          value: 100,
+          suffix: '% solar',
+          title: 'energy autonomy',
+          description: 'Powered by solar energy.',
+          color: '#f9c700'
+        }
+      ]) as Tile[],
+  sectionId = 'impact'
 } = Astro.props;
 ---
 
-<section id={sectionId} class="relative py-16 bg-[#FFB703]/20">
+<section id={sectionId} class="relative py-16 bg-[#FFF4D5]">
   <div class="mx-auto max-w-6xl px-6">
-    <header class="mb-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-basola-brown">{title}</h2>
-      <p class="mt-2 text-basola-brown/80">{subtitle}</p>
+    <header class="mb-12 text-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-basola-brown">{heading}</h2>
+      <p class="mt-2 text-basola-brown/80">{subheading}</p>
     </header>
 
-    <!-- KPI Grid -->
-    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {kpis.map(k => (
-        <div class="rounded-2xl bg-white ring-1 ring-black/5 shadow-sm p-6">
-          <div class="text-4xl font-extrabold text-basola-yellow">
-            <span id={k.id}>0</span>{k.suffix}
-          </div>
-          <div class="mt-1 text-sm text-basola-brown/80">{k.label}</div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {tiles.map((t) => (
+        <div
+          class="kpi-tile rounded-2xl bg-white ring-1 ring-black/5 shadow-sm p-6 text-center opacity-0 translate-y-6 transition duration-700"
+        >
+          <div class="mx-auto mb-2 h-8 w-8"></div>
+          {t.value !== undefined ? (
+            <div class="text-4xl font-extrabold" style={`color:${t.color}`}>
+              <span class="counter" data-to={t.value}>0</span>{t.suffix}
+            </div>
+          ) : (
+            <div class="text-4xl font-extrabold" style={`color:${t.color}`}>{t.label}</div>
+          )}
+          <h3 class="mt-2 font-semibold text-basola-brown">{t.title}</h3>
+          <p class="mt-1 text-sm text-basola-brown/80">{t.description}</p>
         </div>
       ))}
     </div>
-
-    <!-- Output Split -->
-    <div class="mt-10 rounded-2xl bg-white ring-1 ring-black/5 shadow-sm p-6">
-      <div class="mb-3 flex items-center justify-between">
-        <span class="font-semibold text-basola-brown">{lang==='de'?'Output-Verteilung':'Output split'}</span>
-        <span class="text-sm text-basola-brown/70">
-          Fuel {split.fuelPct}% · Syngas {split.syngasPct}% · Rest {split.restPct}%
-        </span>
-      </div>
-      <div class="h-4 w-full overflow-hidden rounded-full bg-basola-brown/10">
-        <div class="h-full bg-basola-yellow" style={`width:${split.fuelPct}%`}></div>
-        <div class="h-full bg-[#F8D26A]" style={`width:${split.syngasPct}%`}></div>
-        <div class="h-full bg-basola-brown/40" style={`width:${split.restPct}%`}></div>
-      </div>
-      <p class="mt-3 text-xs text-basola-brown/70">
-        {lang==='de'
-          ? 'Kein Sauerstoff, keine offene Verbrennung. Syngas heizt den Prozess.'
-          : 'No oxygen, no open burning. Syngas powers the process.'}
-      </p>
-    </div>
   </div>
 
-  <!-- CountUp + Reveal -->
   <script is:client>
-    const ease=(t)=>(--t)*t*t+1;
-    const animate=(el,to,dur=1200)=>{const s=performance.now();const step=n=>{const p=Math.min(1,(n-s)/dur);el.textContent=Math.round(ease(p)*to).toLocaleString('de-DE');if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)};
-    const once=(root)=>{const ids=[...document.querySelectorAll('#impact [id^="k"]')];
-      const io=new IntersectionObserver(es=>{
-        if(es[0].isIntersecting){ids.forEach((el,i)=>animate(el,Number(el.id==='k2'?el.textContent:el.getAttribute('data-to')||el.textContent),900+80*i));io.disconnect()}
-      },{threshold:.35});
-      io.observe(document.getElementById('impact'));
+    const locale = "${lang === 'de' ? 'de-DE' : 'en-US'}";
+    const ease = (t) => (--t) * t * t + 1;
+    const animate = (el, to, dur = 1200) => {
+      const s = performance.now();
+      const step = (n) => {
+        const p = Math.min(1, (n - s) / dur);
+        el.textContent = Math.round(ease(p) * to).toLocaleString(locale);
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
     };
-    // set data-to for kpis
-    document.querySelectorAll('#impact [id^="k"]').forEach(el=>{
-      const t=el.textContent; el.setAttribute('data-to', t); el.textContent='0';
-    });
-    once(document.getElementById('impact'));
+    document
+      .querySelectorAll('#${sectionId} [data-to]')
+      .forEach((el) => (el.textContent = '0'));
+    const tiles = document.querySelectorAll('#${sectionId} .kpi-tile');
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const tile = entry.target;
+            tile.classList.remove('opacity-0', 'translate-y-6');
+            tile.classList.add('opacity-100', 'translate-y-0');
+            const c = tile.querySelector('[data-to]');
+            if (c) animate(c, Number(c.getAttribute('data-to')));
+            io.unobserve(tile);
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+    tiles.forEach((tile) => io.observe(tile));
   </script>
 </section>
