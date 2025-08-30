@@ -1,9 +1,33 @@
 ---
 const { t } = Astro.props;
+
+const team = [
+  { name: 'Lea Bachmann', role: 'Projektleitung', image: '/assets/basola_favicon.png' },
+  { name: 'Friedrich Heinen', role: 'Position noch ausfüllen', image: '/assets/basola_favicon.png' },
+  { name: 'Marike Kardorff', role: 'noch ausfüllen', image: '/assets/basola_favicon.png' },
+  { name: 'Simon Langner', role: 'Founder', image: '/assets/basola_favicon.png' },
+  { name: 'Lilia Ogor', role: 'tbd', image: '/assets/basola_favicon.png' },
+  { name: 'Paul', role: 'tbd', image: '/assets/basola_favicon.png' },
+  { name: 'Poloju', role: 'tbd', image: '/assets/basola_favicon.png' },
+  { name: 'Stefan Eichler', role: 'tbd', image: '/assets/basola_favicon.png' },
+  { name: 'Luca', role: 'tbd', image: '/assets/basola_favicon.png' },
+  { name: 'Jörg Sievert', role: 'Advisor', image: '/assets/basola_favicon.png' },
+];
 ---
-<section id="team" class="text-secondary">
-  <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-8">{t.heading}</h2>
-    <p>{t.text}</p>
+<section id="team" class="py-24 bg-gray-50 text-secondary">
+  <h2 class="text-center text-3xl font-bold mb-2 text-basola-brown">{t.heading}</h2>
+  <p class="text-center text-lg mb-12">{t.text}</p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
+    {team.map((person, index) => (
+      <div
+        class="bg-white rounded-2xl shadow-md p-6 text-center transition transform hover:-translate-y-1 hover:shadow-lg duration-300 opacity-0 animate-fadeIn"
+        style={`animation-delay: ${index * 100}ms`}
+      >
+        <img src={person.image} alt={person.name} class="w-28 h-28 object-contain rounded-full mx-auto mb-4" />
+        <h3 class="text-lg font-semibold text-basola-brown">{person.name}</h3>
+        <p class="text-sm italic text-secondary/70">{person.role}</p>
+      </div>
+    ))}
   </div>
 </section>
