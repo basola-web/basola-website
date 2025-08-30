@@ -24,6 +24,15 @@
     "heading": "Solution",
     "text": "Shredder → Pyrolysis (O₂-free 400–550 °C) → Fractional condensation → Fuel; syngas feeds the heat."
   },
+  "container": {
+    "heading": "Modular container solution",
+    "bullets": [
+      "Container-based small-scale solution",
+      "Solar energy serves as a sustainable and autonomous power source",
+      "Easy commissioning and maintenance"
+    ],
+    "note": "The container solution is fully self-sufficient and can be deployed without major infrastructure."
+  },
   "business": {
     "heading": "Business Model",
     "fuel": "Local fuel sales (boats/generators)",

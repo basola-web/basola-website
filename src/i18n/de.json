@@ -24,6 +24,15 @@
     "heading": "Lösung",
     "text": "Shredder → Pyrolyse (O₂-frei 400–550 °C) → Fraktionierte Kondensation → Fuel; Syngas heizt mit."
   },
+  "container": {
+    "heading": "Modulare Containerlösung",
+    "bullets": [
+      "Containerbasierte small-scale Lösung",
+      "Solarenergie dient als nachhaltige und autarke Energiequelle",
+      "Einfache Inbetriebnahme und Wartung"
+    ],
+    "note": "Die Containerlösung ist vollständig energieautark und kann ohne große Infrastruktur in Betrieb genommen werden."
+  },
   "business": {
     "heading": "Business Model",
     "fuel": "Fuel-Sales lokal (Boote/Generatoren)",

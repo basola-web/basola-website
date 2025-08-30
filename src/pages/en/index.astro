@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import StorySection from '../../components/StorySection.astro';
 import ProcessFlow from '../../components/ProcessFlow';
+import ContainerSolution from '../../components/ContainerSolution.astro';
 import BusinessSection from '../../components/BusinessSection.astro';
 import ProblemSection from '../../components/ProblemSection.astro';
 import ImpactSection from '../../components/ImpactSection.astro';
@@ -52,6 +53,7 @@ const problemProps = {
   <ProblemSection {...problemProps} />
   <StorySection t={t.story || {}} />
   <ProcessFlow client:load />
+  <ContainerSolution t={t.container} />
   <BusinessSection t={t.business} />
   <ImpactSection lang="en"
     kpis={[
