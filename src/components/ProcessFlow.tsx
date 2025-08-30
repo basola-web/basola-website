@@ -56,9 +56,9 @@ const ProcessFlow: React.FC = () => {
         </header>
 
         <div className="relative">
-          <div className="absolute top-12 left-0 w-full h-[4px] bg-[#723100]/20" />
+          <div className="absolute top-12 left-0 w-full h-[4px] bg-[#723100]/20 z-0" />
           <motion.div
-            className="absolute top-12 left-0 h-[4px] bg-[#ffd600]"
+            className="absolute top-12 left-0 h-[4px] bg-[#ffd600] z-0"
             initial={{ width: 0 }}
             animate={isInView ? { width: '100%' } : { width: 0 }}
             transition={{ duration: 1, ease: 'easeInOut' }}
@@ -73,7 +73,7 @@ const ProcessFlow: React.FC = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.2, duration: 0.5, ease: 'easeInOut' }}
               >
-                <div className="w-24 h-24 flex items-center justify-center rounded-full border border-[#723100] bg-white p-3 mb-4">
+                <div className="relative z-10 w-24 h-24 flex items-center justify-center rounded-full border border-[#723100] bg-white p-3 mb-4">
                   <img src={s.icon} alt={s.title} className="w-full h-full" />
                 </div>
                 <div className="bg-white rounded-xl shadow-md p-4 text-left w-full min-h-[120px]">

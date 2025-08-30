@@ -1,9 +1,53 @@
 ---
 const { t } = Astro.props;
+
+const team = [
+  { name: 'Simon Langner', role: 'Founder' },
+  { name: 'Lea Bachmann', role: 'Projektleitung' },
+  { name: 'Marike Kardorff', role: 'Noch ausfüllen' },
+  { name: 'Friedrich Heinen', role: 'Noch ausfüllen' },
+  { name: 'Lilia Ogor', role: 'TBD' },
+  { name: 'Stefan Eichler', role: 'TBD' },
+  { name: 'Luca', role: 'TBD' },
+  { name: 'Paul', role: 'TBD' },
+  { name: 'Poloju', role: 'TBD' },
+];
+
+const advisor = { name: 'Jörg Sievert', role: 'Advisor' };
 ---
-<section id="team" class="text-secondary">
-  <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-8">{t.heading}</h2>
-    <p>{t.text}</p>
+<section class="py-24 px-6 bg-white text-center" id="team">
+  <h2 class="text-4xl font-bold text-basola-brown mb-4">{t.heading}</h2>
+  <p class="text-secondary mb-12">{t.text}</p>
+
+  <div class="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    {team.map(({ name, role }, index) => (
+      <div
+        class="flex flex-col items-center transform transition duration-300 hover:scale-105 opacity-0 animate-fade-in-up"
+        style={`animation-delay: ${index * 100}ms`}
+      >
+        <img
+          src="/assets/basola_favicon.png"
+          alt={name}
+          class="w-32 h-32 rounded-full object-cover border-4 border-basola-yellow mb-4 shadow-md"
+        />
+        <h3 class="text-lg font-semibold text-basola-brown">{name}</h3>
+        <p class="text-sm text-secondary">{role}</p>
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-16">
+    <h3 class="text-2xl font-bold text-basola-brown mb-4">Advisor</h3>
+    <div class="flex flex-wrap justify-center gap-10">
+      <div class="flex flex-col items-center opacity-0 animate-fade-in-up" style="animation-delay: 200ms">
+        <img
+          src="/assets/basola_favicon.png"
+          alt={advisor.name}
+          class="w-28 h-28 rounded-full object-cover border-4 border-gray-300 mb-3 opacity-80"
+        />
+        <h4 class="text-md font-semibold text-basola-brown">{advisor.name}</h4>
+        <p class="text-sm text-secondary">{advisor.role}</p>
+      </div>
+    </div>
   </div>
 </section>
