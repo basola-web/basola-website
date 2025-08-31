@@ -16,10 +16,6 @@
     "heading": "Problem",
     "text": "Ladrilleros ist nur per Boot erreichbar (~1 h ab Buenaventura). Diesel ist teuer, angeschwemmter Müll wird offen verbrannt."
   },
-  "story": {
-    "heading": "Story",
-    "text": "Das abgelegene Ladrilleros ist von Plastik und Dieselmangel umgeben."
-  },
   "solution": {
     "heading": "Lösung",
     "text": "Shredder → Pyrolyse (O₂-frei 400–550 °C) → Fraktionierte Kondensation → Fuel; Syngas heizt mit."
