@@ -44,7 +44,7 @@ const ProcessFlow: React.FC = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section id="loesung" ref={ref} className="font-sans tracking-tight">
+    <section id="so-funktionierts" ref={ref} className="font-sans tracking-tight">
       <div className="py-16 mx-auto max-w-6xl px-6">
         <header className="mb-10 text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#723100]">
