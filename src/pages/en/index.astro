@@ -1,13 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
-import StorySection from '../../components/StorySection.astro';
 import ProcessFlow from '../../components/ProcessFlow';
 import ContainerSolution from '../../components/ContainerSolution.astro';
 import BusinessSection from '../../components/BusinessSection.astro';
 import ProblemSection from '../../components/ProblemSection.astro';
 import ImpactSection from '../../components/ImpactSection.astro';
-import RouteMap from '../../components/RouteMap.astro';
 import TeamSection from '../../components/TeamSection.astro';
 import PartnersSection from '../../components/PartnersSection.astro';
 import ContactSection from '../../components/ContactSection.astro';
@@ -28,11 +26,6 @@ const problemProps = {
     { id: 'k2', value: 86, suffix: ' kg CO₂/day', label: 'Avoidable CO₂ (open burning)' },
     { id: 'k3', value: 40, suffix: ' L/day', label: 'Diesel replaced (local use)' },
   ],
-  progress: {
-    targetPct: 85,
-    title: 'Uncollected waste in coastal communities',
-    note: '→ often leads to open burning or dumping.',
-  },
   flow: [
     { icon: '🗑️', title: 'No collection', text: 'No access to municipal services; plastic piles up.' },
     { icon: '🔥', title: 'Open burning', text: 'Quick fix — releases fine particles, black carbon & CO₂.' },
@@ -51,18 +44,10 @@ const problemProps = {
     ctaSecondary={{ href: '#technology', label: 'How it works' }}
   />
   <ProblemSection {...problemProps} />
-  <StorySection t={t.story || {}} />
   <ProcessFlow client:load />
   <ContainerSolution t={t.container} />
   <BusinessSection t={t.business} />
   <ImpactSection lang="en" />
-
-  <RouteMap lang="en"
-    origin={[-77.082224, 3.888441]}
-    dest={[-77.351330, 3.928646]}
-    waypoints={[[-77.12,3.87],[-77.20,3.86],[-77.28,3.88]]}
-  />
-
   <TeamSection t={t.team} />
   <PartnersSection t={t.partners} />
   {latest.length > 0 && (
