@@ -12,10 +12,10 @@ const other = current === 'de' ? 'en' : 'de';
     <button id="menu-toggle" class="md:hidden text-secondary">☰</button>
     <nav id="menu" class="hidden md:flex space-x-4 text-secondary">
       <a href="#problem" class="hover:text-primary">{nav.problem}</a>
-      <a href="#so-funktionierts" class="hover:text-primary">{nav.solution}</a>
+      <a href="#loesung" class="hover:text-primary">{nav.solution}</a>
       <a href="#impact" class="hover:text-primary">{nav.impact}</a>
-      <a href="#partner" class="hover:text-primary">{nav.partner}</a>
       <a href="#team" class="hover:text-primary">{nav.team}</a>
+      <a href="#partner" class="hover:text-primary">{nav.partner}</a>
       <a href="#contact" class="hover:text-primary">{nav.contact}</a>
     </nav>
     <a href={getRelativeLocaleUrl(other)} class="ml-4 border px-3 py-1 rounded text-secondary hover:bg-primary">{other.toUpperCase()}</a>

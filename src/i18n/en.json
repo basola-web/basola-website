@@ -30,13 +30,6 @@
     ],
     "note": "The container solution is fully self-sufficient and can be deployed without major infrastructure."
   },
-  "business": {
-    "heading": "Business Model",
-    "fuel": "Local fuel sales (boats/generators)",
-    "gate": "Gate fee for taking non-recyclable plastics",
-    "biochar": "Biochar/carbon revenues (potential)",
-    "service": "Service & training (operations, maintenance, community ownership)"
-  },
   "impact": {
     "heading": "Impact",
     "text": "Triple benefit for environment, community and climate."

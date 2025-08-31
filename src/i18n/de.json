@@ -30,13 +30,6 @@
     ],
     "note": "Die Containerlösung ist vollständig energieautark und kann ohne große Infrastruktur in Betrieb genommen werden."
   },
-  "business": {
-    "heading": "Business Model",
-    "fuel": "Fuel-Sales lokal (Boote/Generatoren)",
-    "gate": "Gate-Fee für Abnahme nicht recycelbarer Plastiken",
-    "biochar": "Biochar/Carbon-Erlöse (Potenzial)",
-    "service": "Service & Training (Betrieb, Wartung, Community-Ownership)"
-  },
   "impact": {
     "heading": "Impact",
     "text": "Dreifacher Nutzen für Umwelt, Gemeinschaft und Klima."

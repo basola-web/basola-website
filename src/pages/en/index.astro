@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import ProcessFlow from '../../components/ProcessFlow';
 import ContainerSolution from '../../components/ContainerSolution.astro';
-import BusinessSection from '../../components/BusinessSection.astro';
 import ProblemSection from '../../components/ProblemSection.astro';
 import ImpactSection from '../../components/ImpactSection.astro';
 import TeamSection from '../../components/TeamSection.astro';
@@ -34,17 +33,16 @@ const problemProps = {
 };
 ---
 <BaseLayout lang={lang} t={t} title="Solar fuel from plastic waste">
-  <Hero
-    title="Solar fuel from plastic waste — where no one comes to collect."
-    subtitle="Decentralized solar pyrolysis turns non-recyclable plastics into local fuel — for boat-only coastal communities."
-    ctaPrimary={{ href: '#contact', label: 'Become a partner' }}
-    ctaSecondary={{ href: '#so-funktionierts', label: 'How it works' }}
-  />
+    <Hero
+      title="Solar fuel from plastic waste — where no one comes to collect."
+      subtitle="Decentralized solar pyrolysis turns non-recyclable plastics into local fuel — for boat-only coastal communities."
+      ctaPrimary={{ href: '#contact', label: 'Become a partner' }}
+      ctaSecondary={{ href: '#loesung', label: 'How it works' }}
+    />
   <ProblemSection {...problemProps} />
   <ProcessFlow client:load />
-  <ContainerSolution t={t.container} />
-  <BusinessSection t={t.business} />
-  <ImpactSection lang="en" />
+    <ContainerSolution t={t.container} />
+    <ImpactSection lang="en" />
   <TeamSection t={t.team} />
   {latest.length > 0 && (
     <section id="news" class="mx-auto max-w-6xl px-6 py-16">
