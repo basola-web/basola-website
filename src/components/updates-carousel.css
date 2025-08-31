@@ -1,0 +1,11 @@
+.updates-swiper .swiper-button-next,
+.updates-swiper .swiper-button-prev {
+  @apply hidden text-basola-brown;
+}
+
+@screen md {
+  .updates-swiper .swiper-button-next,
+  .updates-swiper .swiper-button-prev {
+    @apply flex;
+  }
+}

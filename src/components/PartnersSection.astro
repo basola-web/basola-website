@@ -1,20 +1,20 @@
 ---
 const { t } = Astro.props;
 const logos = [
-  '/assets/boreal_lights_logo.png',
-  '/assets/enactus_karlsruhe_logo.png',
-  '/assets/kit_gruenderschmiede_logo.png',
-  '/assets/ngo_uramba_logo.png',
-  '/assets/sena_logo.png',
-  '/assets/univalle_logo.png'
+  { src: '/assets/boreal_lights_logo.png', alt: 'Boreal Lights GmbH' },
+  { src: '/assets/enactus_karlsruhe_logo.png', alt: 'Enactus Karlsruhe e.V.', extra: 'scale-[1.1] md:h-[56px]' },
+  { src: '/assets/kit_gruenderschmiede_logo.png', alt: 'KIT Gründerschmiede' },
+  { src: '/assets/ngo_uramba_logo.png', alt: 'NGO Uramba' },
+  { src: '/assets/sena_logo.png', alt: 'SENA' },
+  { src: '/assets/univalle_logo.png', alt: 'Universidad del Valle' }
 ];
 ---
-<section id="partners" class="bg-gray-50 text-secondary">
+<section id="partner" class="bg-gray-50 text-secondary">
   <div class="max-w-5xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-8">{t.heading}</h2>
     <div class="flex flex-wrap justify-center gap-6">
-      {logos.map((src) => (
-        <img src={src} alt="partner" class="h-12 object-contain" loading="lazy" />
+      {logos.map(({ src, alt, extra }) => (
+        <img src={src} alt={alt} class={`h-12 md:h-14 object-contain ${extra ?? ''}`} loading="lazy" />
       ))}
     </div>
   </div>
