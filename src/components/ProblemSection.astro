@@ -15,9 +15,6 @@ const {
     { icon: '🔥', title: 'Offenes Verbrennen', text: 'Notlösung – setzt Feinstaub, Black Carbon & CO₂ frei.' },
     { icon: '☁️', title: 'Gesundheit & Klima', text: 'Luftverschmutzung & Klimawirkung – über dem Meer oft „unsichtbar“.' },
   ] as FlowCard[],
-  contextImage = { src: '/assets/Ladrilleros.png', alt: 'Ladrilleros Küstendorf' },
-  contextChips = ['📍 ≈ 60 min Boot von Buenaventura'],
-  contextBullets = ['~100 kg Plastik täglich', 'Diesel ~35% teurer als in der Stadt', 'Kein geregeltes Abholsystem'],
   sectionId = 'problem',
 } = Astro.props;
 ---
@@ -57,24 +54,6 @@ const {
       ))}
     </div>
 
-    <!-- Context: Bild + Chips -->
-    <div class="mt-10 grid gap-6 md:grid-cols-5 items-center" data-anim="fade-up">
-      <div class="md:col-span-3">
-        <img src={contextImage.src} alt={contextImage.alt} class="rounded-2xl shadow-md w-full h-auto" />
-      </div>
-      <div class="md:col-span-2">
-        <div class="flex flex-wrap gap-2">
-          {contextChips.map((chip) => (
-            <div class="inline-flex items-center gap-2 rounded-full border border-basola-yellow px-3 py-1.5 text-sm text-basola-brown bg-white/70">
-              {chip}
-            </div>
-          ))}
-        </div>
-        <ul class="mt-4 space-y-2 text-basola-brown/85 list-disc list-inside">
-          {contextBullets.map((b) => <li>{b}</li>)}
-        </ul>
-      </div>
-    </div>
   </div>
 
   <!-- Animations (client) -->
