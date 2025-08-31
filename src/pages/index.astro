@@ -1,13 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import StorySection from '../components/StorySection.astro';
 import ProcessFlow from '../components/ProcessFlow';
 import ContainerSolution from '../components/ContainerSolution.astro';
 import BusinessSection from '../components/BusinessSection.astro';
 import ProblemSection from '../components/ProblemSection.astro';
 import ImpactSection from '../components/ImpactSection.astro';
-import RouteMap from '../components/RouteMap.astro';
 import TeamSection from '../components/TeamSection.astro';
 import PartnersSection from '../components/PartnersSection.astro';
 import ContactSection from '../components/ContactSection.astro';
@@ -28,19 +26,11 @@ const problemProps = {
     { id: 'k2', value: 86, suffix: ' kg CO₂/Tag', label: 'CO₂ vermeidbar (offenes Verbrennen)' },
     { id: 'k3', value: 40, suffix: ' L/Tag', label: 'Diesel ersetzbar (lokal genutzt)' },
   ],
-  progress: {
-    targetPct: 85,
-    title: 'Ungesammelter Müll in Küstenorten',
-    note: '→ führt häufig zu offenem Verbrennen oder Ablagerung.',
-  },
   flow: [
     { icon: '🗑️', title: 'Kein Abholsystem', text: 'Kein Zugang zu geregelter Entsorgung; Plastik sammelt sich.' },
     { icon: '🔥', title: 'Offenes Verbrennen', text: 'Notlösung – setzt Feinstaub, Black Carbon & CO₂ frei.' },
     { icon: '☁️', title: 'Gesundheit & Klima', text: 'Luftverschmutzung & Klimawirkung – über dem Meer oft „unsichtbar“.' },
   ],
-  contextImage: { src: '/assets/Ladrilleros.png', alt: 'Ladrilleros Küstendorf' },
-  contextChips: ['📍 ≈ 60 min Boot von Buenaventura'],
-  contextBullets: ['~100 kg Plastik täglich', 'Diesel ~35% teurer als in der Stadt', 'Kein geregeltes Abholsystem'],
 };
 ---
 <BaseLayout lang={lang} t={t} title="Solarkraftstoff aus Plastikmüll">
@@ -51,18 +41,10 @@ const problemProps = {
     ctaSecondary={{ href: '#technology', label: 'So funktioniert’s' }}
   />
   <ProblemSection {...problemProps} />
-  <StorySection t={t.story || {}} />
   <ProcessFlow client:load />
   <ContainerSolution t={t.container} />
   <BusinessSection t={t.business} />
   <ImpactSection lang="de" />
-
-  <RouteMap lang="de"
-    origin={[-77.082224, 3.888441]}
-    dest={[-77.351330, 3.928646]}
-    waypoints={[[-77.12,3.87],[-77.20,3.86],[-77.28,3.88]]}
-  />
-
   <TeamSection t={t.team} />
   <PartnersSection t={t.partners} />
   {latest.length > 0 && (
