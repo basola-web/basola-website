@@ -49,12 +49,6 @@ const content =
             explanation: 'aus Kraftstoff & Nebenprodukten',
           },
         ],
-        quote: {
-          text:
-            '„Mit einer Anlage zur Umwandlung von Plastikmüll in Kraftstoff könnte unsere Gemeinschaft das Müllproblem in den Küstenregionen und den Gemeinden lösen. So könnten alle Menschen ihren Abfall bringen, um ihn umzuwandeln, und wenn möglich, nach der Umwandlung diesen Kraftstoff nutzen…“',
-          name: 'Olber Grueso',
-          role: 'Bewohner & Unternehmer in Ladrilleros',
-        },
       }
     : {
         intro:
@@ -93,16 +87,10 @@ const content =
             explanation: 'from fuel & by-products',
           },
         ],
-        quote: {
-          text:
-            '“With a facility to convert plastic waste into fuel, our community could solve the waste problem in the coastal regions and villages. People could bring their trash to be transformed and, if possible, use the fuel afterwards…”',
-          name: 'Olber Grueso',
-          role: 'Resident & entrepreneur in Ladrilleros',
-        },
       };
 ---
 
-<section id="impact" class="relative py-16 bg-[#FFB703]/20">
+<section id="impact" class="relative py-16 bg-yellow-50">
   <div class="mx-auto max-w-6xl px-6">
     <header class="mb-8 text-center">
       <h2 class="text-3xl md:text-4xl font-extrabold text-basola-brown">Impact in Ladrilleros</h2>
@@ -124,23 +112,6 @@ const content =
       ))}
     </div>
 
-    <div
-      class="mt-16 flex flex-col items-center md:flex-row md:items-center md:space-x-8"
-      data-anim
-    >
-      <img
-        src="/assets/Team/Olber.png"
-        alt="Olber Grueso"
-        title="Olber Grueso"
-        class="mb-6 md:mb-0 mx-auto"
-        style="max-width:150px;border-radius:9999px"
-      />
-      <div class="text-center md:text-left max-w-xl">
-        <p class="italic text-basola-brown/90">{content.quote.text}</p>
-        <p class="mt-4 font-semibold text-basola-brown">{content.quote.name}</p>
-        <p class="text-sm text-basola-brown/70">{content.quote.role}</p>
-      </div>
-    </div>
   </div>
 </section>
 

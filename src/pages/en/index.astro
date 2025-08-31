@@ -4,7 +4,8 @@ import Hero from '../../components/Hero.astro';
 import StorySection from '../../components/StorySection.astro';
 import ProcessFlow from '../../components/ProcessFlow';
 import ContainerSolution from '../../components/ContainerSolution.astro';
-import BusinessSection from '../../components/BusinessSection.astro';
+import QuoteSection from '../../components/QuoteSection.astro';
+import LadrillerosColombia from '../../components/LadrillerosColombia.astro';
 import ProblemSection from '../../components/ProblemSection.astro';
 import ImpactSection from '../../components/ImpactSection.astro';
 import RouteMap from '../../components/RouteMap.astro';
@@ -54,10 +55,12 @@ const problemProps = {
   <StorySection t={t.story || {}} />
   <ProcessFlow client:load />
   <ContainerSolution t={t.container} />
-  <BusinessSection t={t.business} />
   <ImpactSection lang="en" />
 
   <RouteMap lang="en" />
+
+  <QuoteSection lang="en" />
+  <LadrillerosColombia lang="en" />
 
   <TeamSection t={t.team} />
   <PartnersSection t={t.partners} />
