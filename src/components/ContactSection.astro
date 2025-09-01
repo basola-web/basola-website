@@ -1,16 +1,33 @@
 ---
 const { t, partners } = Astro.props;
 const logos = [
-  '/assets/boreal_lights_logo.png',
-  '/assets/enactus_karlsruhe_logo.png',
-  '/assets/kit_gruenderschmiede_logo.png',
-  '/assets/ngo_uramba_logo.png',
-  '/assets/sena_logo.png',
-  '/assets/univalle_logo.png'
+  { src: '/assets/boreal_lights_logo.png', alt: 'Boreal Light' },
+  {
+    src: '/assets/enactus_karlsruhe_logo.png',
+    alt: 'Enactus Karlsruhe',
+    class: 'h-14',
+  },
+  { src: '/assets/kit_gruenderschmiede_logo.png', alt: 'KIT Gründer­schmiede' },
+  { src: '/assets/ngo_uramba_logo.png', alt: 'NGO Uramba' },
+  { src: '/assets/sena_logo.png', alt: 'SENA' },
+  { src: '/assets/univalle_logo.png', alt: 'Universidad del Valle' },
 ];
 ---
 <section id="contact" class="text-secondary">
   <div class="mx-auto max-w-6xl grid md:grid-cols-2 gap-12 items-start">
+    <div class="max-w-md mx-auto w-full text-center">
+      <h3 class="text-2xl font-bold mb-8">{partners.heading}</h3>
+      <div class="flex flex-wrap justify-center gap-6">
+        {logos.map(({ src, alt, class: cls }) => (
+          <img
+            src={src}
+            alt={alt}
+            class={(cls ?? 'h-12') + ' object-contain'}
+            loading="lazy"
+          />
+        ))}
+      </div>
+    </div>
     <div class="max-w-md mx-auto w-full">
       <h2 class="text-3xl font-bold mb-8 text-center">{t.heading}</h2>
       <form class="space-y-4" method="post" action="#">
@@ -28,14 +45,6 @@ const logos = [
         </div>
         <button type="submit" class="bg-primary text-secondary font-bold py-2 px-4 rounded">{t.submit}</button>
       </form>
-    </div>
-    <div class="max-w-md mx-auto w-full text-center">
-      <h3 class="text-2xl font-bold mb-8">{partners.heading}</h3>
-      <div class="flex flex-wrap justify-center gap-6">
-        {logos.map((src) => (
-          <img src={src} alt="partner" class="h-12 object-contain" loading="lazy" />
-        ))}
-      </div>
     </div>
   </div>
 </section>
