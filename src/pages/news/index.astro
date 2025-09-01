@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import NewsCard from '../../components/NewsCard.astro';
+import NewsCarousel from '../../components/NewsCarousel.astro';
 
 const lang = Astro.url.searchParams.get('lang') ?? 'de';
 const all = await getCollection('news', ({ data }) => data.lang === lang && !data.draft);
@@ -27,18 +27,15 @@ const items = all.sort((a,b) => +new Date(b.data.date) - +new Date(a.data.date))
         </div>
       </header>
 
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map(({ id, slug, data }) => (
-          <NewsCard
-            url={`/news/${slug}`}
-            title={data.title}
-            date={data.date}
-            summary={data.summary}
-            tags={data.tags}
-            heroImage={data.heroImage}
-          />
-        ))}
-      </div>
+      <NewsCarousel
+        items={items.map(({ slug, data }) => ({
+          url: `/news/${slug}`,
+          title: data.title,
+          date: data.date,
+          summary: data.summary,
+          heroImage: data.heroImage
+        }))}
+      />
     </section>
   </body>
 </html>
