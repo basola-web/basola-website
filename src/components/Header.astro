@@ -3,6 +3,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 const nav = Astro.props.t.nav;
 const current = Astro.currentLocale;
 const other = current === 'de' ? 'en' : 'de';
+const home = getRelativeLocaleUrl(current);
 ---
 <header class="sticky top-0 z-50 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/60">
   <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
@@ -11,13 +12,13 @@ const other = current === 'de' ? 'en' : 'de';
   </a>
     <button id="menu-toggle" class="md:hidden text-secondary">☰</button>
     <nav id="menu" class="hidden md:flex space-x-4 text-secondary">
-      <a href="#problem" class="hover:text-primary">{nav.problem}</a>
-      <a href="#solution" class="hover:text-primary">{nav.solution}</a>
-      <a href="#impact" class="hover:text-primary">{nav.impact}</a>
-      <a href="#partners" class="hover:text-primary">{nav.partners}</a>
-      <a href="#team" class="hover:text-primary">{nav.team}</a>
-      <a href="/aktuelles" class="hover:text-primary">{nav.news}</a>
-      <a href="#contact" class="hover:text-primary">{nav.contact}</a>
+      <a href={`${home}#problem`} class="hover:text-primary">{nav.problem}</a>
+      <a href={`${home}#solution`} class="hover:text-primary">{nav.solution}</a>
+      <a href={`${home}#impact`} class="hover:text-primary">{nav.impact}</a>
+      <a href={`${home}#team`} class="hover:text-primary">{nav.team}</a>
+      <a href={`${home}#partners`} class="hover:text-primary">{nav.partners}</a>
+      <a href="/news" class="hover:text-primary">{nav.news}</a>
+      <a href={`${home}#contact`} class="hover:text-primary">{nav.contact}</a>
     </nav>
     <a href={getRelativeLocaleUrl(other)} class="ml-4 border px-3 py-1 rounded text-secondary hover:bg-primary">{other.toUpperCase()}</a>
   </div>
