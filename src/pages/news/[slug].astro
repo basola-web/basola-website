@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntryBySlug } from 'astro:content';
+import NewsCarousel from '../../components/NewsCarousel.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('news', ({ data }) => !data.draft);
@@ -48,14 +49,6 @@ const more = (await getCollection('news', ({ data: d }) => d.lang === data.lang 
         <div class="mt-3 flex flex-wrap gap-2">
           {data.tags?.map((t) => <span class="rounded-full border border-basola-yellow/70 px-2 py-0.5 text-[11px] text-basola-brown bg-white/60">{t}</span>)}
         </div>
-        {data.heroImage && (
-          <>
-            <img src={data.heroImage} alt="" class="mt-6 rounded-xl ring-1 ring-black/5 bg-white p-2" />
-            {data.heroImageCaption && (
-              <p class="mt-2 text-sm text-basola-brown/60">{data.heroImageCaption}</p>
-            )}
-          </>
-        )}
       </header>
 
       <div class="prose prose-neutral max-w-none prose-headings:text-basola-brown prose-a:text-basola-brown hover:prose-a:text-basola-yellow">
@@ -72,14 +65,15 @@ const more = (await getCollection('news', ({ data: d }) => d.lang === data.lang 
     {more.length > 0 && (
       <section class="mx-auto max-w-6xl px-6 pb-16">
         <h2 class="text-xl font-bold text-basola-brown mb-4">Weitere Updates</h2>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {more.map(({ slug, data }) => (
-            <a href={`/news/${slug}`} class="rounded-xl bg-white ring-1 ring-black/5 p-4 hover:shadow-md transition">
-              <div class="text-sm text-basola-brown/60">{new Date(data.date).toLocaleDateString()}</div>
-              <div class="mt-1 font-semibold text-basola-brown">{data.title}</div>
-            </a>
-          ))}
-        </div>
+        <NewsCarousel
+          items={more.map(({ slug, data }) => ({
+            url: `/news/${slug}`,
+            title: data.title,
+            date: data.date,
+            summary: data.summary,
+            heroImage: data.heroImage
+          }))}
+        />
       </section>
     )}
   </body>

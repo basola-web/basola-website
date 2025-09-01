@@ -1,0 +1,6 @@
+---
+import NewsCarouselClient from './NewsCarousel';
+const { items } = Astro.props;
+---
+
+<NewsCarouselClient items={items} client:load />
