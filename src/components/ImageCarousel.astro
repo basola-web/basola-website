@@ -1,0 +1,6 @@
+---
+import ImageCarouselClient from './ImageCarousel';
+const { images } = Astro.props;
+---
+
+<ImageCarouselClient images={images} client:load />
