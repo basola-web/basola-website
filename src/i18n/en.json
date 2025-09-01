@@ -1,11 +1,8 @@
 {
   "nav": {
-    "problem": "Problem",
-    "solution": "Solution",
+    "solution": "Our Solution",
     "impact": "Impact",
-    "partners": "Partners",
-    "team": "Team",
-    "news": "News",
+    "team": "About Us",
     "contact": "Contact"
   },
   "hero": {

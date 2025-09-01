@@ -7,7 +7,6 @@ import BusinessSection from '../components/BusinessSection.astro';
 import ProblemSection from '../components/ProblemSection.astro';
 import ImpactSection from '../components/ImpactSection.astro';
 import TeamSection from '../components/TeamSection.astro';
-import PartnersSection from '../components/PartnersSection.astro';
 import ContactSection from '../components/ContactSection.astro';
 import NewsCard from '../components/NewsCard.astro';
 import { getCollection } from 'astro:content';
@@ -46,7 +45,6 @@ const problemProps = {
   <BusinessSection t={t.business} />
   <ImpactSection lang="de" />
   <TeamSection t={t.team} />
-  <PartnersSection t={t.partners} />
   {latest.length > 0 && (
     <section class="mx-auto max-w-6xl px-6 py-16">
       <h2 class="mb-8 text-3xl font-extrabold text-basola-brown">Neueste Updates</h2>
@@ -64,5 +62,5 @@ const problemProps = {
       </div>
     </section>
   )}
-  <ContactSection t={t.contact} />
+  <ContactSection t={t.contact} partners={t.partners} />
 </BaseLayout>
