@@ -34,10 +34,15 @@ const problemProps = {
 ---
 <BaseLayout lang={lang} t={t} title="Solarkraftstoff aus Plastikmüll">
   <Hero
-    title="Solar-Kraftstoff aus Plastikmüll – dort, wo es niemand abholt."
-    subtitle="Dezentrale Solar-Pyrolyse verwandelt nicht recycelbare Kunststoffe in lokalen Treibstoff – für Küstenorte, die nur per Boot erreichbar sind."
+    title="Solar-Kraftstoff aus Plastikmüll – dort, wo ihn niemand abholt."
+    subtitle="Unsere kleinskalige Solar-Pyrolyseanlage verwandelt nicht recycelbare Kunststoffe in lokalen Treibstoff – eine autarke Lösung für abgelegene Regionen ohne funktionierende Entsorgung und Energieversorgung."
     ctaPrimary={{ href: '#contact', label: 'Partner werden' }}
-    ctaSecondary={{ href: '#loesung', label: 'Zur Lösung' }}
+    ctaSecondary={{ href: '#loesung', label: 'So geht\'s!' }}
+    badges={[
+      { icon: '🔋', label: t.hero.badges[0] },
+      { icon: '🌍', label: t.hero.badges[1] },
+      { icon: '⚓', label: t.hero.badges[2] },
+    ]}
   />
   <ProblemSection {...problemProps} />
   <ProcessFlow client:load />
