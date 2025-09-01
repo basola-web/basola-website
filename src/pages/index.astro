@@ -46,7 +46,6 @@ const problemProps = {
   <BusinessSection t={t.business} />
   <ImpactSection lang="de" />
   <TeamSection t={t.team} />
-  <PartnersSection t={t.partners} />
   {latest.length > 0 && (
     <section class="mx-auto max-w-6xl px-6 py-16">
       <h2 class="mb-8 text-3xl font-extrabold text-basola-brown">Neueste Updates</h2>
@@ -64,5 +63,6 @@ const problemProps = {
       </div>
     </section>
   )}
+  <PartnersSection t={t.partners} />
   <ContactSection t={t.contact} />
 </BaseLayout>
