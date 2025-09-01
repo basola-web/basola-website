@@ -16,7 +16,7 @@ const home = getRelativeLocaleUrl(current);
       <a href={`${home}#solution`} class="hover:text-primary">{nav.solution}</a>
       <a href={`${home}#impact`} class="hover:text-primary">{nav.impact}</a>
       <a href={`${home}#team`} class="hover:text-primary">{nav.team}</a>
-      <a href="/news" class="hover:text-primary">{nav.news}</a>
+      <a href={getRelativeLocaleUrl(current, '/news')} class="hover:text-primary">{nav.news}</a>
       <a href={`${home}#partners`} class="hover:text-primary">{nav.partners}</a>
       <a href={`${home}#contact`} class="hover:text-primary">{nav.contact}</a>
     </nav>

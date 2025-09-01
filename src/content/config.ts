@@ -21,6 +21,7 @@ const aktuelles = defineCollection({
     title: z.string(),
     description: z.string(),
     publishDate: z.string(), // ISO
+    heroImage: z.string().optional(),
     tags: z.array(z.string()).default([]),
   }),
 });
