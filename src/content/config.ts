@@ -9,6 +9,7 @@ const news = defineCollection({
     summary: z.string().max(280),
     tags: z.array(z.string()).default([]),
     heroImage: z.string().optional(),   // /assets/...
+    heroImageCaption: z.string().optional(),
     externalUrl: z.string().url().optional(), // optionaler „Mehr erfahren“-Link
     featured: z.boolean().default(false),
     draft: z.boolean().optional().default(false),

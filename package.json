@@ -14,6 +14,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@astrojs/react": "^4.3.0",
+    "@astrojs/mdx": "^4.0.0",
     "@astrojs/tailwind": "^5.0.0",
     "@tailwindcss/typography": "^0.5.16",
     "astro": "^5.13.4",
