@@ -16,60 +16,6 @@
       "Locally operated"
     ]
   },
-  "problemStory": {
-    "heading": "When waste disposal falls to the community…",
-    "intro": "Many small-island & coastal communities lack regular collection. Plastic waste is burned or dumped, while long transport routes make fuel in remote regions expensive.",
-    "cards": {
-      "burning": {
-        "icon": "🔥",
-        "title": "Open burning",
-        "text": "Small fires are the last resort: smoke with fine particles and toxic by-products pollutes air and surroundings."
-      },
-      "dumps": {
-        "icon": "🗑️",
-        "icon2": "🌊",
-        "title": "Open dumps",
-        "text": "Unsecured dumps near settlements and waters are flushed by rain; plastics spread and some reach the sea via rivers."
-      },
-      "fuel": {
-        "icon": "⛽",
-        "title": "High fuel prices",
-        "badge": "Default: +20 %",
-        "text": "Long transport routes, small import volumes and extra handling steps drive local energy prices in island markets — supply is costly and unreliable."
-      }
-    },
-    "transition": "Plastic waste on one side, high fuel prices in remote regions on the other — Basola turns both into local clean fuel.",
-    "sources": {
-      "label": "ⓘ Sources",
-      "close": "Close",
-      "items": [
-        {
-          "label": "WHO – Open waste burning & health (overview)",
-          "url": "https://www.who.int/teams/environment-climate-change-and-health/air-quality-and-health/sectoral-interventions/waste"
-        },
-        {
-          "label": "Pathak et al. – Open burning of plastic wastes (review)",
-          "url": "https://doi.org/10.1016/j.jhazmat.2023.131043"
-        },
-        {
-          "label": "OECD – Global Plastics Outlook (background on leakage)",
-          "url": "https://www.oecd.org/environment/plastics/"
-        },
-        {
-          "label": "Meijer et al., Science Advances – Rivers as major pathways",
-          "url": "https://www.science.org/doi/10.1126/sciadv.aaz5803"
-        },
-        {
-          "label": "UNCTAD – SIDS bear highest transport & insurance costs",
-          "url": "https://unctad.org/topic/transport-and-trade-logistics"
-        },
-        {
-          "label": "Pacific Community (SPC) – Fuel pricing in Pacific Island markets (components/monitoring)",
-          "url": "https://www.spc.int/"
-        }
-      ]
-    }
-  },
   "solution": {
     "heading": "Solution",
     "text": "Shredder → Pyrolysis (O₂-free 400–550 °C) → Fractional condensation → Fuel; syngas feeds the heat."

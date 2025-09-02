@@ -1,18 +1,13 @@
-const prefersReduced = window.matchMedia(
-  "(prefers-reduced-motion: reduce)",
-).matches;
+if (typeof window !== "undefined" && typeof document !== "undefined") {
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.documentElement.classList.add("js");
 
-document.documentElement.classList.add("js");
+  const revealEls = Array.from(document.querySelectorAll<HTMLElement>("[data-need-reveal]"));
+  revealEls.forEach((el, idx) => {
+    el.style.transitionDelay = `${idx * 90}ms`;
+  });
 
-const revealEls = Array.from(
-  document.querySelectorAll<HTMLElement>("[data-need-reveal]"),
-);
-revealEls.forEach((el, idx) => {
-  el.style.transitionDelay = `${idx * 90}ms`;
-});
-
-const io = new IntersectionObserver(
-  (entries) => {
+  const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const el = entry.target as HTMLElement;
@@ -32,33 +27,67 @@ const io = new IntersectionObserver(
         io.unobserve(el);
       }
     });
-  },
-  { threshold: 0.2 },
-);
+  }, { threshold: 0.2 });
 
-if (!prefersReduced) {
-  revealEls.forEach((el) => io.observe(el));
-} else {
-  revealEls.forEach((el) => {
-    el.classList.add("need-visible");
-    const counter = el.querySelector<HTMLElement>("[data-counter]");
-    if (counter) {
-      const target = parseInt(counter.dataset.target || "0", 10);
-      counter.textContent = String(randomValue(target));
-    }
-    if (el.dataset.line !== undefined && el instanceof SVGElement) {
-      const path = el.querySelector<SVGPathElement>("path");
-      if (path) path.style.strokeDashoffset = "0";
-    }
-  });
+  if (!prefersReduced) {
+    revealEls.forEach((el) => io.observe(el));
+  } else {
+    revealEls.forEach((el) => {
+      el.classList.add("need-visible");
+      const counter = el.querySelector<HTMLElement>("[data-counter]");
+      if (counter) {
+        const target = parseInt(counter.dataset.target || "0", 10);
+        counter.textContent = String(randomValue(target));
+      }
+      if (el.dataset.line !== undefined && el instanceof SVGElement) {
+        const path = el.querySelector<SVGPathElement>("path");
+        if (path) path.style.strokeDashoffset = "0";
+      }
+    });
+  }
+
+  const toggle = document.getElementById("need-sources-toggle");
+  const dialog = document.getElementById("need-sources-dialog") as HTMLDialogElement | null;
+  const closeBtn = document.getElementById("need-sources-close");
+  let lastFocused: HTMLElement | null = null;
+
+  if (toggle && dialog && closeBtn) {
+    const selectors = 'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])';
+    toggle.addEventListener("click", () => {
+      lastFocused = document.activeElement as HTMLElement;
+      dialog.showModal();
+      const first = dialog.querySelector<HTMLElement>(selectors);
+      first?.focus();
+    });
+    const trap = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        dialog.close();
+      } else if (e.key === "Tab") {
+        const focusables = Array.from(dialog.querySelectorAll<HTMLElement>(selectors));
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    dialog.addEventListener("keydown", trap);
+    closeBtn.addEventListener("click", () => {
+      dialog.close();
+      lastFocused?.focus();
+    });
+    dialog.addEventListener("close", () => {
+      dialog.removeEventListener("keydown", trap);
+    });
+  }
 }
 
-function animateCounter(
-  el: HTMLElement,
-  from: number,
-  to: number,
-  duration: number,
-) {
+function animateCounter(el: HTMLElement, from: number, to: number, duration: number) {
   const end = randomValue(to);
   let startTime: number | null = null;
   function frame(time: number) {
@@ -84,48 +113,5 @@ function drawLine(svg: SVGSVGElement) {
   requestAnimationFrame(() => {
     path.style.transition = "stroke-dashoffset 1.2s ease";
     path.style.strokeDashoffset = "0";
-  });
-}
-
-const toggle = document.getElementById("need-sources-toggle");
-const dialog = document.getElementById(
-  "need-sources-dialog",
-) as HTMLDialogElement | null;
-const closeBtn = document.getElementById("need-sources-close");
-let lastFocused: HTMLElement | null = null;
-
-if (toggle && dialog && closeBtn) {
-  const selectors =
-    'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])';
-  toggle.addEventListener("click", () => {
-    lastFocused = document.activeElement as HTMLElement;
-    dialog.showModal();
-    const first = dialog.querySelector<HTMLElement>(selectors);
-    first?.focus();
-  });
-  const trap = (e: KeyboardEvent) => {
-    if (e.key === "Escape") {
-      dialog.close();
-    } else if (e.key === "Tab") {
-      const focusables = Array.from(
-        dialog.querySelectorAll<HTMLElement>(selectors),
-      );
-      if (focusables.length === 0) return;
-      const first = focusables[0];
-      const last = focusables[focusables.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
-    }
-  };
-  dialog.addEventListener("keydown", trap);
-  closeBtn.addEventListener("click", () => dialog.close());
-  dialog.addEventListener("close", () => {
-    dialog.removeEventListener("keydown", trap);
-    lastFocused?.focus();
   });
 }
