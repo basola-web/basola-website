@@ -2,7 +2,6 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
 const nav = Astro.props.t.nav;
 const current = Astro.currentLocale;
-const other = current === 'de' ? 'en' : 'de';
 ---
 <header class="sticky top-0 z-50 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/60">
   <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
@@ -15,9 +14,21 @@ const other = current === 'de' ? 'en' : 'de';
       <a href="#loesung" class="hover:text-primary">{nav.solution}</a>
       <a href="#impact" class="hover:text-primary">{nav.impact}</a>
       <a href="#team" class="hover:text-primary">{nav.team}</a>
-      <a href="#contact" class="text-primary font-semibold hover:text-primary">{nav.contact}</a>
+      <a href="#contact" class="text-basola-brown font-semibold hover:text-primary">{nav.contact}</a>
     </nav>
-    <a href={getRelativeLocaleUrl(other)} class="ml-4 border px-3 py-1 rounded text-secondary hover:bg-primary">{other.toUpperCase()}</a>
+    <div class="ml-4 text-secondary">
+      {current === 'de' ? (
+        <>
+          <span class="font-bold">de</span> |
+          <a href={getRelativeLocaleUrl('en')} class="hover:text-primary">en</a>
+        </>
+      ) : (
+        <>
+          <a href={getRelativeLocaleUrl('de')} class="hover:text-primary">de</a> |
+          <span class="font-bold">en</span>
+        </>
+      )}
+    </div>
   </div>
 </header>
 <script is:client>
