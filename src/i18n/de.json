@@ -10,7 +10,11 @@
     "lead": "Unsere kleinskalige Solar-Pyrolyseanlage verwandelt nicht recycelbare Kunststoffe in lokalen Treibstoff – eine autarke Lösung für abgelegene Regionen ohne funktionierende Entsorgung und Energieversorgung.",
     "ctaPrimary": "Partner werden",
     "ctaSecondary": "So geht's!",
-    "badges": ["Off-Grid", "Dezentral", "Lokal betrieben"]
+    "badges": [
+      "Off-Grid",
+      "Dezentral",
+      "Lokal betrieben"
+    ]
   },
   "problem": {
     "heading": "Problem",
@@ -41,8 +45,8 @@
     "text": "Dreifacher Nutzen für Umwelt, Gemeinschaft und Klima."
   },
   "team": {
-    "heading": "Unser Team",
-    "text": "Lerne die Menschen hinter BASOLA kennen."
+    "heading": "Über Uns",
+    "text": "Unser interdisziplinäres Team vereint Expertise in Chemie- und Verfahrenstechnik, Maschinenbau, Elektrotechnik und Wirtschaftsingenieurwesen – ergänzt um betriebswirtschaftliche und umwelttechnische Perspektiven. Gemeinsam mit erfahrenen Advisor:innen validieren wir unsere Technologie, bauen Prototypen und erproben sie im Feld. Unser Ziel: die Ausgründung eines Start-ups, das nicht recycelbare Kunststoffe vor Ort in lokalen Kraftstoff verwandelt – technisch robust, wirtschaftlich tragfähig und mit messbarem Impact."
   },
   "partners": {
     "heading": "Partner",

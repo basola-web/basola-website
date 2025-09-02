@@ -10,7 +10,11 @@
     "lead": "Our small-scale solar pyrolysis system converts non-recyclable plastics into local fuel – an autonomous solution for remote regions lacking waste management and reliable energy supply.",
     "ctaPrimary": "Become a partner",
     "ctaSecondary": "How it works!",
-    "badges": ["Off-grid", "Decentralized", "Locally operated"]
+    "badges": [
+      "Off-grid",
+      "Decentralized",
+      "Locally operated"
+    ]
   },
   "problem": {
     "heading": "Problem",
@@ -41,8 +45,8 @@
     "text": "Triple benefit for environment, community and climate."
   },
   "team": {
-    "heading": "Our Team",
-    "text": "Meet the people behind BASOLA."
+    "heading": "About Us",
+    "text": "Our interdisciplinary team combines expertise in chemical and process engineering, mechanical engineering, electrical engineering, and industrial engineering — complemented by business and environmental perspectives. Together with seasoned advisors, we validate our technology, build prototypes, and test them in the field. Our goal is to spin off a startup that transforms non-recyclable plastics on site into local fuel — technically robust, economically viable, and with measurable impact."
   },
   "partners": {
     "heading": "Partners",
