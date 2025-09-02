@@ -16,9 +16,63 @@
       "Lokal betrieben"
     ]
   },
-  "problem": {
-    "heading": "Problem",
-    "text": "Ladrilleros ist nur per Boot erreichbar (~1 h ab Buenaventura). Diesel ist teuer, angeschwemmter Müll wird offen verbrannt."
+  "problemStory": {
+    "heading": "Wenn der Müll selbst entsorgt werden muss…",
+    "intro": "In vielen Small-Island & Coastal Communities gibt es keine reguläre Abholung. Was bleibt, sind Notlösungen, die Umwelt, Gesundheit und Lebensgrundlagen belasten.",
+    "cards": {
+      "burning": {
+        "icon": "🔥",
+        "title": "Offenes Verbrennen",
+        "text": "Kleinstfeuer als Ausweg: Rauch mit Feinstaub und giftigen Verbrennungsprodukten belastet die Atemluft und die Umgebung."
+      },
+      "dumps": {
+        "icon": "🗑️",
+        "icon2": "🌊",
+        "title": "Offene Müllhalden",
+        "text": "Ungesicherte Halden nahe Siedlungen und Gewässern werden bei Regen ausgespült; Kunststoff verteilt sich, ein Teil gelangt über Flüsse ins Meer."
+      },
+      "fuel": {
+        "icon": "⛽",
+        "title": "Erhöhte Kraftstoffpreise",
+        "badge": "Default: +20 %",
+        "text": "Weite Transportwege, kleine Importmengen und zusätzliche Umschlagstufen treiben lokale Energiepreise in Inselmärkten — Versorgung ist teuer und unzuverlässig."
+      }
+    },
+    "transition": "Wir ersetzen Selbstentsorgung durch lokale Verwertung – so wird aus Plastik sauberer Treibstoff.",
+    "basola": {
+      "title": "BASOLA",
+      "text": "Plastik lokal sammeln, sauber verwerten, Kraftstoff vor Ort bereitstellen. Weniger Rauch, weniger offene Halden, mehr Versorgungssicherheit."
+    },
+    "sources": {
+      "label": "ⓘ Quellen",
+      "close": "Schließen",
+      "items": [
+        {
+          "label": "WHO – Open waste burning & health (Übersicht)",
+          "url": "https://www.who.int/teams/environment-climate-change-and-health/air-quality-and-health/sectoral-interventions/waste"
+        },
+        {
+          "label": "Pathak et al. – Open burning of plastic wastes (Review)",
+          "url": "https://doi.org/10.1016/j.jhazmat.2023.131043"
+        },
+        {
+          "label": "OECD – Global Plastics Outlook (Hintergrund zum Weg in die Umwelt)",
+          "url": "https://www.oecd.org/environment/plastics/"
+        },
+        {
+          "label": "Meijer et al., Science Advances – Flüsse als Haupteintragswege",
+          "url": "https://www.science.org/doi/10.1126/sciadv.aaz5803"
+        },
+        {
+          "label": "UNCTAD – SIDS tragen die höchsten Transport- & Versicherungskosten",
+          "url": "https://unctad.org/topic/transport-and-trade-logistics"
+        },
+        {
+          "label": "Pacific Community (SPC) – Fuel pricing in Pacific Island markets (Preisbestandteile/Monitoring)",
+          "url": "https://www.spc.int/"
+        }
+      ]
+    }
   },
   "solution": {
     "heading": "Lösung",
