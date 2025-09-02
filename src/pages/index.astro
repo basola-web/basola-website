@@ -4,7 +4,7 @@ import Hero from '../components/Hero.astro';
 import ProcessFlow from '../components/ProcessFlow';
 import ContainerSolution from '../components/ContainerSolution.astro';
 import BusinessSection from '../components/BusinessSection.astro';
-import ProblemSection from '../components/ProblemSection.astro';
+import ProblemStory from '../components/ProblemStory.astro';
 import ImpactSection from '../components/ImpactSection.astro';
 import TeamSection from '../components/TeamSection.astro';
 import ContactSection from '../components/ContactSection.astro';
@@ -16,21 +16,6 @@ const t = de;
 const latest = (await getCollection('news', ({ data }) => data.lang === lang && !data.draft))
   .sort((a,b) => +new Date(b.data.date) - +new Date(a.data.date))
   .slice(0,3);
-const problemProps = {
-  heading: 'Das Problem – wenn niemand abholt',
-  subline:
-    'In Orten wie Ladrilleros (nur per Boot erreichbar) gibt es keine Müllabfuhr: Plastik wird offen verbrannt oder abgelagert – das belastet Luft, Meer & Gesundheit.',
-  kpis: [
-    { id: 'k1', value: 100, suffix: ' kg/Tag', label: 'Plastikabfall (lokal)' },
-    { id: 'k2', value: 86, suffix: ' kg CO₂/Tag', label: 'CO₂ vermeidbar (offenes Verbrennen)' },
-    { id: 'k3', value: 40, suffix: ' L/Tag', label: 'Diesel ersetzbar (lokal genutzt)' },
-  ],
-  flow: [
-    { icon: '🗑️', title: 'Kein Abholsystem', text: 'Kein Zugang zu geregelter Entsorgung; Plastik sammelt sich.' },
-    { icon: '🔥', title: 'Offenes Verbrennen', text: 'Notlösung – setzt Feinstaub, Black Carbon & CO₂ frei.' },
-    { icon: '☁️', title: 'Gesundheit & Klima', text: 'Luftverschmutzung & Klimawirkung – über dem Meer oft „unsichtbar“.' },
-  ],
-};
 ---
 <BaseLayout lang={lang} t={t} title="Solarkraftstoff aus Plastikmüll">
   <Hero
@@ -44,7 +29,7 @@ const problemProps = {
       { icon: '⚓', label: t.hero.badges[2] },
     ]}
   />
-  <ProblemSection {...problemProps} />
+  <ProblemStory t={t.problemStory} />
   <ProcessFlow client:load />
   <ContainerSolution t={t.container} />
   <BusinessSection t={t.business} />

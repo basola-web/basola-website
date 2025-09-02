@@ -10,11 +10,69 @@
     "lead": "Our small-scale solar pyrolysis system converts non-recyclable plastics into local fuel – an autonomous solution for remote regions lacking waste management and reliable energy supply.",
     "ctaPrimary": "Become a partner",
     "ctaSecondary": "How it works!",
-    "badges": ["Off-grid", "Decentralized", "Locally operated"]
+    "badges": [
+      "Off-grid",
+      "Decentralized",
+      "Locally operated"
+    ]
   },
-  "problem": {
-    "heading": "Problem",
-    "text": "Ladrilleros can only be reached by boat (~1 h from Buenaventura). Diesel is expensive; washed-up waste is openly burned."
+  "problemStory": {
+    "heading": "When waste disposal falls to the community…",
+    "intro": "Many small-island & coastal communities lack regular collection. Improvised solutions burden environment, health and livelihoods.",
+    "cards": {
+      "burning": {
+        "icon": "🔥",
+        "title": "Open burning",
+        "text": "Small fires are the last resort: smoke with fine particles and toxic by-products pollutes air and surroundings."
+      },
+      "dumps": {
+        "icon": "🗑️",
+        "icon2": "🌊",
+        "title": "Open dumps",
+        "text": "Unsecured dumps near settlements and waters are flushed by rain; plastics spread and some reach the sea via rivers."
+      },
+      "fuel": {
+        "icon": "⛽",
+        "title": "High fuel prices",
+        "badge": "Default: +20 %",
+        "text": "Long transport routes, small import volumes and extra handling steps drive local energy prices in island markets — supply is costly and unreliable."
+      }
+    },
+    "transition": "We replace self-disposal with local recovery – turning plastic into clean fuel.",
+    "basola": {
+      "title": "BASOLA",
+      "text": "Collect plastic locally, recover it cleanly and provide fuel on-site. Less smoke, fewer dumps, more energy security."
+    },
+    "sources": {
+      "label": "ⓘ Sources",
+      "close": "Close",
+      "items": [
+        {
+          "label": "WHO – Open waste burning & health (overview)",
+          "url": "https://www.who.int/teams/environment-climate-change-and-health/air-quality-and-health/sectoral-interventions/waste"
+        },
+        {
+          "label": "Pathak et al. – Open burning of plastic wastes (review)",
+          "url": "https://doi.org/10.1016/j.jhazmat.2023.131043"
+        },
+        {
+          "label": "OECD – Global Plastics Outlook (background on leakage)",
+          "url": "https://www.oecd.org/environment/plastics/"
+        },
+        {
+          "label": "Meijer et al., Science Advances – Rivers as major pathways",
+          "url": "https://www.science.org/doi/10.1126/sciadv.aaz5803"
+        },
+        {
+          "label": "UNCTAD – SIDS bear highest transport & insurance costs",
+          "url": "https://unctad.org/topic/transport-and-trade-logistics"
+        },
+        {
+          "label": "Pacific Community (SPC) – Fuel pricing in Pacific Island markets (components/monitoring)",
+          "url": "https://www.spc.int/"
+        }
+      ]
+    }
   },
   "solution": {
     "heading": "Solution",
@@ -41,8 +99,8 @@
     "text": "Triple benefit for environment, community and climate."
   },
   "team": {
-    "heading": "Our Team",
-    "text": "Meet the people behind BASOLA."
+    "heading": "About Us",
+    "text": "Our interdisciplinary team combines expertise in chemical and process engineering, mechanical engineering, electrical engineering, and industrial engineering — complemented by business and environmental perspectives. Together with seasoned advisors, we validate our technology, build prototypes, and test them in the field. Our goal is to spin off a startup that transforms non-recyclable plastics on site into local fuel — technically robust, economically viable, and with measurable impact."
   },
   "partners": {
     "heading": "Partners",

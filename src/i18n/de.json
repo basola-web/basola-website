@@ -10,11 +10,69 @@
     "lead": "Unsere kleinskalige Solar-Pyrolyseanlage verwandelt nicht recycelbare Kunststoffe in lokalen Treibstoff – eine autarke Lösung für abgelegene Regionen ohne funktionierende Entsorgung und Energieversorgung.",
     "ctaPrimary": "Partner werden",
     "ctaSecondary": "So geht's!",
-    "badges": ["Off-Grid", "Dezentral", "Lokal betrieben"]
+    "badges": [
+      "Off-Grid",
+      "Dezentral",
+      "Lokal betrieben"
+    ]
   },
-  "problem": {
-    "heading": "Problem",
-    "text": "Ladrilleros ist nur per Boot erreichbar (~1 h ab Buenaventura). Diesel ist teuer, angeschwemmter Müll wird offen verbrannt."
+  "problemStory": {
+    "heading": "Wenn der Müll selbst entsorgt werden muss…",
+    "intro": "In vielen Small-Island & Coastal Communities gibt es keine reguläre Abholung. Was bleibt, sind Notlösungen, die Umwelt, Gesundheit und Lebensgrundlagen belasten.",
+    "cards": {
+      "burning": {
+        "icon": "🔥",
+        "title": "Offenes Verbrennen",
+        "text": "Kleinstfeuer als Ausweg: Rauch mit Feinstaub und giftigen Verbrennungsprodukten belastet die Atemluft und die Umgebung."
+      },
+      "dumps": {
+        "icon": "🗑️",
+        "icon2": "🌊",
+        "title": "Offene Müllhalden",
+        "text": "Ungesicherte Halden nahe Siedlungen und Gewässern werden bei Regen ausgespült; Kunststoff verteilt sich, ein Teil gelangt über Flüsse ins Meer."
+      },
+      "fuel": {
+        "icon": "⛽",
+        "title": "Erhöhte Kraftstoffpreise",
+        "badge": "Default: +20 %",
+        "text": "Weite Transportwege, kleine Importmengen und zusätzliche Umschlagstufen treiben lokale Energiepreise in Inselmärkten — Versorgung ist teuer und unzuverlässig."
+      }
+    },
+    "transition": "Wir ersetzen Selbstentsorgung durch lokale Verwertung – so wird aus Plastik sauberer Treibstoff.",
+    "basola": {
+      "title": "BASOLA",
+      "text": "Plastik lokal sammeln, sauber verwerten, Kraftstoff vor Ort bereitstellen. Weniger Rauch, weniger offene Halden, mehr Versorgungssicherheit."
+    },
+    "sources": {
+      "label": "ⓘ Quellen",
+      "close": "Schließen",
+      "items": [
+        {
+          "label": "WHO – Open waste burning & health (Übersicht)",
+          "url": "https://www.who.int/teams/environment-climate-change-and-health/air-quality-and-health/sectoral-interventions/waste"
+        },
+        {
+          "label": "Pathak et al. – Open burning of plastic wastes (Review)",
+          "url": "https://doi.org/10.1016/j.jhazmat.2023.131043"
+        },
+        {
+          "label": "OECD – Global Plastics Outlook (Hintergrund zum Weg in die Umwelt)",
+          "url": "https://www.oecd.org/environment/plastics/"
+        },
+        {
+          "label": "Meijer et al., Science Advances – Flüsse als Haupteintragswege",
+          "url": "https://www.science.org/doi/10.1126/sciadv.aaz5803"
+        },
+        {
+          "label": "UNCTAD – SIDS tragen die höchsten Transport- & Versicherungskosten",
+          "url": "https://unctad.org/topic/transport-and-trade-logistics"
+        },
+        {
+          "label": "Pacific Community (SPC) – Fuel pricing in Pacific Island markets (Preisbestandteile/Monitoring)",
+          "url": "https://www.spc.int/"
+        }
+      ]
+    }
   },
   "solution": {
     "heading": "Lösung",
@@ -41,8 +99,8 @@
     "text": "Dreifacher Nutzen für Umwelt, Gemeinschaft und Klima."
   },
   "team": {
-    "heading": "Unser Team",
-    "text": "Lerne die Menschen hinter BASOLA kennen."
+    "heading": "Über Uns",
+    "text": "Unser interdisziplinäres Team vereint Expertise in Chemie- und Verfahrenstechnik, Maschinenbau, Elektrotechnik und Wirtschaftsingenieurwesen – ergänzt um betriebswirtschaftliche und umwelttechnische Perspektiven. Gemeinsam mit erfahrenen Advisor:innen validieren wir unsere Technologie, bauen Prototypen und erproben sie im Feld. Unser Ziel: die Ausgründung eines Start-ups, das nicht recycelbare Kunststoffe vor Ort in lokalen Kraftstoff verwandelt – technisch robust, wirtschaftlich tragfähig und mit messbarem Impact."
   },
   "partners": {
     "heading": "Partner",
