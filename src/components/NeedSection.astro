@@ -1,0 +1,139 @@
+---
+import NeedCard from './NeedCard.astro';
+import '../scripts/need-animate.ts';
+---
+<section id="need" aria-labelledby="need-heading" class="py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="mb-12">
+      <p class="text-primary font-semibold text-sm" data-need-reveal>Der doppelte Engpass in entlegenen Küstengemeinden</p>
+      <h2 id="need-heading" class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-basola-brown" data-need-reveal>
+        Wenn Müll liegen bleibt, zahlen Menschen doppelt.
+      </h2>
+      <p class="mt-4 max-w-3xl text-basola-brown/80" data-need-reveal>
+        In vielen Small-Island & Remote Communities gibt es keine verlässliche Abholung. Plastik wird verbrannt oder landet auf offenen Halden. Gleichzeitig treiben lange Transportwege die Treibstoffpreise nach oben – Boote und Generatoren werden zum Kostenrisiko.
+      </p>
+    </header>
+    <div class="grid gap-6 md:grid-cols-2">
+      <NeedCard title="Offenes Verbrennen" variant="burn">
+        <span slot="icon">
+          <svg
+            class="w-5 h-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+          </svg>
+        </span>
+        <p>Rauch mit Feinstaub und toxischen Verbrennungsprodukten belastet Atemluft und Gesundheit – Alltag durch Kleinfeuer als Notbehelf statt Entsorgung.</p>
+      </NeedCard>
+      <NeedCard title="Offene Müllhalden" variant="dump">
+        <span slot="icon">
+          <svg
+            class="w-5 h-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M10 11v6" />
+            <path d="M14 11v6" />
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+            <path d="M3 6h18" />
+            <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+          </svg>
+        </span>
+        <p>Ungesicherte Halden werden bei Regen ausgespült; Kunststoff gelangt in Flüsse und Meer – mit Folgen für Fischerei, Tourismus und Ökosysteme.</p>
+      </NeedCard>
+      <NeedCard title="Erhöhte Kraftstoffpreise" variant="fuel" counterTarget={40}>
+        <span slot="icon">
+          <svg
+            class="w-5 h-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="3" x2="15" y1="22" y2="22" />
+            <line x1="4" x2="14" y1="9" y2="9" />
+            <path d="M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18" />
+            <path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5" />
+          </svg>
+        </span>
+        <p>In abgelegenen Küstendörfern sind Kraftstoffpreise deutlich höher als im Umland; Beispiel Ladrilleros: +30–40 % gegenüber Buenaventura.</p>
+      </NeedCard>
+    </div>
+    <svg
+      class="mt-12 mx-auto max-w-md w-full hidden lg:block text-basola-brown/40"
+      viewBox="0 0 400 100"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      aria-hidden="true"
+      data-need-reveal
+      data-line
+    >
+      <path d="M0 50 C80 20 160 80 240 40 300 20 360 60 400 50" />
+    </svg>
+    <div class="mt-12 relative" data-need-reveal>
+      <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-basola-brown/30 to-transparent"></div>
+      <p class="mt-4 flex items-center justify-center text-basola-brown">
+        <svg
+          class="w-5 h-5 mr-2 text-primary"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+          <path d="M12 9v4" />
+          <path d="M12 17h.01" />
+        </svg>
+        Plastikmüll auf der einen Seite, teurer Treibstoff auf der anderen. – Basola setzt genau hier an.
+      </p>
+    </div>
+    <footer class="mt-8 text-basola-brown/70 text-sm" data-need-reveal>
+      <button
+        id="need-sources-toggle"
+        type="button"
+        class="underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      >
+        Quellen anzeigen
+      </button>
+      <dialog
+        id="need-sources-dialog"
+        class="rounded-lg p-6 w-full max-w-md bg-white text-basola-brown"
+      >
+        <h3 class="text-lg font-semibold mb-4">Quellen</h3>
+        <ul class="list-disc pl-4 space-y-2">
+          <li>UNEP 2018: Plastic waste management in Small Island Developing States</li>
+          <li>DANE 2023: Treibstoffpreise Buenaventura vs. Ladrilleros</li>
+        </ul>
+        <button
+          id="need-sources-close"
+          class="mt-4 underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        >
+          Schließen
+        </button>
+      </dialog>
+    </footer>
+  </div>
+  <style>
+    .js [data-need-reveal]{opacity:0;transform:translateY(12px)}
+    .js .need-visible{opacity:1;transform:translateY(0);transition:opacity 400ms ease,transform 400ms ease}
+  </style>
+</section>
