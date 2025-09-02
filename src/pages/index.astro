@@ -42,6 +42,8 @@ const latest = (await getCollection('news', ({ data }) => data.lang === lang && 
           summary: data.summary,
           heroImage: data.heroImage
         }))}
+        t={t.news}
+        lang={lang}
       />
     </section>
   )}

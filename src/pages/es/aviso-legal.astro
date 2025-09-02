@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import es from '../../i18n/es.json';
+const lang = 'es';
+const t = es;
+---
+<BaseLayout lang={lang} t={t} title="Aviso legal" mainClass="prose prose-lg max-w-3xl mx-auto px-4 py-10">
+  <h1>Aviso legal</h1>
+  <p>BASOLA es un proyecto independiente de Enactus Karlsruhe e.V.</p>
+  <p>Enactus Karlsruhe e.V.<br/>Adenauerring 7<br/>76131 Karlsruhe</p>
+  <p>La asociación está representada legalmente de forma conjunta por los miembros de la junta:<br/>Simon Langner, Julia Hilt, Adrian Braess, Marike Kardorff</p>
+  <p>Dirección del proyecto: Lea Bachmann</p>
+  <p>Correo electrónico: <a href="mailto:basola@karlsruhe.enactus.team" class="text-[#FBC02D] hover:underline">basola@karlsruhe.enactus.team</a></p>
+  <p>Tribunal de registro / número de registro: Tribunal de distrito – registro de asociaciones – Mannheim, VR 701085</p>
+  <p>Responsable del contenido según § 55 párr. 2 RStV: Simon Langner</p>
+  <p>Aviso de responsabilidad: A pesar del cuidadoso control del contenido, no asumimos ninguna responsabilidad por el contenido de los enlaces externos. Los operadores de las páginas enlazadas son los únicos responsables de su contenido.</p>
+  <p>Derechos de autor: El contenido y la estructura de este sitio web están protegidos por derechos de autor. La reproducción de información o datos, especialmente el uso de textos, partes de texto o material gráfico, requiere el consentimiento previo por escrito de Enactus Karlsruhe e.V.</p>
+  <p>Resolución de disputas: La Comisión de la UE ofrece una plataforma para la resolución de litigios en línea: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-[#FBC02D] hover:underline">https://ec.europa.eu/consumers/odr/</a><br/>No estamos dispuestos ni obligados a participar en procedimientos de resolución de disputas ante una junta de arbitraje de consumo.</p>
+</BaseLayout>

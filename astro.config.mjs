@@ -9,7 +9,7 @@ export default defineConfig({
   integrations: [mdx(), tailwind(), react()],
   i18n: {
     defaultLocale: 'de',
-    locales: ['de', 'en'],
+    locales: ['de', 'en', 'es'],
     routing: {
       prefixDefaultLocale: false,
     },

@@ -1,6 +1,9 @@
 ---
 import { getCollection, getEntryBySlug } from 'astro:content';
 import NewsCarousel from '../../components/NewsCarousel.astro';
+import de from '../../i18n/de.json';
+import en from '../../i18n/en.json';
+import es from '../../i18n/es.json';
 
 export async function getStaticPaths() {
   const entries = await getCollection('news', ({ data }) => !data.draft);
@@ -13,6 +16,9 @@ if (!entry) throw new Error('Not found');
 
 const { Content } = await entry.render();
 const { data } = entry;
+const lang = data.lang;
+const dict = { de, en, es } as const;
+const t = dict[lang];
 
 const more = (await getCollection('news', ({ data: d }) => d.lang === data.lang && entry.slug !== slug && !d.draft))
   .sort((a,b) => +new Date(b.data.date) - +new Date(a.data.date))
@@ -43,9 +49,9 @@ const more = (await getCollection('news', ({ data: d }) => d.lang === data.lang 
   <body class="bg-neutral-50">
     <article class="mx-auto max-w-3xl px-6 py-16">
       <header class="mb-6">
-        <a href={`/news?lang=${data.lang}`} class="text-sm text-basola-brown/70 hover:text-basola-brown">← Zur Übersicht</a>
+        <a href={`/news?lang=${data.lang}`} class="text-sm text-basola-brown/70 hover:text-basola-brown">{t.news.back}</a>
         <h1 class="mt-2 text-3xl md:text-4xl font-extrabold text-basola-brown">{data.title}</h1>
-        <time class="mt-2 block text-sm text-basola-brown/60">{new Date(data.date).toLocaleDateString()}</time>
+        <time class="mt-2 block text-sm text-basola-brown/60">{new Date(data.date).toLocaleDateString(lang)}</time>
         <div class="mt-3 flex flex-wrap gap-2">
           {data.tags?.map((t) => <span class="rounded-full border border-basola-yellow/70 px-2 py-0.5 text-[11px] text-basola-brown bg-white/60">{t}</span>)}
         </div>
@@ -57,14 +63,14 @@ const more = (await getCollection('news', ({ data: d }) => d.lang === data.lang 
 
       {data.externalUrl && (
         <a href={data.externalUrl} target="_blank" rel="noopener" class="mt-8 inline-flex items-center gap-2 rounded-xl border border-basola-yellow px-4 py-2 font-semibold text-basola-brown hover:bg-white">
-          Zum Artikel <span aria-hidden>↗</span>
+          {t.news.read} <span aria-hidden>↗</span>
         </a>
       )}
     </article>
 
     {more.length > 0 && (
       <section class="mx-auto max-w-6xl px-6 pb-16">
-        <h2 class="text-xl font-bold text-basola-brown mb-4">Weitere Updates</h2>
+        <h2 class="text-xl font-bold text-basola-brown mb-4">{t.news.more}</h2>
         <NewsCarousel
           items={more.map(({ slug, data }) => ({
             url: `/news/${slug}`,
@@ -73,6 +79,8 @@ const more = (await getCollection('news', ({ data: d }) => d.lang === data.lang 
             summary: data.summary,
             heroImage: data.heroImage
           }))}
+          t={t.news}
+          lang={lang}
         />
       </section>
     )}

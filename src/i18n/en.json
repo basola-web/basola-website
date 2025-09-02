@@ -55,5 +55,14 @@
       "other": "Other"
     },
     "submit": "Send"
+  },
+  "news": {
+    "title": "News & Updates",
+    "tagline": "What's new – awards, milestones, press.",
+    "prev": "Previous article",
+    "next": "Next article",
+    "back": "\u2190 Back to overview",
+    "more": "More updates",
+    "read": "Read article"
   }
 }

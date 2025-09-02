@@ -55,5 +55,14 @@
       "other": "Andere"
     },
     "submit": "Senden"
+  },
+  "news": {
+    "title": "News & Updates",
+    "tagline": "Was es Neues gibt – Auszeichnungen, Meilensteine, Presse.",
+    "prev": "Vorheriger Artikel",
+    "next": "Nächster Artikel",
+    "back": "\u2190 Zur Übersicht",
+    "more": "Weitere Updates",
+    "read": "Zum Artikel"
   }
 }
