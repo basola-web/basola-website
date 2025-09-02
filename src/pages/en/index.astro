@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import ProcessFlow from '../../components/ProcessFlow';
 import ContainerSolution from '../../components/ContainerSolution.astro';
-import BusinessSection from '../../components/BusinessSection.astro';
 import ImpactSection from '../../components/ImpactSection.astro';
 import TeamSection from '../../components/TeamSection.astro';
 import ContactSection from '../../components/ContactSection.astro';
@@ -30,7 +29,6 @@ const latest = (await getCollection('news', ({ data }) => data.lang === lang && 
   />
   <ProcessFlow client:load />
   <ContainerSolution t={t.container} />
-  <BusinessSection t={t.business} />
   <ImpactSection lang="en" />
   <TeamSection t={t.team} />
   {latest.length > 0 && (
