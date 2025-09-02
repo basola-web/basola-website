@@ -18,7 +18,7 @@
   },
   "problemStory": {
     "heading": "When waste disposal falls to the community…",
-    "intro": "Many small-island & coastal communities lack regular collection. Improvised solutions burden environment, health and livelihoods.",
+    "intro": "Many small-island & coastal communities lack regular collection. Plastic waste is burned or dumped, while long transport routes make fuel in remote regions expensive.",
     "cards": {
       "burning": {
         "icon": "🔥",
@@ -38,11 +38,7 @@
         "text": "Long transport routes, small import volumes and extra handling steps drive local energy prices in island markets — supply is costly and unreliable."
       }
     },
-    "transition": "We replace self-disposal with local recovery – turning plastic into clean fuel.",
-    "basola": {
-      "title": "BASOLA",
-      "text": "Collect plastic locally, recover it cleanly and provide fuel on-site. Less smoke, fewer dumps, more energy security."
-    },
+    "transition": "Plastic waste on one side, high fuel prices in remote regions on the other — Basola turns both into local clean fuel.",
     "sources": {
       "label": "ⓘ Sources",
       "close": "Close",

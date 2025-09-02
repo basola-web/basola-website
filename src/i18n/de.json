@@ -18,7 +18,7 @@
   },
   "problemStory": {
     "heading": "Wenn der Müll selbst entsorgt werden muss…",
-    "intro": "In vielen Small-Island & Coastal Communities gibt es keine reguläre Abholung. Was bleibt, sind Notlösungen, die Umwelt, Gesundheit und Lebensgrundlagen belasten.",
+    "intro": "In vielen Small-Island & Coastal Communities gibt es keine reguläre Abholung. Plastikmüll wird verbrannt oder landet auf offenen Halden – zugleich verteuern weite Transportwege den Treibstoff in entlegenen Regionen.",
     "cards": {
       "burning": {
         "icon": "🔥",
@@ -38,11 +38,7 @@
         "text": "Weite Transportwege, kleine Importmengen und zusätzliche Umschlagstufen treiben lokale Energiepreise in Inselmärkten — Versorgung ist teuer und unzuverlässig."
       }
     },
-    "transition": "Wir ersetzen Selbstentsorgung durch lokale Verwertung – so wird aus Plastik sauberer Treibstoff.",
-    "basola": {
-      "title": "BASOLA",
-      "text": "Plastik lokal sammeln, sauber verwerten, Kraftstoff vor Ort bereitstellen. Weniger Rauch, weniger offene Halden, mehr Versorgungssicherheit."
-    },
+    "transition": "Plastikmüll auf der einen Seite, erhöhte Kraftstoffpreise in entlegenen Regionen auf der anderen – Basola macht aus beidem vor Ort sauberen Treibstoff.",
     "sources": {
       "label": "ⓘ Quellen",
       "close": "Schließen",
