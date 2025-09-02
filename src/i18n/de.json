@@ -7,9 +7,10 @@
   },
   "hero": {
     "title": "Solar-Kraftstoff aus Plastikmüll – dort, wo ihn niemand abholt.",
-    "lead": "Dezentrale Solar-Pyrolyse verwandelt nicht recycelbare Kunststoffe in lokalen Treibstoff – für boat-only Küstengemeinden.",
+    "lead": "Unsere kleinskalige Solar-Pyrolyseanlage verwandelt nicht recycelbare Kunststoffe in lokalen Treibstoff – eine autarke Lösung für abgelegene Regionen ohne funktionierende Entsorgung und Energieversorgung.",
     "ctaPrimary": "Partner werden",
-    "ctaSecondary": "Zur Lösung"
+    "ctaSecondary": "So geht's!",
+    "badges": ["Off-Grid", "Dezentral", "Lokal betrieben"]
   },
   "problem": {
     "heading": "Problem",
