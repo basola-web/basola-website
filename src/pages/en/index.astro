@@ -34,7 +34,7 @@ const latest = (await getCollection('news', ({ data }) => data.lang === lang && 
   {latest.length > 0 && (
     <section class="mx-auto max-w-6xl px-6 py-16">
       <h2 class="mb-8 text-3xl font-extrabold text-basola-brown">Latest News</h2>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
         {latest.map(({ slug, data }) => (
           <NewsCard
             url={`/news/${slug}`}

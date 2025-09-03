@@ -23,7 +23,7 @@ export default function NewsCarousel({ items, t, lang }: Props) {
 
   return (
     <div className="relative w-full">
-      <div className="flex gap-6">
+      <div className="flex gap-6 items-stretch">
         {visible.map((item, i) => (
           <a key={i} href={item.url} className="group flex flex-1 flex-col h-full">
             {item.heroImage && (
@@ -33,7 +33,7 @@ export default function NewsCarousel({ items, t, lang }: Props) {
                 className="h-40 w-full object-contain p-4 opacity-90 group-hover:opacity-100 transition bg-white rounded-t-2xl"
               />
             )}
-            <div className="flex flex-1 flex-col p-5 bg-white rounded-b-2xl ring-1 ring-black/5 shadow-sm group-hover:shadow-lg transition">
+            <div className="flex flex-1 flex-col p-5 bg-white rounded-b-2xl ring-1 ring-black/5 shadow-sm group-hover:shadow-lg transition h-full">
               <time className="text-xs uppercase tracking-wide text-basola-brown/60">
                 {new Date(item.date).toLocaleDateString(lang)}
               </time>
