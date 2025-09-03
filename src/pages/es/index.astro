@@ -27,7 +27,7 @@ const latest = (await getCollection('news', ({ data }) => data.lang === lang && 
       { icon: '⚓', label: t.hero.badges[2] },
     ]}
   />
-  <ProcessFlow client:load />
+  <ProcessFlow lang="es" client:load />
   <ContainerSolution t={t.container} />
   <ImpactSection lang="es" />
   <TeamSection t={t.team} />
