@@ -13,7 +13,7 @@ const logos = [
   { src: '/assets/univalle_logo.png', alt: 'Universidad del Valle' },
 ];
 ---
-<section id="contact" class="text-secondary">
+<section id="contact" class="text-secondary py-16">
   <div class="mx-auto max-w-6xl grid md:grid-cols-2 gap-12 items-start">
     <div class="max-w-md mx-auto w-full text-center">
       <h3 class="text-2xl font-bold mb-8">{partners.heading}</h3>
@@ -30,20 +30,74 @@ const logos = [
     </div>
     <div class="max-w-md mx-auto w-full">
       <h2 class="text-3xl font-bold mb-8 text-center">{t.heading}</h2>
-      <form class="space-y-4" method="post" action="#">
+      <form
+        class="space-y-4 bg-white/80 backdrop-blur p-6 rounded-2xl shadow-lg ring-1 ring-black/5"
+        method="POST"
+        action="https://formsubmit.co/basola@karlsruhe.enactus.team"
+      >
         <div>
-          <label class="block text-sm mb-1">{t.name}</label>
-          <input type="text" class="w-full border p-2 rounded" />
+          <label for="name" class="block text-sm mb-1">{t.name}</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            placeholder={t.name}
+            class="w-full border border-basola-brown/20 p-3 rounded-lg focus:border-basola-yellow focus:ring-basola-yellow"
+          />
         </div>
         <div>
-          <label class="block text-sm mb-1">{t.email}</label>
-          <input type="email" class="w-full border p-2 rounded" />
+          <label for="email" class="block text-sm mb-1">{t.email}</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="name@beispiel.de"
+            class="w-full border border-basola-brown/20 p-3 rounded-lg focus:border-basola-yellow focus:ring-basola-yellow"
+          />
         </div>
         <div>
-          <label class="block text-sm mb-1">{t.message}</label>
-          <textarea class="w-full border p-2 rounded" rows="4"></textarea>
+          <label for="org" class="block text-sm mb-1">{t.org}</label>
+          <input
+            id="org"
+            name="organisation"
+            type="text"
+            placeholder={t.org}
+            class="w-full border border-basola-brown/20 p-3 rounded-lg focus:border-basola-yellow focus:ring-basola-yellow"
+          />
         </div>
-        <button type="submit" class="bg-primary text-secondary font-bold py-2 px-4 rounded">{t.submit}</button>
+        <div>
+          <label for="role" class="block text-sm mb-1">{t.role}</label>
+          <select
+            id="role"
+            name="role"
+            class="w-full border border-basola-brown/20 p-3 rounded-lg focus:border-basola-yellow focus:ring-basola-yellow"
+          >
+            <option value="partner">{t.roles.partner}</option>
+            <option value="investor">{t.roles.investor}</option>
+            <option value="ngo">{t.roles.ngo}</option>
+            <option value="other">{t.roles.other}</option>
+          </select>
+        </div>
+        <div>
+          <label for="message" class="block text-sm mb-1">{t.message}</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            placeholder={t.message}
+            class="w-full border border-basola-brown/20 p-3 rounded-lg focus:border-basola-yellow focus:ring-basola-yellow"
+          ></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Website contact form" />
+        <button
+          type="submit"
+          class="w-full bg-primary text-secondary font-bold py-3 px-4 rounded-lg hover:bg-primary/90"
+        >
+          {t.submit}
+        </button>
       </form>
     </div>
   </div>

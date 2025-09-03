@@ -11,7 +11,7 @@ import { getCollection } from 'astro:content';
 import de from '../i18n/de.json';
 const lang = 'de';
 const t = de;
-const latest = (await getCollection('news', ({ data }) => data.lang === lang && !data.draft))
+const latest = (await getCollection('news', ({ data }) => !data.draft))
   .sort((a,b) => +new Date(b.data.date) - +new Date(a.data.date))
   .slice(0,3);
 ---
@@ -27,7 +27,7 @@ const latest = (await getCollection('news', ({ data }) => data.lang === lang && 
       { icon: '⚓', label: t.hero.badges[2] },
     ]}
   />
-  <ProcessFlow client:load />
+  <ProcessFlow lang="de" client:load />
   <ContainerSolution t={t.container} />
   <ImpactSection lang="de" />
   <TeamSection t={t.team} />
