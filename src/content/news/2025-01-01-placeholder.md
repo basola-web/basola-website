@@ -2,7 +2,7 @@
 title: "Platzhalter"
 date: "2025-01-01"
 lang: "de"
-summary: "Vorläufiger Platzhalter für zukünftige Updates."
+summary: "Noch keine Inhalte."
 tags: []
 draft: true
 ---

@@ -2,7 +2,7 @@
 title: "Basola ist offiziell Enactus-Projekt (Gating)"
 date: "2024-02-19"
 lang: "de"
-summary: "Das Gating erfolgte am 19. Februar 2024 – Startschuss für Basola als Enactus-Projekt."
+summary: "Our new project Basola successfully pitched to the jury of Enactus Germany and is now an official Enactus project!"
 tags: ["Enactus","Milestone"]
 heroImage: "/assets/enactus_karlsruhe_logo.png"
 ---
