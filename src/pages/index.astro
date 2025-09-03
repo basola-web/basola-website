@@ -33,7 +33,7 @@ const latest = (await getCollection('news', ({ data }) => data.lang === lang && 
   <TeamSection t={t.team} />
   {latest.length > 0 && (
     <section class="mx-auto max-w-6xl px-6 py-16">
-      <h2 class="mb-8 text-3xl font-extrabold text-basola-brown">Neueste Updates</h2>
+      <h2 class="mb-8 text-3xl font-extrabold text-basola-brown">Aktuelles</h2>
       <NewsCarousel
         items={latest.map(({ slug, data }) => ({
           url: `/news/${slug}`,
