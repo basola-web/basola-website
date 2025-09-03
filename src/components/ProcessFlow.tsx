@@ -46,7 +46,7 @@ const content: Record<string, Translations> = {
         title: 'Verwertung',
         icon: '/assets/icons/icon_5.png',
         description:
-          'Der Kraftstoff wird lokal verkauft – z. B. an Boote oder Generatoren.',
+          'Der Kraftstoff wird lokal verkauft und kann in Generatoren, Trucks oder Booten genutzt werden.',
       },
     ],
   },
@@ -81,7 +81,7 @@ const content: Record<string, Translations> = {
       {
         title: 'Utilization',
         icon: '/assets/icons/icon_5.png',
-        description: 'The fuel is sold locally, e.g., to boats or generators.',
+        description: 'The fuel is sold locally and can be used in generators, trucks, or boats.',
       },
     ],
   },
@@ -118,7 +118,7 @@ const content: Record<string, Translations> = {
         title: 'Aprovechamiento',
         icon: '/assets/icons/icon_5.png',
         description:
-          'El combustible se vende localmente, p. ej., a barcos o generadores.',
+          'El combustible se vende localmente y puede utilizarse en generadores, camiones o barcos.',
       },
     ],
   },
@@ -150,11 +150,11 @@ const ProcessFlow: React.FC<Props> = ({ lang = 'de' }) => {
             transition={{ duration: 1, ease: 'easeInOut' }}
           />
 
-          <div className="flex flex-col md:flex-row md:justify-between gap-12">
+          <div className="flex flex-col md:flex-row md:justify-between gap-12 md:items-stretch">
             {steps.map((s, i) => (
               <motion.div
                 key={s.title}
-                className="flex flex-col items-center flex-1"
+                className="flex flex-col items-center flex-1 h-full"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.2, duration: 0.5, ease: 'easeInOut' }}
@@ -162,7 +162,7 @@ const ProcessFlow: React.FC<Props> = ({ lang = 'de' }) => {
                 <div className="relative z-10 w-24 h-24 flex items-center justify-center rounded-full border border-[#723100] bg-white p-3 mb-4">
                   <img src={s.icon} alt={s.title} className="w-full h-full" />
                 </div>
-                <div className="bg-white rounded-xl shadow-md p-4 text-left w-full min-h-[120px]">
+                <div className="bg-white rounded-xl shadow-md p-4 text-left w-full flex-1 flex flex-col">
                   <h3 className="font-semibold text-[#723100] mb-2">{s.title}</h3>
                   <p className="text-sm text-[#723100]/80">{s.description}</p>
                 </div>
