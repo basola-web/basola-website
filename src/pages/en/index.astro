@@ -11,7 +11,7 @@ import { getCollection } from 'astro:content';
 import en from '../../i18n/en.json';
 const lang = 'en';
 const t = en;
-const latest = (await getCollection('news', ({ data }) => data.lang === lang && !data.draft))
+const latest = (await getCollection('news', ({ data }) => !data.draft))
   .sort((a,b) => +new Date(b.data.date) - +new Date(a.data.date))
   .slice(0,3);
 ---
