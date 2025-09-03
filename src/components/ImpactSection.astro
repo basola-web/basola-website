@@ -3,9 +3,9 @@ interface KPI {
   icon: string;
   alt: string;
   title: string;
+  heading: string;
+  description: string;
   value: string;
-  label: string;
-  explanation: string;
 }
 
 const { lang = 'de' } = Astro.props;
@@ -28,33 +28,33 @@ const contentMap: Record<
         icon: '/assets/icons/sdg12.png',
         alt: 'SDG 12',
         title: 'SDG 12',
+        heading: 'Plastikreduktion pro Tag',
+        description: 'durch Recycling & Strandreinigung',
         value: '80 kg',
-        label: 'Plastikreduktion pro Tag',
-        explanation: 'durch Recycling & Strandreinigung',
       },
       {
         icon: '/assets/icons/sdg13.png',
         alt: 'SDG 13',
         title: 'SDG 13',
-        value: '86 kg',
-        label: 'CO₂-Reduktion pro Tag',
-        explanation: '≈2,3 kg CO₂ pro kg Plastik',
+        heading: 'Messbarer Impact',
+        description: 'Abfallreduktion & CO₂-Einsparung',
+        value: '2,3 t CO₂ pro t Plastikmüll',
       },
       {
         icon: '/assets/icons/sdg8.png',
         alt: 'SDG 8',
         title: 'SDG 8',
+        heading: 'Lokale Arbeitsplätze',
+        description: 'Vollzeit bei doppeltem Mindestlohn',
         value: '2 Jobs',
-        label: 'Vollzeit bei doppeltem Mindestlohn',
-        explanation: 'Lokale Arbeitsplätze',
       },
       {
         icon: '/assets/icons/sdg8.png',
         alt: 'SDG 8',
         title: 'SDG 8',
-        value: '1.123 USD',
-        label: 'Monatlicher Umsatz durch Produkte',
-        explanation: 'aus Kraftstoff & Nebenprodukten',
+        heading: 'Wirtschaftlich tragfähig',
+        description: 'Positiver Business Case in dezentralen Setups',
+        value: '<1,00 € /L',
       },
     ],
     quote: {
@@ -73,33 +73,33 @@ const contentMap: Record<
         icon: '/assets/icons/sdg12.png',
         alt: 'SDG 12',
         title: 'SDG 12',
+        heading: 'Plastic reduction per day',
+        description: 'through recycling & beach cleanup',
         value: '80 kg',
-        label: 'Plastic reduced per day',
-        explanation: 'through recycling & beach cleanup',
       },
       {
         icon: '/assets/icons/sdg13.png',
         alt: 'SDG 13',
         title: 'SDG 13',
-        value: '86 kg',
-        label: 'CO₂ reduction per day',
-        explanation: '≈2.3 kg CO₂ per kg plastic',
+        heading: 'Measurable impact',
+        description: 'Waste reduction & CO₂ savings',
+        value: '2.3 t CO₂ per t plastic waste',
       },
       {
         icon: '/assets/icons/sdg8.png',
         alt: 'SDG 8',
         title: 'SDG 8',
+        heading: 'Local jobs',
+        description: 'Full-time at double minimum wage',
         value: '2 jobs',
-        label: 'Full-time at double minimum wage',
-        explanation: 'Local employment',
       },
       {
         icon: '/assets/icons/sdg8.png',
         alt: 'SDG 8',
         title: 'SDG 8',
-        value: '1,123 USD',
-        label: 'Monthly revenue from products',
-        explanation: 'from fuel & by-products',
+        heading: 'Economically viable',
+        description: 'Positive business case in decentralized setups',
+        value: '<€1.00 /L',
       },
     ],
     quote: {
@@ -118,33 +118,33 @@ const contentMap: Record<
         icon: '/assets/icons/sdg12.png',
         alt: 'SDG 12',
         title: 'SDG 12',
+        heading: 'Reducción de plástico por día',
+        description: 'mediante reciclaje y limpieza de playas',
         value: '80 kg',
-        label: 'Reducción de plástico por día',
-        explanation: 'mediante reciclaje y limpieza de playas',
       },
       {
         icon: '/assets/icons/sdg13.png',
         alt: 'SDG 13',
         title: 'SDG 13',
-        value: '86 kg',
-        label: 'Reducción de CO₂ por día',
-        explanation: '≈2,3 kg de CO₂ por kg de plástico',
+        heading: 'Impacto medible',
+        description: 'Reducción de residuos y ahorro de CO₂',
+        value: '2,3 t CO₂ por t de residuos plásticos',
       },
       {
         icon: '/assets/icons/sdg8.png',
         alt: 'SDG 8',
         title: 'SDG 8',
+        heading: 'Empleo local',
+        description: 'Tiempo completo al doble del salario mínimo',
         value: '2 puestos',
-        label: 'Tiempo completo al doble del salario mínimo',
-        explanation: 'Empleo local',
       },
       {
         icon: '/assets/icons/sdg8.png',
         alt: 'SDG 8',
         title: 'SDG 8',
-        value: '1.123 USD',
-        label: 'Ingresos mensuales por productos',
-        explanation: 'de combustible y subproductos',
+        heading: 'Económicamente viable',
+        description: 'Caso de negocio positivo en configuraciones descentralizadas',
+        value: '<1,00 € /L',
       },
     ],
     quote: {
@@ -172,13 +172,15 @@ const content = contentMap[lang] ?? contentMap.en;
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {content.kpis.map((k) => (
         <div
-          class="rounded-2xl bg-white ring-1 ring-black/5 shadow-sm p-6 text-center flex flex-col items-center"
+          class="rounded-2xl bg-[#F7F6F3] ring-1 ring-black/5 p-6 flex flex-col"
           data-anim
         >
-          <img src={k.icon} alt={k.alt} title={k.title} class="mb-4 h-12 w-12" />
-          <div class="text-3xl font-extrabold text-basola-yellow">{k.value}</div>
-          <p class="mt-1 font-semibold text-basola-brown">{k.label}</p>
-          <p class="mt-1 text-sm text-basola-brown/70">{k.explanation}</p>
+          <div class="flex items-center gap-3 mb-4">
+            <img src={k.icon} alt={k.alt} title={k.title} class="h-10 w-10" />
+            <h3 class="text-basola-brown font-semibold">{k.heading}</h3>
+          </div>
+          <p class="text-sm text-basola-brown/80 flex-1">{k.description}</p>
+          <div class="mt-4 text-basola-yellow font-extrabold">{k.value}</div>
         </div>
       ))}
     </div>
