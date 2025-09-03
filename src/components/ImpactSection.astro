@@ -159,8 +159,10 @@ const contentMap: Record<
 const content = contentMap[lang] ?? contentMap.en;
 ---
 
-<section id="impact" class="relative py-16 bg-[#FFB703]/20">
-  <div class="mx-auto max-w-6xl px-6">
+<section id="impact" class="relative py-16 overflow-hidden">
+  <div class="absolute inset-0 bg-[url('/assets/Ladrilleros.png')] bg-cover bg-[position:60%] opacity-20 pointer-events-none"></div>
+  <div class="absolute inset-0 bg-[#FFB703]/20"></div>
+  <div class="relative mx-auto max-w-6xl px-6">
     <header class="mb-8 text-center">
       <h2 class="text-3xl md:text-4xl font-extrabold text-basola-brown">{content.heading}</h2>
     </header>
