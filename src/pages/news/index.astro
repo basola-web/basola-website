@@ -1,16 +1,21 @@
 ---
 import { getCollection } from 'astro:content';
 import NewsCarousel from '../../components/NewsCarousel.astro';
+import de from '../../i18n/de.json';
+import en from '../../i18n/en.json';
+import es from '../../i18n/es.json';
 
 const lang = Astro.url.searchParams.get('lang') ?? 'de';
+const dict = { de, en, es } as const;
+const t = dict[lang];
 const all = await getCollection('news', ({ data }) => data.lang === lang && !data.draft);
 const items = all.sort((a,b) => +new Date(b.data.date) - +new Date(a.data.date));
 ---
 
 <html lang={lang}>
   <head>
-    <title>Basola – News & Updates</title>
-    <meta name="description" content="Neuigkeiten, Preise und Meilensteine von Basola." />
+    <title>Basola – {t.news.title}</title>
+    <meta name="description" content={t.news.tagline} />
     <link rel="icon" type="image/png" href="/assets/basola_favicon.png" />
 
   </head>
@@ -18,12 +23,13 @@ const items = all.sort((a,b) => +new Date(b.data.date) - +new Date(a.data.date))
     <section class="mx-auto max-w-6xl px-6 py-16">
       <header class="mb-8 flex items-end justify-between gap-4">
         <div>
-          <h1 class="text-3xl md:text-4xl font-extrabold text-basola-brown">News & Updates</h1>
-          <p class="mt-2 text-basola-brown/75">Was es Neues gibt – Auszeichnungen, Meilensteine, Presse.</p>
+          <h1 class="text-3xl md:text-4xl font-extrabold text-basola-brown">{t.news.title}</h1>
+          <p class="mt-2 text-basola-brown/75">{t.news.tagline}</p>
         </div>
         <div class="flex gap-2">
-          <a href="?lang=de" class="rounded-full px-3 py-1 text-sm border border-basola-yellow/60 text-basola-brown bg-white">DE</a>
-          <a href="?lang=en" class="rounded-full px-3 py-1 text-sm border border-basola-yellow/0 text-basola-brown/60 hover:border-basola-yellow/60 hover:bg-white">EN</a>
+          <a href="?lang=de" class={`rounded-full px-3 py-1 text-sm ${lang==='de' ? 'border border-basola-yellow/60 text-basola-brown bg-white' : 'border border-basola-yellow/0 text-basola-brown/60 hover:border-basola-yellow/60 hover:bg-white'}`}>DE</a>
+          <a href="?lang=en" class={`rounded-full px-3 py-1 text-sm ${lang==='en' ? 'border border-basola-yellow/60 text-basola-brown bg-white' : 'border border-basola-yellow/0 text-basola-brown/60 hover:border-basola-yellow/60 hover:bg-white'}`}>EN</a>
+          <a href="?lang=es" class={`rounded-full px-3 py-1 text-sm ${lang==='es' ? 'border border-basola-yellow/60 text-basola-brown bg-white' : 'border border-basola-yellow/0 text-basola-brown/60 hover:border-basola-yellow/60 hover:bg-white'}`}>ES</a>
         </div>
       </header>
 
@@ -35,6 +41,8 @@ const items = all.sort((a,b) => +new Date(b.data.date) - +new Date(a.data.date))
           summary: data.summary,
           heroImage: data.heroImage
         }))}
+        t={t.news}
+        lang={lang}
       />
     </section>
   </body>

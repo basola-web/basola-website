@@ -1,10 +1,10 @@
 ---
 const { lang } = Astro.props;
-const imprintText = lang === 'en' ? 'Imprint' : 'Impressum';
-const privacyText = lang === 'en' ? 'Privacy' : 'Datenschutz';
-const contactText = lang === 'en' ? 'Contact' : 'Kontakt';
-const imprintHref = lang === 'en' ? '/en/imprint' : '/de/impressum';
-const privacyHref = lang === 'en' ? '/en/privacy-policy' : '/de/datenschutz';
+const imprintText = lang === 'en' ? 'Imprint' : lang === 'es' ? 'Aviso legal' : 'Impressum';
+const privacyText = lang === 'en' ? 'Privacy' : lang === 'es' ? 'Privacidad' : 'Datenschutz';
+const contactText = lang === 'en' ? 'Contact' : lang === 'es' ? 'Contacto' : 'Kontakt';
+const imprintHref = lang === 'en' ? '/en/imprint' : lang === 'es' ? '/es/aviso-legal' : '/de/impressum';
+const privacyHref = lang === 'en' ? '/en/privacy-policy' : lang === 'es' ? '/es/politica-de-privacidad' : '/de/datenschutz';
 ---
 <footer class="bg-[#2C1B0F] text-white py-8 mt-12 text-sm">
   <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row md:justify-between md:items-start">

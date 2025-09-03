@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "solution": "Nuestra Solución",
+    "impact": "Impacto",
+    "team": "Sobre Nosotros",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Combustible solar a partir de residuos plásticos, donde nadie los recoge.",
+    "lead": "Nuestro sistema de pirólisis solar a pequeña escala convierte plásticos no reciclables en combustible local – una solución autónoma para regiones remotas sin gestión de residuos ni suministro energético fiable.",
+    "ctaPrimary": "Hazte socio",
+    "ctaSecondary": "Así funciona",
+    "badges": [
+      "Fuera de la red",
+      "Descentralizado",
+      "Operado localmente"
+    ]
+  },
+  "solution": {
+    "heading": "Solución",
+    "text": "Triturado → Pirólisis (400–550 °C sin O₂) → Condensación fraccionada → Combustible; el gas de síntesis aporta el calor."
+  },
+  "container": {
+    "heading": "Solución modular en contenedor",
+    "bullets": [
+      "Solución a pequeña escala basada en contenedor",
+      "La energía solar sirve como fuente de energía sostenible y autónoma",
+      "Puesta en marcha y mantenimiento sencillos"
+    ],
+    "note": "La solución en contenedor es completamente autosuficiente y puede ponerse en marcha sin una gran infraestructura."
+  },
+  "impact": {
+    "heading": "Impacto",
+    "text": "Triple beneficio para el medio ambiente, la comunidad y el clima."
+  },
+  "team": {
+    "heading": "Sobre Nosotros",
+    "text": "Nuestro equipo interdisciplinario combina experiencia en ingeniería química y de procesos, ingeniería mecánica, ingeniería eléctrica e ingeniería industrial — complementado por perspectivas empresariales y medioambientales. Junto con asesores experimentados, validamos nuestra tecnología, construimos prototipos y los probamos sobre el terreno. Nuestro objetivo: crear una start-up que transforme plásticos no reciclables en combustible local — técnicamente robusto, económicamente viable y con un impacto medible."
+  },
+  "partners": {
+    "heading": "Socios",
+    "text": "Organizaciones que nos apoyan."
+  },
+  "contact": {
+    "heading": "Contacto",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "org": "Organización",
+    "message": "Mensaje",
+    "role": "Soy",
+    "roles": {
+      "partner": "Socio",
+      "investor": "Inversor",
+      "ngo": "ONG",
+      "other": "Otro"
+    },
+    "submit": "Enviar"
+  },
+  "news": {
+    "title": "Noticias y Actualizaciones",
+    "tagline": "Novedades – premios, hitos, prensa.",
+    "prev": "Artículo anterior",
+    "next": "Artículo siguiente",
+    "back": "\u2190 Volver al resumen",
+    "more": "Más novedades",
+    "read": "Ir al artículo"
+  }
+}

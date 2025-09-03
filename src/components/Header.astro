@@ -20,12 +20,20 @@ const current = Astro.currentLocale;
       {current === 'de' ? (
         <>
           <span class="font-bold">de</span> |
-          <a href={getRelativeLocaleUrl('en')} class="hover:text-primary">en</a>
+          <a href={getRelativeLocaleUrl('en')} class="hover:text-primary">en</a> |
+          <a href={getRelativeLocaleUrl('es')} class="hover:text-primary">es</a>
+        </>
+      ) : current === 'en' ? (
+        <>
+          <a href={getRelativeLocaleUrl('de')} class="hover:text-primary">de</a> |
+          <span class="font-bold">en</span> |
+          <a href={getRelativeLocaleUrl('es')} class="hover:text-primary">es</a>
         </>
       ) : (
         <>
           <a href={getRelativeLocaleUrl('de')} class="hover:text-primary">de</a> |
-          <span class="font-bold">en</span>
+          <a href={getRelativeLocaleUrl('en')} class="hover:text-primary">en</a> |
+          <span class="font-bold">es</span>
         </>
       )}
     </div>

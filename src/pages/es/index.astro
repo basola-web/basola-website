@@ -8,19 +8,19 @@ import TeamSection from '../../components/TeamSection.astro';
 import ContactSection from '../../components/ContactSection.astro';
 import NewsCard from '../../components/NewsCard.astro';
 import { getCollection } from 'astro:content';
-import en from '../../i18n/en.json';
-const lang = 'en';
-const t = en;
+import es from '../../i18n/es.json';
+const lang = 'es';
+const t = es;
 const latest = (await getCollection('news', ({ data }) => data.lang === lang && !data.draft))
   .sort((a,b) => +new Date(b.data.date) - +new Date(a.data.date))
   .slice(0,3);
 ---
-<BaseLayout lang={lang} t={t} title="Solar fuel from plastic waste">
+<BaseLayout lang={lang} t={t} title="Combustible solar de residuos plásticos">
   <Hero
-    title="Solar fuel from plastic waste — where no one collects it."
-    subtitle="Our small-scale solar pyrolysis system converts non-recyclable plastics into local fuel – an autonomous solution for remote regions lacking waste management and reliable energy supply."
-    ctaPrimary={{ href: '#contact', label: 'Become a partner' }}
-    ctaSecondary={{ href: '#loesung', label: 'How it works!' }}
+    title="Combustible solar a partir de residuos plásticos, donde nadie los recoge."
+    subtitle="Nuestro sistema de pirólisis solar a pequeña escala convierte plásticos no reciclables en combustible local – una solución autónoma para regiones remotas sin gestión de residuos ni suministro energético fiable."
+    ctaPrimary={{ href: '#contact', label: 'Hazte socio' }}
+    ctaSecondary={{ href: '#loesung', label: 'Así funciona' }}
     badges={[
       { icon: '🔋', label: t.hero.badges[0] },
       { icon: '🌍', label: t.hero.badges[1] },
@@ -29,11 +29,11 @@ const latest = (await getCollection('news', ({ data }) => data.lang === lang && 
   />
   <ProcessFlow client:load />
   <ContainerSolution t={t.container} />
-  <ImpactSection lang="en" />
+  <ImpactSection lang="es" />
   <TeamSection t={t.team} />
   {latest.length > 0 && (
     <section class="mx-auto max-w-6xl px-6 py-16">
-      <h2 class="mb-8 text-3xl font-extrabold text-basola-brown">Latest News</h2>
+      <h2 class="mb-8 text-3xl font-extrabold text-basola-brown">Últimas noticias</h2>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {latest.map(({ slug, data }) => (
           <NewsCard
@@ -43,7 +43,7 @@ const latest = (await getCollection('news', ({ data }) => data.lang === lang && 
             summary={data.summary}
             tags={data.tags}
             heroImage={data.heroImage}
-            moreLabel="More"
+            moreLabel="Más"
             lang={lang}
           />
         ))}

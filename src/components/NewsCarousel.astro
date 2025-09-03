@@ -1,6 +1,6 @@
 ---
 import NewsCarouselClient from './NewsCarousel';
-const { items } = Astro.props;
+const { items, t, lang } = Astro.props;
 ---
 
-<NewsCarouselClient items={items} client:load />
+<NewsCarouselClient items={items} t={t} lang={lang} client:load />
