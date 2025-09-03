@@ -1,35 +1,63 @@
 ---
 const { t, partners } = Astro.props;
 const logos = [
-  { src: '/assets/boreal_lights_logo.png', alt: 'Boreal Light' },
+  {
+    src: '/assets/boreal_lights_logo.png',
+    alt: 'Boreal Light',
+    href: 'https://www.boreallight.com/'
+  },
   {
     src: '/assets/enactus_karlsruhe_logo.png',
     alt: 'Enactus Karlsruhe',
     class: 'h-20',
+    href: 'https://enactus-karlsruhe.de/projects'
   },
-  { src: '/assets/kit_gruenderschmiede_logo.png', alt: 'KIT Gründer­schmiede' },
-  { src: '/assets/ngo_uramba_logo.png', alt: 'NGO Uramba' },
-  { src: '/assets/sena_logo.png', alt: 'SENA' },
-  { src: '/assets/univalle_logo.png', alt: 'Universidad del Valle' },
+  {
+    src: '/assets/kit_gruenderschmiede_logo.png',
+    alt: 'KIT Gründerschmiede',
+    href: 'https://kit-gruenderschmiede.de/'
+  },
+  {
+    src: '/assets/ngo_uramba_logo.png',
+    alt: 'Plástico Precioso Uramba',
+    href: 'https://www.plasticopreciosouramba.com/'
+  },
+  {
+    src: '/assets/sena_logo.png',
+    alt: 'SENA',
+    href: 'https://www.sena.edu.co/'
+  },
+  {
+    src: '/assets/univalle_logo.png',
+    alt: 'Universidad del Valle',
+    href: 'https://www.univalle.edu.co/'
+  }
 ];
 ---
 <section id="contact" class="text-secondary py-16">
   <div class="mx-auto max-w-6xl grid md:grid-cols-2 gap-12 items-start">
     <div class="max-w-md mx-auto w-full text-center">
-      <h3 class="text-2xl font-bold mb-8">{partners.heading}</h3>
+      <h3 class="text-2xl font-bold mb-8" data-anim>{partners.heading}</h3>
       <div class="flex flex-wrap justify-center gap-6">
-        {logos.map(({ src, alt, class: cls }) => (
-          <img
-            src={src}
-            alt={alt}
-            class={(cls ?? 'h-12') + ' object-contain'}
-            loading="lazy"
-          />
+        {logos.map(({ src, alt, href, class: cls }) => (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-anim
+          >
+            <img
+              src={src}
+              alt={alt}
+              class={(cls ?? 'h-12') + ' object-contain transition-transform hover:scale-105'}
+              loading="lazy"
+            />
+          </a>
         ))}
       </div>
     </div>
     <div class="max-w-md mx-auto w-full">
-      <h2 class="text-3xl font-bold mb-8 text-center">{t.heading}</h2>
+      <h2 class="text-3xl font-bold mb-8 text-center" data-anim>{t.heading}</h2>
       <form
         class="space-y-4 bg-white/80 backdrop-blur p-6 rounded-2xl shadow-lg ring-1 ring-black/5"
         method="POST"
@@ -102,4 +130,3 @@ const logos = [
     </div>
   </div>
 </section>
-

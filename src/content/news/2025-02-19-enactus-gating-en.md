@@ -1,7 +1,7 @@
 ---
-title: "Basola ist offiziell Enactus-Projekt (Gating)"
+title: "Basola is officially an Enactus project (Gating)"
 date: "2025-02-19"
-lang: "de"
+lang: "en"
 summary: "Our new project Basola successfully pitched to the jury of Enactus Germany and is now an official Enactus project!"
 tags: ["Enactus","Milestone"]
 heroImage: "/assets/enactus_karlsruhe_logo.png"
