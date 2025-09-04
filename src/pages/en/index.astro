@@ -11,9 +11,14 @@ import { getCollection } from 'astro:content';
 import en from '../../i18n/en.json';
 const lang = 'en';
 const t = en;
-const latest = (await getCollection('news', ({ data }) => !data.draft && data.lang === lang))
+let latest = (await getCollection('news', ({ data }) => !data.draft && data.lang === lang))
   .sort((a,b) => +new Date(b.data.date) - +new Date(a.data.date))
   .slice(0,3);
+if (latest.length === 0) {
+  latest = (await getCollection('news', ({ data }) => !data.draft && data.lang === 'de'))
+    .sort((a,b) => +new Date(b.data.date) - +new Date(a.data.date))
+    .slice(0,3);
+}
 ---
 <BaseLayout lang={lang} t={t} title="Solar fuel from plastic waste">
   <Hero
@@ -43,7 +48,7 @@ const latest = (await getCollection('news', ({ data }) => !data.draft && data.la
             summary={data.summary}
             tags={data.tags}
             heroImage={data.heroImage}
-            moreLabel="More"
+            moreLabel={t.news.read}
             lang={lang}
           />
         ))}
