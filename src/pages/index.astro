@@ -11,7 +11,7 @@ import { getCollection } from 'astro:content';
 import de from '../i18n/de.json';
 const lang = 'de';
 const t = de;
-const latest = (await getCollection('news', ({ data }) => !data.draft))
+const latest = (await getCollection('news', ({ data }) => !data.draft && data.lang === lang))
   .sort((a,b) => +new Date(b.data.date) - +new Date(a.data.date))
   .slice(0,3);
 ---
@@ -33,7 +33,7 @@ const latest = (await getCollection('news', ({ data }) => !data.draft))
   <TeamSection t={t.team} lang={lang} />
   {latest.length > 0 && (
     <section class="mx-auto max-w-6xl px-6 py-16">
-      <h2 class="mb-8 text-3xl font-extrabold text-basola-brown">Aktuelles</h2>
+      <h2 class="mb-8 text-3xl font-extrabold text-basola-brown">{t.news.title}</h2>
       <NewsCarousel
         items={latest.map(({ slug, data }) => ({
           url: `/news/${slug}`,
