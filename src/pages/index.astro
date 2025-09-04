@@ -30,7 +30,7 @@ const latest = (await getCollection('news', ({ data }) => !data.draft))
   <ProcessFlow lang="de" client:load />
   <ContainerSolution t={t.container} />
   <ImpactSection lang="de" />
-  <TeamSection t={t.team} />
+  <TeamSection t={t.team} lang={lang} />
   {latest.length > 0 && (
     <section class="mx-auto max-w-6xl px-6 py-16">
       <h2 class="mb-8 text-3xl font-extrabold text-basola-brown">Aktuelles</h2>

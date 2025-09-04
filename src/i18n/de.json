@@ -48,6 +48,7 @@
     "org": "Organisation",
     "message": "Nachricht",
     "role": "Ich bin",
+    "emailPlaceholder": "name@beispiel.de",
     "roles": {
       "partner": "Partner",
       "investor": "Investor",

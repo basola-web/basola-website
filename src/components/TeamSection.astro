@@ -1,19 +1,46 @@
 ---
-const { t } = Astro.props;
+const { t, lang = 'de' } = Astro.props;
 
-const team = [
-  { name: 'Simon Langner', role: 'Founder', image: '/assets/Team/Simon_Langner.png' },
-  { name: 'Lea Bachmann', role: 'Projektleitung', image: '/assets/Team/Lea_Bachmann.png' },
-  { name: 'Marike Kardorff', role: 'Noch ausfüllen', image: '/assets/Team/Marike_Kardorff.png' },
-  { name: 'Friedrich Heinen', role: 'Noch ausfüllen', image: '/assets/Team/Friedrich_Heinen.png' },
-  { name: 'Lilia Ogor', role: 'TBD', image: '/assets/Team/Lilia.png' },
-  { name: 'Luca', role: 'TBD', image: '/assets/Team/Luca.png' },
-  { name: 'Paul', role: 'TBD', image: '/assets/Team/Paul.png' },
-  { name: 'Poloju', role: 'TBD', image: '/assets/Team/Poloju.png' },
-  { name: 'Stefan Eichler', role: 'TBD', image: '/assets/basola_favicon.png' },
-];
+const teamMembers: Record<string, { name: string; role: string; image: string }[]> = {
+  en: [
+    { name: 'Simon Langner', role: 'Founder', image: '/assets/Team/Simon_Langner.png' },
+    { name: 'Lea Bachmann', role: 'Project Lead', image: '/assets/Team/Lea_Bachmann.png' },
+    { name: 'Marike Kardorff', role: 'TBD', image: '/assets/Team/Marike_Kardorff.png' },
+    { name: 'Friedrich Heinen', role: 'TBD', image: '/assets/Team/Friedrich_Heinen.png' },
+    { name: 'Lilia Ogor', role: 'TBD', image: '/assets/Team/Lilia.png' },
+    { name: 'Luca', role: 'TBD', image: '/assets/Team/Luca.png' },
+    { name: 'Paul', role: 'TBD', image: '/assets/Team/Paul.png' },
+    { name: 'Poloju', role: 'TBD', image: '/assets/Team/Poloju.png' },
+    { name: 'Stefan Eichler', role: 'TBD', image: '/assets/basola_favicon.png' },
+  ],
+  de: [
+    { name: 'Simon Langner', role: 'Gründer', image: '/assets/Team/Simon_Langner.png' },
+    { name: 'Lea Bachmann', role: 'Projektleitung', image: '/assets/Team/Lea_Bachmann.png' },
+    { name: 'Marike Kardorff', role: 'Noch ausfüllen', image: '/assets/Team/Marike_Kardorff.png' },
+    { name: 'Friedrich Heinen', role: 'Noch ausfüllen', image: '/assets/Team/Friedrich_Heinen.png' },
+    { name: 'Lilia Ogor', role: 'Noch ausfüllen', image: '/assets/Team/Lilia.png' },
+    { name: 'Luca', role: 'Noch ausfüllen', image: '/assets/Team/Luca.png' },
+    { name: 'Paul', role: 'Noch ausfüllen', image: '/assets/Team/Paul.png' },
+    { name: 'Poloju', role: 'Noch ausfüllen', image: '/assets/Team/Poloju.png' },
+    { name: 'Stefan Eichler', role: 'Noch ausfüllen', image: '/assets/basola_favicon.png' },
+  ],
+  es: [
+    { name: 'Simon Langner', role: 'Fundador', image: '/assets/Team/Simon_Langner.png' },
+    { name: 'Lea Bachmann', role: 'Dirección del proyecto', image: '/assets/Team/Lea_Bachmann.png' },
+    { name: 'Marike Kardorff', role: 'Por definir', image: '/assets/Team/Marike_Kardorff.png' },
+    { name: 'Friedrich Heinen', role: 'Por definir', image: '/assets/Team/Friedrich_Heinen.png' },
+    { name: 'Lilia Ogor', role: 'Por definir', image: '/assets/Team/Lilia.png' },
+    { name: 'Luca', role: 'Por definir', image: '/assets/Team/Luca.png' },
+    { name: 'Paul', role: 'Por definir', image: '/assets/Team/Paul.png' },
+    { name: 'Poloju', role: 'Por definir', image: '/assets/Team/Poloju.png' },
+    { name: 'Stefan Eichler', role: 'Por definir', image: '/assets/basola_favicon.png' },
+  ],
+};
 
-const advisor = { name: 'Jörg Sievert', role: 'Advisor' };
+const team = teamMembers[lang] ?? teamMembers.de;
+
+const advisorRole = lang === 'en' ? 'Advisor' : lang === 'es' ? 'Asesor' : 'Berater';
+const advisor = { name: 'Jörg Sievert', role: advisorRole };
 ---
 <section class="py-24 px-6 bg-white text-center" id="team">
   <h2 class="text-4xl font-bold text-basola-brown mb-4">{t.heading}</h2>
@@ -39,7 +66,7 @@ const advisor = { name: 'Jörg Sievert', role: 'Advisor' };
   </div>
 
   <div class="mt-16">
-    <h3 class="text-2xl font-bold text-basola-brown mb-4">Advisor</h3>
+    <h3 class="text-2xl font-bold text-basola-brown mb-4">{advisorRole}</h3>
     <div class="flex flex-wrap justify-center gap-10">
       <div class="flex flex-col items-center opacity-0 animate-fade-in-up" style="animation-delay: 200ms">
         <img
