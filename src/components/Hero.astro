@@ -78,8 +78,17 @@ const [firstLine, secondLine = ''] = title.split(/\s+[–—]\s+/);
   </div>
 
   <!-- Scroll Hint -->
-  <a href="#problem" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition">
-    <div class="animate-bounce">▿</div>
+  <a href="#problem" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition" aria-label="Scroll down">
+    <svg
+      class="w-6 h-6 animate-bounce"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
     <span class="sr-only">Weiter scrollen</span>
   </a>
 

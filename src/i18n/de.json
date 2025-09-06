@@ -48,6 +48,7 @@
     "org": "Organisation",
     "message": "Nachricht",
     "role": "Ich bin",
+    "emailPlaceholder": "name@beispiel.de",
     "roles": {
       "partner": "Partner",
       "investor": "Investor",
@@ -57,7 +58,7 @@
     "submit": "Senden"
   },
   "news": {
-    "title": "News & Updates",
+    "title": "Aktuelles",
     "tagline": "Was es Neues gibt – Auszeichnungen, Meilensteine, Presse.",
     "prev": "Vorheriger Artikel",
     "next": "Nächster Artikel",

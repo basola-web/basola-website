@@ -11,9 +11,14 @@ import { getCollection } from 'astro:content';
 import en from '../../i18n/en.json';
 const lang = 'en';
 const t = en;
-const latest = (await getCollection('news', ({ data }) => !data.draft))
+let latest = (await getCollection('news', ({ data }) => !data.draft && data.lang === lang))
   .sort((a,b) => +new Date(b.data.date) - +new Date(a.data.date))
   .slice(0,3);
+if (latest.length === 0) {
+  latest = (await getCollection('news', ({ data }) => !data.draft && data.lang === 'de'))
+    .sort((a,b) => +new Date(b.data.date) - +new Date(a.data.date))
+    .slice(0,3);
+}
 ---
 <BaseLayout lang={lang} t={t} title="Solar fuel from plastic waste">
   <Hero
@@ -30,10 +35,10 @@ const latest = (await getCollection('news', ({ data }) => !data.draft))
   <ProcessFlow lang="en" client:load />
   <ContainerSolution t={t.container} />
   <ImpactSection lang="en" />
-  <TeamSection t={t.team} />
+  <TeamSection t={t.team} lang={lang} />
   {latest.length > 0 && (
     <section class="mx-auto max-w-6xl px-6 py-16">
-      <h2 class="mb-8 text-3xl font-extrabold text-basola-brown">Latest News</h2>
+      <h2 class="mb-8 text-3xl font-extrabold text-basola-brown">{t.news.title}</h2>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
         {latest.map(({ slug, data }) => (
           <NewsCard
@@ -43,7 +48,7 @@ const latest = (await getCollection('news', ({ data }) => !data.draft))
             summary={data.summary}
             tags={data.tags}
             heroImage={data.heroImage}
-            moreLabel="More"
+            moreLabel={t.news.read}
             lang={lang}
           />
         ))}
