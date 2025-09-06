@@ -5,17 +5,24 @@ const current = Astro.currentLocale;
 ---
 <header class="sticky top-0 z-50 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/60">
   <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
-  <a href={getRelativeLocaleUrl(current)} class="text-2xl font-bold text-secondary">
-    <img src="/assets/basola_logo.png" alt="BASOLA logo" class="h-8" />
-  </a>
+    <a href={getRelativeLocaleUrl(current)} class="text-2xl font-bold text-secondary">
+      <img src="/assets/basola_logo.png" alt="BASOLA logo" class="hidden md:block h-8" />
+      <img src="/assets/basola_favicon.png" alt="BASOLA logo" class="block md:hidden h-8" />
+    </a>
     <button id="menu-toggle" class="md:hidden text-secondary">☰</button>
-    <nav id="menu" class="hidden md:flex space-x-4 text-secondary">
-      <!-- Link to solution section -->
-      <a href="#problem" class="hover:text-primary">{nav.problem}</a>
-      <a href="#loesung" class="hover:text-primary">{nav.solution}</a>
-      <a href="#impact" class="hover:text-primary">{nav.impact}</a>
-      <a href="#team" class="hover:text-primary">{nav.team}</a>
-      <a href="#contact" class="text-basola-brown font-semibold hover:text-primary">{nav.contact}</a>
+    <div id="menu-overlay" class="hidden fixed inset-0 bg-black/30"></div>
+    <nav
+      id="menu"
+      class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 md:static md:translate-x-0 md:flex md:space-x-4 md:shadow-none md:bg-transparent text-secondary"
+    >
+      <button id="menu-close" class="md:hidden absolute top-4 right-4 text-2xl">×</button>
+      <div class="flex flex-col mt-16 space-y-4 px-6 md:mt-0 md:flex-row md:space-y-0 md:space-x-4 md:px-0">
+        <a href="#problem" class="hover:text-primary">{nav.problem}</a>
+        <a href="#loesung" class="hover:text-primary">{nav.solution}</a>
+        <a href="#impact" class="hover:text-primary">{nav.impact}</a>
+        <a href="#team" class="hover:text-primary">{nav.team}</a>
+        <a href="#contact" class="text-basola-brown font-semibold hover:text-primary">{nav.contact}</a>
+      </div>
     </nav>
     <div class="ml-4 text-secondary">
       {current === 'de' ? (
@@ -43,5 +50,13 @@ const current = Astro.currentLocale;
 <script is:client>
   const btn = document.getElementById('menu-toggle');
   const menu = document.getElementById('menu');
-  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+  const overlay = document.getElementById('menu-overlay');
+  const close = document.getElementById('menu-close');
+  const toggleMenu = () => {
+    menu?.classList.toggle('translate-x-full');
+    overlay?.classList.toggle('hidden');
+  };
+  btn?.addEventListener('click', toggleMenu);
+  overlay?.addEventListener('click', toggleMenu);
+  close?.addEventListener('click', toggleMenu);
 </script>
