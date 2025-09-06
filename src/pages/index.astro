@@ -7,6 +7,7 @@ import ImpactSection from '../components/ImpactSection.astro';
 import TeamSection from '../components/TeamSection.astro';
 import ContactSection from '../components/ContactSection.astro';
 import NewsCarousel from '../components/NewsCarousel.astro';
+import ProblemSection from '../components/ProblemSection.astro';
 import { getCollection } from 'astro:content';
 import de from '../i18n/de.json';
 const lang = 'de';
@@ -27,6 +28,7 @@ const latest = (await getCollection('news', ({ data }) => !data.draft && data.la
       { icon: '⚓', label: t.hero.badges[2] },
     ]}
   />
+  <ProblemSection lang={lang} />
   <ProcessFlow lang="de" client:load />
   <ContainerSolution t={t.container} />
   <ImpactSection lang="de" />

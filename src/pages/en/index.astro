@@ -7,6 +7,7 @@ import ImpactSection from '../../components/ImpactSection.astro';
 import TeamSection from '../../components/TeamSection.astro';
 import ContactSection from '../../components/ContactSection.astro';
 import NewsCard from '../../components/NewsCard.astro';
+import ProblemSection from '../../components/ProblemSection.astro';
 import { getCollection } from 'astro:content';
 import en from '../../i18n/en.json';
 const lang = 'en';
@@ -32,6 +33,7 @@ if (latest.length === 0) {
       { icon: '⚓', label: t.hero.badges[2] },
     ]}
   />
+  <ProblemSection lang={lang} />
   <ProcessFlow lang="en" client:load />
   <ContainerSolution t={t.container} />
   <ImpactSection lang="en" />
