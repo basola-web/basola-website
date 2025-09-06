@@ -3,7 +3,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 const nav = Astro.props.t.nav;
 const current = Astro.currentLocale;
 ---
-<header class="sticky top-0 z-50 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+<header class="sticky top-0 z-50 bg-[#FFF7ED] md:bg-white/85 md:backdrop-blur md:supports-[backdrop-filter]:bg-white/60">
   <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
     <a href={getRelativeLocaleUrl(current)} class="relative z-50 text-2xl font-bold text-secondary">
       <img id="logo-full" src="/assets/basola_logo.png" alt="BASOLA logo" class="h-8" />
@@ -12,7 +12,7 @@ const current = Astro.currentLocale;
     <button id="menu-toggle" class="md:hidden text-secondary relative z-50">☰</button>
     <nav
       id="menu"
-      class="fixed top-0 right-0 z-50 h-full w-64 bg-white text-secondary shadow-lg transform translate-x-full transition-transform duration-300 md:static md:h-auto md:w-auto md:transform-none md:shadow-none md:bg-transparent md:flex md:space-x-4"
+      class="fixed top-0 right-0 z-50 h-full w-64 bg-[#FFF7ED] text-secondary shadow-lg transform translate-x-full transition-transform duration-300 md:static md:h-auto md:w-auto md:transform-none md:shadow-none md:bg-transparent md:flex md:space-x-4"
     >
       <button id="menu-close" class="md:hidden absolute top-4 right-4 text-2xl">×</button>
       <div class="md:hidden mt-4 px-6">
