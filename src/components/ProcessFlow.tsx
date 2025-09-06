@@ -148,17 +148,17 @@ const ProcessFlow: React.FC<Props> = ({ lang = "de" }) => {
 
         <div className="relative">
           {/* Desktop horizontal line */}
-          <div className="absolute top-12 left-0 w-full h-[4px] bg-[#723100]/20 z-0 hidden md:block" />
+          <div className="absolute top-12 left-0 w-full h-[4px] bg-[#723100]/20 -z-10 hidden md:block" />
           <motion.div
-            className="absolute top-12 left-0 h-[4px] bg-[#ffd600] z-0 hidden md:block"
+            className="absolute top-12 left-0 h-[4px] bg-[#ffd600] -z-10 hidden md:block"
             initial={{ width: 0 }}
             animate={isInView ? { width: "100%" } : { width: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
           />
           {/* Mobile vertical line */}
-          <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[4px] h-full bg-[#723100]/20 z-0 md:hidden" />
+          <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[4px] h-full bg-[#723100]/20 -z-10 md:hidden" />
           <motion.div
-            className="absolute left-1/2 top-0 -translate-x-1/2 w-[4px] bg-[#ffd600] z-0 md:hidden"
+            className="absolute left-1/2 top-0 -translate-x-1/2 w-[4px] bg-[#ffd600] -z-10 md:hidden"
             initial={{ height: 0 }}
             animate={isInView ? { height: "100%" } : { height: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}

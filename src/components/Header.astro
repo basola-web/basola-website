@@ -6,17 +6,37 @@ const current = Astro.currentLocale;
 <header class="sticky top-0 z-50 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/60">
   <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
     <a href={getRelativeLocaleUrl(current)} class="text-2xl font-bold text-secondary">
-      <img src="/assets/basola_logo.png" alt="BASOLA logo" class="hidden md:block h-8" />
-      <img src="/assets/basola_favicon.png" alt="BASOLA logo" class="block md:hidden h-8" />
+      <img id="logo-full" src="/assets/basola_logo.png" alt="BASOLA logo" class="h-8" />
+      <img id="logo-favicon" src="/assets/basola_favicon.png" alt="BASOLA icon" class="h-8 hidden" />
     </a>
     <button id="menu-toggle" class="md:hidden text-secondary">☰</button>
-    <div id="menu-overlay" class="hidden fixed inset-0 bg-black/30"></div>
     <nav
       id="menu"
-      class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 md:static md:translate-x-0 md:flex md:space-x-4 md:shadow-none md:bg-transparent text-secondary"
+      class="fixed top-0 right-0 h-full w-64 bg-white text-secondary shadow-lg transform translate-x-full transition-transform duration-300 md:static md:h-auto md:w-auto md:transform-none md:shadow-none md:bg-transparent md:flex md:space-x-4"
     >
       <button id="menu-close" class="md:hidden absolute top-4 right-4 text-2xl">×</button>
-      <div class="flex flex-col mt-16 space-y-4 px-6 md:mt-0 md:flex-row md:space-y-0 md:space-x-4 md:px-0">
+      <div class="md:hidden mt-4 px-6">
+        {current === 'de' ? (
+          <>
+            <span class="font-bold">de</span> |
+            <a href={getRelativeLocaleUrl('en')} class="hover:text-primary">en</a> |
+            <a href={getRelativeLocaleUrl('es')} class="hover:text-primary">es</a>
+          </>
+        ) : current === 'en' ? (
+          <>
+            <a href={getRelativeLocaleUrl('de')} class="hover:text-primary">de</a> |
+            <span class="font-bold">en</span> |
+            <a href={getRelativeLocaleUrl('es')} class="hover:text-primary">es</a>
+          </>
+        ) : (
+          <>
+            <a href={getRelativeLocaleUrl('de')} class="hover:text-primary">de</a> |
+            <a href={getRelativeLocaleUrl('en')} class="hover:text-primary">en</a> |
+            <span class="font-bold">es</span>
+          </>
+        )}
+      </div>
+      <div class="flex flex-col mt-8 space-y-4 px-6 md:mt-0 md:flex-row md:space-y-0 md:space-x-4 md:px-0">
         <a href="#problem" class="hover:text-primary">{nav.problem}</a>
         <a href="#loesung" class="hover:text-primary">{nav.solution}</a>
         <a href="#impact" class="hover:text-primary">{nav.impact}</a>
@@ -24,7 +44,8 @@ const current = Astro.currentLocale;
         <a href="#contact" class="text-basola-brown font-semibold hover:text-primary">{nav.contact}</a>
       </div>
     </nav>
-    <div class="ml-4 text-secondary">
+    <div id="menu-overlay" class="hidden fixed inset-0 bg-black/50"></div>
+    <div class="ml-4 text-secondary hidden md:block">
       {current === 'de' ? (
         <>
           <span class="font-bold">de</span> |
@@ -52,9 +73,13 @@ const current = Astro.currentLocale;
   const menu = document.getElementById('menu');
   const overlay = document.getElementById('menu-overlay');
   const close = document.getElementById('menu-close');
+  const logoFull = document.getElementById('logo-full');
+  const logoFavicon = document.getElementById('logo-favicon');
   const toggleMenu = () => {
     menu?.classList.toggle('translate-x-full');
     overlay?.classList.toggle('hidden');
+    logoFull?.classList.toggle('hidden');
+    logoFavicon?.classList.toggle('hidden');
   };
   btn?.addEventListener('click', toggleMenu);
   overlay?.addEventListener('click', toggleMenu);
