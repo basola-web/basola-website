@@ -5,14 +5,14 @@ const current = Astro.currentLocale;
 ---
 <header class="sticky top-0 z-50 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/60">
   <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
-    <a href={getRelativeLocaleUrl(current)} class="text-2xl font-bold text-secondary">
+    <a href={getRelativeLocaleUrl(current)} class="relative z-50 text-2xl font-bold text-secondary">
       <img id="logo-full" src="/assets/basola_logo.png" alt="BASOLA logo" class="h-8" />
       <img id="logo-favicon" src="/assets/basola_favicon.png" alt="BASOLA icon" class="h-8 hidden" />
     </a>
-    <button id="menu-toggle" class="md:hidden text-secondary">☰</button>
+    <button id="menu-toggle" class="md:hidden text-secondary relative z-50">☰</button>
     <nav
       id="menu"
-      class="fixed top-0 right-0 h-full w-64 bg-white text-secondary shadow-lg transform translate-x-full transition-transform duration-300 md:static md:h-auto md:w-auto md:transform-none md:shadow-none md:bg-transparent md:flex md:space-x-4"
+      class="fixed top-0 right-0 z-50 h-full w-64 bg-white text-secondary shadow-lg transform translate-x-full transition-transform duration-300 md:static md:h-auto md:w-auto md:transform-none md:shadow-none md:bg-transparent md:flex md:space-x-4"
     >
       <button id="menu-close" class="md:hidden absolute top-4 right-4 text-2xl">×</button>
       <div class="md:hidden mt-4 px-6">
@@ -44,7 +44,7 @@ const current = Astro.currentLocale;
         <a href="#contact" class="text-basola-brown font-semibold hover:text-primary">{nav.contact}</a>
       </div>
     </nav>
-    <div id="menu-overlay" class="hidden fixed inset-0 bg-white"></div>
+    <div id="menu-overlay" class="hidden fixed inset-0 z-40 bg-white"></div>
     <div class="ml-4 text-secondary hidden md:block">
       {current === 'de' ? (
         <>
