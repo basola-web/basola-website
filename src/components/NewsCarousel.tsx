@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface Item {
   url: string;
@@ -16,13 +16,28 @@ interface Props {
 
 export default function NewsCarousel({ items, t, lang }: Props) {
   const [index, setIndex] = useState(0);
-  const visibleCount = Math.min(3, items.length);
+
+  const computeVisible = () => {
+    if (typeof window === 'undefined') return Math.min(3, items.length);
+    if (window.innerWidth < 640) return 1;
+    if (window.innerWidth < 1024) return Math.min(2, items.length);
+    return Math.min(3, items.length);
+  };
+
+  const [visibleCount, setVisibleCount] = useState(computeVisible());
+
+  useEffect(() => {
+    const handler = () => setVisibleCount(computeVisible());
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, [items.length]);
+
   const prev = () => setIndex((index - 1 + items.length) % items.length);
   const next = () => setIndex((index + 1) % items.length);
   const visible = Array.from({ length: visibleCount }, (_, i) => items[(index + i) % items.length]);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full overflow-hidden">
       <div className="flex gap-6 items-stretch">
         {visible.map((item, i) => (
           <a key={i} href={item.url} className="group flex flex-1 flex-col h-full">
