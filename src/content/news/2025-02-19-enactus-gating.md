@@ -2,14 +2,14 @@
 title: "Basola ist offiziell Enactus-Projekt (Gating)"
 date: "2025-02-19"
 lang: "de"
-summary: "Our new project Basola successfully pitched to the jury of Enactus Germany and is now an official Enactus project!"
-tags: ["Enactus","Milestone"]
+summary: "Unser neues Projekt Basola hat die Jury von Enactus Germany überzeugt und ist jetzt ein offizielles Enactus-Projekt!"
+tags: ["Enactus", "Meilenstein"]
 heroImage: "/assets/enactus_karlsruhe_logo.png"
 ---
-Our new project Basola successfully pitched to the jury of Enactus Germany and is now an official Enactus project! This means: Basola is no longer part of the Innovations Team but is now an independent project. It can now participate in Enactus competitions and create even more impact.
+Unser neues Projekt Basola hat die Jury von Enactus Germany erfolgreich überzeugt und ist nun ein offizielles Enactus-Projekt! Das bedeutet: Basola ist nicht länger Teil des Innovationsteams, sondern jetzt ein eigenständiges Projekt. Es kann nun an Enactus-Wettbewerben teilnehmen und noch mehr Impact erzeugen.
 
-But what is the project actually about? In the coastal community of Ladrilleros, Colombia, there are two major challenges: plastic waste and expensive diesel. Our solution? A solar-powered pyrolysis plant that converts plastic into fuel — sustainable, local, and efficient. This helps reduce pollution, creates jobs, and makes the region more energy-independent.
+Doch worum geht es in dem Projekt eigentlich? In der Küstengemeinde Ladrilleros in Kolumbien gibt es zwei große Herausforderungen: Plastikmüll und teurer Diesel. Unsere Lösung? Eine solarbetriebene Pyrolyseanlage, die Plastik in Kraftstoff umwandelt – nachhaltig, lokal und effizient. Das hilft, Verschmutzung zu reduzieren, Arbeitsplätze zu schaffen und die Region energieunabhängiger zu machen.
 
-Behind Basola is a dedicated team of nine students from chemical engineering, mechanical engineering, and industrial engineering. With interdisciplinary know-how, we are developing an efficient, scalable solution that can also be used in other regions in the future.
+Hinter Basola steht ein engagiertes Team aus neun Studierenden der Chemie-, Maschinen- und Wirtschaftsingenieurwissenschaften. Mit interdisziplinärem Know-how entwickeln wir eine effiziente, skalierbare Lösung, die künftig auch in anderen Regionen eingesetzt werden kann.
 
-And we’re getting started right away! On March 27, we’ll be taking part in the Enactus Startup Accelerator (ESA) and presenting Basola to a large audience. We can’t wait to take the next steps — stay tuned for what’s coming next!
+Und wir legen direkt los! Am 27. März nehmen wir am Enactus Startup Accelerator (ESA) teil und präsentieren Basola einem großen Publikum. Wir können es kaum erwarten, die nächsten Schritte zu gehen – bleibt dran!

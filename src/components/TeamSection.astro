@@ -9,8 +9,16 @@ const teamMembers: Record<string, { name: string; role: string; image: string }[
     { name: 'Friedrich Heinen', role: 'Systems & Integration', image: '/assets/Team/Friedrich_Heinen.png' },
     { name: 'Lilia Ogor', role: 'Product Manager', image: '/assets/Team/Lilia.png' },
     { name: 'Luca', role: 'Energy & Control', image: '/assets/Team/Luca.png' },
-    { name: 'Paul', role: 'Project Coordination & Funding Management', image: '/assets/Team/Paul.png' },
-    { name: 'Poloju', role: 'Venture Development & Simulation Engineering', image: '/assets/Team/Poloju.png' },
+    {
+      name: 'Paul',
+      role: 'Project Coordination\n& Funding Management',
+      image: '/assets/Team/Paul.png',
+    },
+    {
+      name: 'Poloju',
+      role: 'Venture Development\n& Simulation Engineering',
+      image: '/assets/Team/Poloju.png',
+    },
     { name: 'Stefan Eichler', role: 'Process Development', image: '/assets/basola_favicon.png' },
   ],
   de: [
@@ -20,8 +28,16 @@ const teamMembers: Record<string, { name: string; role: string; image: string }[
     { name: 'Friedrich Heinen', role: 'Systems & Integration', image: '/assets/Team/Friedrich_Heinen.png' },
     { name: 'Lilia Ogor', role: 'Product Managerin', image: '/assets/Team/Lilia.png' },
     { name: 'Luca', role: 'Energie & Steuerung', image: '/assets/Team/Luca.png' },
-    { name: 'Paul', role: 'Projektkoordination & Fördermittelmanagement', image: '/assets/Team/Paul.png' },
-    { name: 'Poloju', role: 'Venture Development & Simulation Engineering', image: '/assets/Team/Poloju.png' },
+    {
+      name: 'Paul',
+      role: 'Projektkoordination\n& Fördermittelmanagement',
+      image: '/assets/Team/Paul.png',
+    },
+    {
+      name: 'Poloju',
+      role: 'Venture Development\n& Simulation Engineering',
+      image: '/assets/Team/Poloju.png',
+    },
     { name: 'Stefan Eichler', role: 'Prozessentwicklung', image: '/assets/basola_favicon.png' },
   ],
   es: [
@@ -31,8 +47,16 @@ const teamMembers: Record<string, { name: string; role: string; image: string }[
     { name: 'Friedrich Heinen', role: 'Sistemas e Integración', image: '/assets/Team/Friedrich_Heinen.png' },
     { name: 'Lilia Ogor', role: 'Product Manager', image: '/assets/Team/Lilia.png' },
     { name: 'Luca', role: 'Energía y Control', image: '/assets/Team/Luca.png' },
-    { name: 'Paul', role: 'Coordinación de proyectos y gestión de subvenciones', image: '/assets/Team/Paul.png' },
-    { name: 'Poloju', role: 'Desarrollo de emprendimientos y simulación de ingeniería', image: '/assets/Team/Poloju.png' },
+    {
+      name: 'Paul',
+      role: 'Coordinación de proyectos\ny gestión de subvenciones',
+      image: '/assets/Team/Paul.png',
+    },
+    {
+      name: 'Poloju',
+      role: 'Desarrollo de emprendimientos\ny simulación de ingeniería',
+      image: '/assets/Team/Poloju.png',
+    },
     { name: 'Stefan Eichler', role: 'Desarrollo de procesos', image: '/assets/basola_favicon.png' },
   ],
 };
@@ -60,7 +84,7 @@ const advisor = { name: 'Jörg Sievert', role: advisorRole };
           class="w-32 h-32 rounded-full object-cover border-4 border-basola-yellow mb-4 shadow-md"
         />
         <h3 class="text-lg font-semibold text-basola-brown">{name}</h3>
-        <p class="text-sm text-secondary">{role}</p>
+        <p class="text-sm text-secondary whitespace-pre-line">{role}</p>
       </div>
     ))}
   </div>

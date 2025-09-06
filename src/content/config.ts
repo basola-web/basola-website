@@ -5,7 +5,7 @@ const news = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.string(), // ISO
-    lang: z.enum(['de','en']).default('de'),
+    lang: z.enum(['de','en','es']).default('de'),
     summary: z.string().max(280),
     tags: z.array(z.string()).default([]),
     heroImage: z.string().optional(),   // /assets/...
