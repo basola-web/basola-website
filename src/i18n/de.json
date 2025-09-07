@@ -53,7 +53,7 @@
     "roles": {
       "partner": "Partner",
       "investor": "Investor",
-      "ngo": "NPO",
+      "ngo": "NGO",
       "other": "Andere"
     },
     "submit": "Senden"
