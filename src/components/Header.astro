@@ -44,7 +44,6 @@ const current = Astro.currentLocale;
         <a href="#contact" class="text-basola-brown font-semibold hover:text-primary">{nav.contact}</a>
       </div>
     </nav>
-    <div id="menu-overlay" class="hidden fixed inset-0 z-40 bg-white md:hidden"></div>
     <div class="ml-4 text-secondary hidden md:block">
       {current === 'de' ? (
         <>
@@ -71,17 +70,19 @@ const current = Astro.currentLocale;
 <script is:client>
   const btn = document.getElementById('menu-toggle');
   const menu = document.getElementById('menu');
-  const overlay = document.getElementById('menu-overlay');
   const close = document.getElementById('menu-close');
   const logoFull = document.getElementById('logo-full');
   const logoFavicon = document.getElementById('logo-favicon');
   const toggleMenu = () => {
     menu?.classList.toggle('translate-x-full');
-    overlay?.classList.toggle('hidden');
     logoFull?.classList.toggle('hidden');
     logoFavicon?.classList.toggle('hidden');
   };
   btn?.addEventListener('click', toggleMenu);
-  overlay?.addEventListener('click', toggleMenu);
   close?.addEventListener('click', toggleMenu);
+  menu?.querySelectorAll('a').forEach((link) =>
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 768) toggleMenu();
+    }),
+  );
 </script>
