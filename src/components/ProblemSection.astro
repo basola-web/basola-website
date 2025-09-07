@@ -7,7 +7,7 @@ interface Box {
 
 const { lang = 'de' } = Astro.props;
 
-const contentMap: Record<string, { eyebrow: string; heading: string; lead: string; boxes: Box[]; bridge: string }> = {
+const contentMap: Record<string, { eyebrow: string; heading: string; lead: string; boxes: Box[] }> = {
   de: {
     eyebrow: 'Kein Abtransport, teurer Kraftstoff',
     heading: 'Abgelegen, aber nicht chancenlos',
@@ -30,9 +30,7 @@ const contentMap: Record<string, { eyebrow: string; heading: string; lead: strin
           'Fehlende Elektrifizierung der Mobilität'
         ]
       }
-    ],
-    bridge:
-      'BASOLA verbindet beide Herausforderungen in einer Lösung:\nUnsere solar-hybride Pyrolyseanlage macht aus Plastikmüll vor Ort den Treibstoff, den die Gemeinschaft dringend braucht – autark, nachhaltig und bezahlbar.'
+    ]
   },
   en: {
     eyebrow: 'No waste removal, costly fuel',
@@ -56,9 +54,7 @@ const contentMap: Record<string, { eyebrow: string; heading: string; lead: strin
           'No electrification of mobility'
         ]
       }
-    ],
-    bridge:
-      'BASOLA tackles both challenges with one solution:\nOur solar-hybrid pyrolysis plant turns local plastic waste into the fuel the community urgently needs—autonomous, sustainable and affordable.'
+    ]
   },
   es: {
     eyebrow: 'Sin recogida de residuos, combustible caro',
@@ -82,9 +78,7 @@ const contentMap: Record<string, { eyebrow: string; heading: string; lead: strin
           'Falta de electrificación de la movilidad'
         ]
       }
-    ],
-    bridge:
-      'BASOLA une ambos desafíos en una solución:\nNuestro sistema de pirólisis solar-híbrida convierte los residuos plásticos locales en el combustible que la comunidad necesita con urgencia — autónoma, sostenible y asequible.'
+    ]
   }
 };
 
@@ -94,9 +88,9 @@ const content = contentMap[lang] ?? contentMap.en;
   <p class="mb-2 text-xs uppercase tracking-wide text-basola-brown/60">{content.eyebrow}</p>
   <h2 class="mb-6 text-3xl font-extrabold text-basola-brown">{content.heading}</h2>
   <p class="mb-12 text-lg text-secondary/80">{content.lead}</p>
-  <div class="grid gap-6 md:grid-cols-2">
+  <div class="grid gap-6 md:grid-cols-2 justify-center">
     {content.boxes.map((b) => (
-      <div class="p-6 bg-[#F7F6F3] rounded-xl shadow-sm flex flex-col" data-anim>
+      <div class="p-4 bg-[#F7F6F3] rounded-xl shadow-sm flex flex-col max-w-xs mx-auto" data-anim>
         <span class="text-3xl mb-4" aria-hidden="true">{b.icon}</span>
         <h3 class="mb-2 font-semibold text-basola-brown">{b.title}</h3>
         <ul class="list-disc pl-4 text-sm text-secondary/80 space-y-1">
@@ -105,7 +99,6 @@ const content = contentMap[lang] ?? contentMap.en;
       </div>
     ))}
   </div>
-  <p class="mt-12 text-lg text-basola-brown whitespace-pre-line">{content.bridge}</p>
 </section>
 <script>
   const observer = new IntersectionObserver((entries)=>{
