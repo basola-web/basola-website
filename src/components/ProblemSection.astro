@@ -2,97 +2,106 @@
 interface Box {
   icon: string;
   title: string;
-  text: string;
+  bullets: string[];
 }
 
 const { lang = 'de' } = Astro.props;
 
-const contentMap: Record<string, { heading: string; lead: string; boxes: Box[]; bridge: string }> = {
+const contentMap: Record<string, { eyebrow: string; heading: string; lead: string; boxes: Box[]; bridge: string }> = {
   de: {
+    eyebrow: 'Kein Abtransport, teurer Kraftstoff',
     heading: 'Abgelegen, aber nicht chancenlos',
     lead:
-      'Viele abgelegene Regionen – ob Inseln, Küstendörfer oder schwer zugängliche Siedlungen – haben eines gemeinsam: Sie stehen vor massiven Herausforderungen im Umgang mit Abfall und Energieversorgung.',
+      'Viele abgelegene Regionen – ob Inseln, Küstendörfer oder schwer zugängliche Siedlungen – haben eines gemeinsam: mangelnde Infrastruktur und fehlende Entsorgungssysteme.',
     boxes: [
       {
         icon: '🗑️',
         title: 'Abfall ohne Ausweg',
-        text: 'Ohne funktionierende Entsorgungssysteme sammelt sich Plastik an und wird oft notdürftig verbrannt – mit schädlichen Folgen für Umwelt und Gesundheit.'
-      },
-      {
-        icon: '🚧',
-        title: 'Isolation statt Infrastruktur',
-        text: 'Straßen, Recyclinganlagen oder Stromnetze gibt es kaum. Alles muss lokal gelöst werden, weil Transport und externe Entsorgung praktisch nicht möglich sind.'
+        bullets: [
+          'Notverbrennung & offene Müllhalden',
+          'Rauch, Giftstoffe, Umweltverschmutzung'
+        ]
       },
       {
         icon: '⛽',
-        title: 'Hohe Kraftstoffpreise als Nebeneffekt',
-        text: 'Kraftstoff gelangt nur über lange und teure Wege in diese Regionen. Die Folge: deutlich höhere Preise – ein zusätzlicher Anreiz, Abfall vor Ort in nutzbare Energie zu verwandeln.'
+        title: 'Hohe Kraftstoffpreise',
+        bullets: [
+          'Isoliertes Setup → hohe Transportkosten',
+          'Fehlende Elektrifizierung der Mobilität'
+        ]
       }
     ],
     bridge:
-      'BASOLA verbindet diese drei Herausforderungen in einer Lösung:\nUnsere solar-hybride Pyrolyseanlage macht aus Plastikmüll vor Ort den Treibstoff, den die Gemeinschaft dringend braucht – autark, nachhaltig und bezahlbar.'
+      'BASOLA verbindet beide Herausforderungen in einer Lösung:\nUnsere solar-hybride Pyrolyseanlage macht aus Plastikmüll vor Ort den Treibstoff, den die Gemeinschaft dringend braucht – autark, nachhaltig und bezahlbar.'
   },
   en: {
+    eyebrow: 'No waste removal, costly fuel',
     heading: 'Remote, but not without opportunity',
     lead:
-      'Many remote regions — whether islands, coastal villages or hard-to-reach settlements — share one thing: massive challenges in dealing with waste and securing energy supply.',
+      'Many remote regions — whether islands, coastal villages or hard-to-reach settlements — share one thing: poor infrastructure and a lack of waste disposal systems.',
     boxes: [
       {
         icon: '🗑️',
         title: 'Waste with no way out',
-        text: 'Without functioning disposal systems, plastic piles up and is often burned out of necessity—with harmful effects on the environment and human health.'
-      },
-      {
-        icon: '🚧',
-        title: 'Isolation over infrastructure',
-        text: 'Roads, recycling facilities or power grids are scarce. Everything must be solved locally because transport and external disposal are practically impossible.'
+        bullets: [
+          'Emergency burning & open dumps',
+          'Smoke, toxins, environmental pollution'
+        ]
       },
       {
         icon: '⛽',
-        title: 'High fuel prices as a side effect',
-        text: 'Fuel reaches these regions only via long and costly routes. The result: much higher prices—another incentive to turn local waste into usable energy.'
+        title: 'High fuel prices',
+        bullets: [
+          'Isolated setup → high transport costs',
+          'No electrification of mobility'
+        ]
       }
     ],
     bridge:
-      'BASOLA tackles all three challenges with one solution:\nOur solar-hybrid pyrolysis plant turns plastic waste on site into the fuel the community urgently needs—autonomous, sustainable and affordable.'
+      'BASOLA tackles both challenges with one solution:\nOur solar-hybrid pyrolysis plant turns local plastic waste into the fuel the community urgently needs—autonomous, sustainable and affordable.'
   },
   es: {
+    eyebrow: 'Sin recogida de residuos, combustible caro',
     heading: 'Alejados, pero no sin oportunidades',
     lead:
-      'Muchas regiones remotas – ya sean islas, pueblos costeros o asentamientos de difícil acceso – tienen algo en común: afrontan enormes retos en la gestión de residuos y el suministro energético.',
+      'Muchas regiones remotas — ya sean islas, pueblos costeros o asentamientos de difícil acceso — tienen algo en común: infraestructura deficiente y falta de sistemas de eliminación.',
     boxes: [
       {
         icon: '🗑️',
         title: 'Residuos sin salida',
-        text: 'Sin sistemas de eliminación funcionales, el plástico se acumula y a menudo se quema de forma precaria, con consecuencias nocivas para el medio ambiente y la salud.'
-      },
-      {
-        icon: '🚧',
-        title: 'Aislamiento en lugar de infraestructura',
-        text: 'Casi no hay carreteras, plantas de reciclaje ni redes eléctricas. Todo debe resolverse localmente, porque el transporte y la eliminación externa son prácticamente imposibles.'
+        bullets: [
+          'Quema de emergencia y vertederos abiertos',
+          'Humo, toxinas, contaminación ambiental'
+        ]
       },
       {
         icon: '⛽',
-        title: 'Precios elevados del combustible como efecto secundario',
-        text: 'El combustible llega a estas regiones solo a través de rutas largas y costosas. El resultado: precios mucho más altos, un incentivo adicional para transformar los residuos en energía útil in situ.'
+        title: 'Precios elevados del combustible',
+        bullets: [
+          'Configuración aislada → altos costos de transporte',
+          'Falta de electrificación de la movilidad'
+        ]
       }
     ],
     bridge:
-      'BASOLA reúne estos tres retos en una sola solución:\nNuestro sistema de pirólisis solar-híbrida convierte los residuos plásticos locales en el combustible que la comunidad necesita con urgencia — autónomo, sostenible y asequible.'
+      'BASOLA une ambos desafíos en una solución:\nNuestro sistema de pirólisis solar-híbrida convierte los residuos plásticos locales en el combustible que la comunidad necesita con urgencia — autónoma, sostenible y asequible.'
   }
 };
 
 const content = contentMap[lang] ?? contentMap.en;
 ---
 <section id="problem" class="mx-auto max-w-6xl px-6 py-16 text-secondary">
+  <p class="mb-2 text-xs uppercase tracking-wide text-basola-brown/60">{content.eyebrow}</p>
   <h2 class="mb-6 text-3xl font-extrabold text-basola-brown">{content.heading}</h2>
   <p class="mb-12 text-lg text-secondary/80">{content.lead}</p>
-  <div class="grid gap-6 md:grid-cols-3">
+  <div class="grid gap-6 md:grid-cols-2">
     {content.boxes.map((b) => (
       <div class="p-6 bg-[#F7F6F3] rounded-xl shadow-sm flex flex-col" data-anim>
         <span class="text-3xl mb-4" aria-hidden="true">{b.icon}</span>
         <h3 class="mb-2 font-semibold text-basola-brown">{b.title}</h3>
-        <p class="text-sm text-secondary/80">{b.text}</p>
+        <ul class="list-disc pl-4 text-sm text-secondary/80 space-y-1">
+          {b.bullets.map((item) => <li>{item}</li>)}
+        </ul>
       </div>
     ))}
   </div>
