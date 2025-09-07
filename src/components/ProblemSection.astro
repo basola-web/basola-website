@@ -15,7 +15,7 @@ const contentMap: Record<string, { eyebrow: string; heading: string; lead: strin
       'Viele abgelegene Regionen – ob Inseln, Küstendörfer oder schwer zugängliche Siedlungen – haben eines gemeinsam: mangelnde Infrastruktur und fehlende Entsorgungssysteme.',
     boxes: [
       {
-        icon: '🗑️',
+        icon: '/assets/icons/waste.svg',
         title: 'Abfall ohne Ausweg',
         bullets: [
           'Notverbrennung & offene Müllhalden',
@@ -23,7 +23,7 @@ const contentMap: Record<string, { eyebrow: string; heading: string; lead: strin
         ]
       },
       {
-        icon: '⛽',
+        icon: '/assets/icons/fuel.svg',
         title: 'Hohe Kraftstoffpreise',
         bullets: [
           'Isoliertes Setup → hohe Transportkosten',
@@ -39,7 +39,7 @@ const contentMap: Record<string, { eyebrow: string; heading: string; lead: strin
       'Many remote regions — whether islands, coastal villages or hard-to-reach settlements — share one thing: poor infrastructure and a lack of waste disposal systems.',
     boxes: [
       {
-        icon: '🗑️',
+        icon: '/assets/icons/waste.svg',
         title: 'Waste with no way out',
         bullets: [
           'Emergency burning & open dumps',
@@ -47,7 +47,7 @@ const contentMap: Record<string, { eyebrow: string; heading: string; lead: strin
         ]
       },
       {
-        icon: '⛽',
+        icon: '/assets/icons/fuel.svg',
         title: 'High fuel prices',
         bullets: [
           'Isolated setup → high transport costs',
@@ -63,7 +63,7 @@ const contentMap: Record<string, { eyebrow: string; heading: string; lead: strin
       'Muchas regiones remotas — ya sean islas, pueblos costeros o asentamientos de difícil acceso — tienen algo en común: infraestructura deficiente y falta de sistemas de eliminación.',
     boxes: [
       {
-        icon: '🗑️',
+        icon: '/assets/icons/waste.svg',
         title: 'Residuos sin salida',
         bullets: [
           'Quema de emergencia y vertederos abiertos',
@@ -71,7 +71,7 @@ const contentMap: Record<string, { eyebrow: string; heading: string; lead: strin
         ]
       },
       {
-        icon: '⛽',
+        icon: '/assets/icons/fuel.svg',
         title: 'Precios elevados del combustible',
         bullets: [
           'Configuración aislada → altos costos de transporte',
@@ -91,7 +91,7 @@ const content = contentMap[lang] ?? contentMap.en;
   <div class="grid gap-6 md:grid-cols-2 justify-center">
     {content.boxes.map((b) => (
       <div class="p-4 bg-[#F7F6F3] rounded-xl shadow-sm flex flex-col max-w-xs mx-auto" data-anim>
-        <span class="text-3xl mb-4" aria-hidden="true">{b.icon}</span>
+        <img src={b.icon} alt="" class="mb-4 h-8 w-8" />
         <h3 class="mb-2 font-semibold text-basola-brown">{b.title}</h3>
         <ul class="list-disc pl-4 text-sm text-secondary/80 space-y-1">
           {b.bullets.map((item) => <li>{item}</li>)}
