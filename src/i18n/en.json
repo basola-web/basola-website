@@ -36,7 +36,7 @@
   },
   "team": {
     "heading": "About Us",
-    "text": "Our interdisciplinary team combines expertise in chemical and process engineering, mechanical engineering, electrical engineering, and industrial engineering — complemented by business and environmental perspectives. Together with seasoned advisors, we validate our technology, build prototypes, and test them in the field. Our goal is to spin off a startup that transforms non-recyclable plastics on site into local fuel — technically robust, economically viable, and with measurable impact."
+    "text": "We are BASOLA – we combine engineering and entrepreneurial spirit to build solutions for remote regions."
   },
   "partners": {
     "heading": "Partners",
@@ -63,7 +63,7 @@
     "tagline": "What's new – awards, milestones, press.",
     "prev": "Previous article",
     "next": "Next article",
-    "back": "\u2190 Back to overview",
+    "back": "← Back to overview",
     "more": "More updates",
     "read": "Read article"
   }

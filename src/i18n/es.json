@@ -36,7 +36,7 @@
   },
   "team": {
     "heading": "Sobre Nosotros",
-    "text": "Nuestro equipo interdisciplinario combina experiencia en ingeniería química y de procesos, ingeniería mecánica, ingeniería eléctrica e ingeniería industrial — complementado por perspectivas empresariales y medioambientales. Junto con asesores experimentados, validamos nuestra tecnología, construimos prototipos y los probamos sobre el terreno. Nuestro objetivo: crear una start-up que transforme plásticos no reciclables en combustible local — técnicamente robusto, económicamente viable y con un impacto medible."
+    "text": "Somos BASOLA – unimos ingeniería y espíritu emprendedor para construir soluciones para regiones remotas."
   },
   "partners": {
     "heading": "Socios",
@@ -63,7 +63,7 @@
     "tagline": "Novedades – premios, hitos, prensa.",
     "prev": "Artículo anterior",
     "next": "Artículo siguiente",
-    "back": "\u2190 Volver al resumen",
+    "back": "← Volver al resumen",
     "more": "Más novedades",
     "read": "Ir al artículo"
   }
