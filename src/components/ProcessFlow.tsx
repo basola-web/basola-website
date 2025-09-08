@@ -178,7 +178,7 @@ const ProcessFlow: React.FC<Props> = ({ lang = "de" }) => {
                 }}
               >
                 <div className="relative z-10 w-24 h-24 flex items-center justify-center rounded-full border border-[#723100] bg-white p-3 mb-4">
-                  <img src={s.icon} alt={s.title} className="w-full h-full" />
+                  <img src={s.icon} alt={s.title} className="w-full h-full" loading="lazy" />
                 </div>
                 <div className="bg-white rounded-xl shadow-md p-4 text-left w-full flex-1 flex flex-col">
                   <h3 className="font-semibold text-[#723100] mb-2">

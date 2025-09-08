@@ -1,4 +1,5 @@
 ---
+import BlurImage from './BlurImage';
 const {
   lang='de',
   i18n = (lang==='de'
@@ -37,7 +38,16 @@ const route = {
 
   <div class="relative mt-4 h-[420px] w-full">
     <div id="ml-map" class="h-full w-full"></div>
-    <img id="ml-fallback" src="/assets/Ladrilleros.png" alt={i18n.subtitle} class="absolute inset-0 h-full w-full object-cover" />
+    <BlurImage
+      id="ml-fallback"
+      src="/assets/Ladrilleros.png"
+      alt={i18n.subtitle}
+      hash="UcGR|=adIVR-~pxZt6WB?b%0bHay-;xaR*oe"
+      width={2048}
+      height={1536}
+      className="absolute inset-0 h-full w-full"
+      imgClassName="h-full w-full object-cover"
+    />
   </div>
 
   <div class="pointer-events-none absolute inset-0">

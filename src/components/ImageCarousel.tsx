@@ -11,7 +11,7 @@ export default function ImageCarousel({ images }: Props) {
 
   return (
     <div className="relative w-full max-w-xl mx-auto">
-      <img src={images[index]} alt="" className="w-full" />
+      <img src={images[index]} alt="" className="w-full" loading="lazy" />
       <button
         type="button"
         onClick={prev}
