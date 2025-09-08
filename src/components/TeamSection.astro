@@ -65,9 +65,9 @@ const team = teamMembers[lang] ?? teamMembers.de;
 
 const advisorRole = lang === 'en' ? 'Advisor' : lang === 'es' ? 'Asesor' : 'Berater';
 const advisorDescriptions: Record<string, string> = {
-  en: 'Former COO at Freudenberg Filtration Technologies. Business advisor at ENACTUS Germany e.V. for 9 years.',
-  de: 'Ehemaliger COO bei Freudenberg Filtration Technologies. Seit 9 Jahren Business Advisor bei ENACTUS Germany e.V.',
-  es: 'Ex COO de Freudenberg Filtration Technologies y asesor empresarial en ENACTUS Germany e.V. durante 9 años.',
+  en: 'Former COO, Freudenberg Filtration Technologies · 9 yrs Business Advisor, Enactus Germany e.V.',
+  de: 'Ehem. COO, Freudenberg Filtration Technologies · seit 9 J. Business Advisor, Enactus Germany e.V.',
+  es: 'Ex COO, Freudenberg Filtration Technologies · 9 años asesor empresarial, Enactus Germany e.V.',
 };
 const advisor = {
   name: 'Jörg Sievert',
@@ -110,7 +110,9 @@ const advisor = {
         />
         <h4 class="text-md font-semibold text-basola-brown">{advisor.name}</h4>
         <p class="text-sm text-secondary">{advisor.role}</p>
-        <p class="text-sm text-secondary text-center mt-1">{advisor.description}</p>
+        <p class="text-sm text-secondary text-center mt-1 bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg shadow max-w-xs">
+          {advisor.description}
+        </p>
       </div>
     </div>
   </div>
