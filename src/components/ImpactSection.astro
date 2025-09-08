@@ -8,6 +8,7 @@ interface KPI {
   value: string;
 }
 
+import BlurImage from './BlurImage';
 const { lang = 'de' } = Astro.props;
 
 const contentMap: Record<
@@ -176,7 +177,7 @@ const content = contentMap[lang] ?? contentMap.en;
           data-anim
         >
           <div class="flex items-center gap-3 mb-4">
-            <img src={k.icon} alt={k.alt} title={k.title} class="h-10 w-10" />
+            <img src={k.icon} alt={k.alt} title={k.title} class="h-10 w-10" loading="lazy" />
             <h3 class="text-basola-brown font-semibold">{k.heading}</h3>
           </div>
           <p class="text-sm text-basola-brown/80 flex-1">{k.description}</p>
@@ -189,12 +190,15 @@ const content = contentMap[lang] ?? contentMap.en;
       class="mt-16 flex flex-col items-center md:flex-row md:items-center md:space-x-8"
       data-anim
     >
-      <img
+      <BlurImage
         src="/assets/Team/Olber.png"
         alt="Olber Grueso"
-        title="Olber Grueso"
-        class="mb-6 md:mb-0 mx-auto"
-        style="max-width:150px;border-radius:9999px"
+        hash="UCF;yQ%KP2KJrWRkw|-U0mRo+$=y~St2Xkoy"
+        width={664}
+        height={796}
+        className="mb-6 md:mb-0 mx-auto"
+        imgClassName="w-full h-full object-cover"
+        style={{ maxWidth: '150px', borderRadius: '9999px' }}
       />
       <div class="text-center md:text-left max-w-xl">
         <p class="italic text-basola-brown/90">{content.quote.text}</p>

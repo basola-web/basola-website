@@ -6,8 +6,8 @@ const current = Astro.currentLocale;
 <header class="sticky top-0 z-50 bg-white md:bg-white/85 md:backdrop-blur md:supports-[backdrop-filter]:bg-white/60">
   <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
     <a href={getRelativeLocaleUrl(current)} class="relative z-50 text-2xl font-bold text-secondary">
-      <img id="logo-full" src="/assets/basola_logo.png" alt="BASOLA logo" class="h-8" />
-      <img id="logo-favicon" src="/assets/basola_favicon.png" alt="BASOLA icon" class="h-8 hidden" />
+      <img id="logo-full" src="/assets/basola_logo.png" alt="BASOLA logo" class="h-8" loading="eager" />
+      <img id="logo-favicon" src="/assets/basola_favicon.png" alt="BASOLA icon" class="h-8 hidden" loading="eager" />
     </a>
     <button id="menu-toggle" class="md:hidden text-secondary relative z-50">☰</button>
     <nav

@@ -101,6 +101,7 @@ const advisor = {
           src={image}
           alt={name}
           class="w-32 h-32 rounded-full object-cover border-4 border-basola-yellow mb-4 shadow-md"
+          loading="lazy"
         />
         <h3 class="text-lg font-semibold text-basola-brown">{name}</h3>
         <p class="text-sm text-secondary whitespace-pre-line">{role}</p>
@@ -116,6 +117,7 @@ const advisor = {
           src={advisor.image}
           alt={advisor.name}
           class="w-28 h-28 rounded-full object-cover border-4 border-gray-300 mb-3"
+          loading="lazy"
         />
         <h4 class="text-md font-semibold text-basola-brown">{advisor.name}</h4>
         <p class="text-sm text-secondary">{advisor.role}</p>

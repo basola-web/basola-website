@@ -46,6 +46,7 @@ export default function NewsCarousel({ items, t, lang }: Props) {
                 src={item.heroImage}
                 alt=""
                 className="h-40 w-full object-contain p-4 opacity-90 group-hover:opacity-100 transition bg-white rounded-t-2xl"
+                loading="lazy"
               />
             )}
             <div className="flex flex-1 flex-col p-5 bg-white rounded-b-2xl ring-1 ring-black/5 shadow-sm group-hover:shadow-lg transition h-full">
