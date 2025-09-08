@@ -36,7 +36,7 @@
   },
   "team": {
     "heading": "Über Uns",
-    "text": "Unser interdisziplinäres Team vereint Expertise in Chemie- und Verfahrenstechnik, Maschinenbau, Elektrotechnik und Wirtschaftsingenieurwesen – ergänzt um betriebswirtschaftliche und umwelttechnische Perspektiven. Gemeinsam mit erfahrenen Advisor:innen validieren wir unsere Technologie, bauen Prototypen und erproben sie im Feld. Unser Ziel: die Ausgründung eines Start-ups, das nicht recycelbare Kunststoffe vor Ort in lokalen Kraftstoff verwandelt – technisch robust, wirtschaftlich tragfähig und mit messbarem Impact."
+    "text": "Wir sind BASOLA – wir verbinden Ingenieurwesen und Unternehmergeist, um Lösungen für abgelegene Regionen zu bauen."
   },
   "partners": {
     "heading": "Partner",
@@ -63,7 +63,7 @@
     "tagline": "Was es Neues gibt – Auszeichnungen, Meilensteine, Presse.",
     "prev": "Vorheriger Artikel",
     "next": "Nächster Artikel",
-    "back": "\u2190 Zur Übersicht",
+    "back": "← Zur Übersicht",
     "more": "Weitere Updates",
     "read": "Zum Artikel"
   }

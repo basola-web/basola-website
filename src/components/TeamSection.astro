@@ -64,7 +64,17 @@ const teamMembers: Record<string, { name: string; role: string; image: string }[
 const team = teamMembers[lang] ?? teamMembers.de;
 
 const advisorRole = lang === 'en' ? 'Advisor' : lang === 'es' ? 'Asesor' : 'Berater';
-const advisor = { name: 'Jörg Sievert', role: advisorRole };
+const advisorDescriptions: Record<string, string> = {
+  en: 'Former COO at Freudenberg Filtration Technologies. Business advisor at ENACTUS Germany e.V. for 9 years.',
+  de: 'Ehemaliger COO bei Freudenberg Filtration Technologies. Seit 9 Jahren Business Advisor bei ENACTUS Germany e.V.',
+  es: 'Ex COO de Freudenberg Filtration Technologies y asesor empresarial en ENACTUS Germany e.V. durante 9 años.',
+};
+const advisor = {
+  name: 'Jörg Sievert',
+  role: advisorRole,
+  image: '/assets/Team/joerg_sievert.jpeg',
+  description: advisorDescriptions[lang] ?? advisorDescriptions.de,
+};
 ---
 <section class="py-24 px-6 bg-white text-center" id="team">
   <h2 class="text-4xl font-bold text-basola-brown mb-4">{t.heading}</h2>
@@ -94,12 +104,13 @@ const advisor = { name: 'Jörg Sievert', role: advisorRole };
     <div class="flex flex-wrap justify-center gap-10">
       <div class="flex flex-col items-center opacity-0 animate-fade-in-up" style="animation-delay: 200ms">
         <img
-          src="/assets/basola_favicon.png"
+          src={advisor.image}
           alt={advisor.name}
-          class="w-28 h-28 rounded-full object-cover border-4 border-gray-300 mb-3 opacity-80"
+          class="w-28 h-28 rounded-full object-cover border-4 border-gray-300 mb-3"
         />
         <h4 class="text-md font-semibold text-basola-brown">{advisor.name}</h4>
         <p class="text-sm text-secondary">{advisor.role}</p>
+        <p class="text-sm text-secondary text-center mt-1">{advisor.description}</p>
       </div>
     </div>
   </div>
