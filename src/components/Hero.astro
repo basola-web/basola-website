@@ -10,7 +10,6 @@ const {
     { icon: '⚓', label: 'Lokal betrieben' },
   ],
   videoSrc = '/assets/bootsfahrt_nach_ladrilleros.MP4',
-  poster = '/assets/Ladrilleros_Strand.png',
 } = Astro.props;
 
 const [firstLine, secondLine = ''] = title.split(/\s+[–—]\s+/);
@@ -21,7 +20,6 @@ const [firstLine, secondLine = ''] = title.split(/\s+[–—]\s+/);
   <video
     class="absolute inset-0 w-full h-full object-cover will-change-transform"
     src={videoSrc}
-    poster={poster}
     autoplay
     muted
     loop
