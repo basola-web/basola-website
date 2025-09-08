@@ -64,10 +64,19 @@ const teamMembers: Record<string, { name: string; role: string; image: string }[
 const team = teamMembers[lang] ?? teamMembers.de;
 
 const advisorRole = lang === 'en' ? 'Advisor' : lang === 'es' ? 'Asesor' : 'Berater';
-const advisorDescriptions: Record<string, string> = {
-  en: 'Former COO, Freudenberg Filtration Technologies · 9 yrs Business Advisor, Enactus Germany e.V.',
-  de: 'Ehem. COO, Freudenberg Filtration Technologies · seit 9 J. Business Advisor, Enactus Germany e.V.',
-  es: 'Ex COO, Freudenberg Filtration Technologies · 9 años asesor empresarial, Enactus Germany e.V.',
+const advisorDescriptions: Record<string, string[]> = {
+  en: [
+    'Former COO, Freudenberg Filtration Technologies',
+    '9 yrs Business Advisor, Enactus Germany e.V.',
+  ],
+  de: [
+    'Ehem. COO, Freudenberg Filtration Technologies',
+    'seit 9 J. Business Advisor, Enactus Germany e.V.',
+  ],
+  es: [
+    'Ex COO, Freudenberg Filtration Technologies',
+    '9 años asesor empresarial, Enactus Germany e.V.',
+  ],
 };
 const advisor = {
   name: 'Jörg Sievert',
@@ -110,9 +119,9 @@ const advisor = {
         />
         <h4 class="text-md font-semibold text-basola-brown">{advisor.name}</h4>
         <p class="text-sm text-secondary">{advisor.role}</p>
-        <p class="text-sm text-secondary text-center mt-1 bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg shadow max-w-xs">
-          {advisor.description}
-        </p>
+        <ul class="text-sm text-secondary mt-1 bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg shadow max-w-xs list-disc list-inside text-left">
+          {advisor.description.map((item) => <li>{item}</li>)}
+        </ul>
       </div>
     </div>
   </div>
