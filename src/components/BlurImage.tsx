@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Blurhash } from 'react-blurhash';
 
 interface Props {
@@ -14,7 +14,33 @@ interface Props {
 }
 
 export default function BlurImage({ src, hash, alt, width, height, className, imgClassName, id, style }: Props) {
+  const imgRef = useRef<HTMLImageElement | null>(null);
   const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = imgRef.current;
+    if (!img) {
+      return;
+    }
+
+    if (img.complete) {
+      setLoaded(true);
+      return;
+    }
+
+    setLoaded(false);
+
+    const handleLoad = () => setLoaded(true);
+    const handleError = () => setLoaded(true);
+
+    img.addEventListener('load', handleLoad);
+    img.addEventListener('error', handleError);
+
+    return () => {
+      img.removeEventListener('load', handleLoad);
+      img.removeEventListener('error', handleError);
+    };
+  }, [src]);
   return (
     <div
       id={id}
@@ -31,12 +57,12 @@ export default function BlurImage({ src, hash, alt, width, height, className, im
         />
       )}
       <img
+        ref={imgRef}
         src={src}
         alt={alt}
         width={width}
         height={height}
         loading="lazy"
-        onLoad={() => setLoaded(true)}
         className={imgClassName}
         style={{ opacity: loaded ? 1 : 0, transition: 'opacity 0.3s' }}
       />
